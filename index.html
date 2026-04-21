@@ -56,9 +56,9 @@
 
       <div class="nav-divider">Resources</div>
 
-      <div class="nav-item" data-page="writing" onclick="nav('writing')">
+      <div class="nav-item" data-page="blog" onclick="nav('blog')">
         <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <span class="nav-label">Writing</span>
+        <span class="nav-label">Blog</span>
         <span class="nav-shortcut">7</span>
       </div>
       <div class="nav-item" data-page="tools" onclick="nav('tools')">
@@ -75,7 +75,7 @@
         <span class="nav-shortcut">9</span>
       </div>
       <div class="nav-item nav-ext" onclick="window.open('https://www.linkedin.com/in/michaelhnath/','_blank')">
-        <div class="nav-icon"><img src="Icons/linkedin.svg" alt="LinkedIn" width="15px"></div>
+        <div class="nav-icon"><img src="Icons/linkedin.svg" alt="LinkedIn"></div>
         <span class="nav-label">LinkedIn ↗</span>
       </div>
     </div>
@@ -96,6 +96,7 @@
 
   <!-- ── MAIN CONTENT ─────────────────────────────────────────── -->
   <main class="main">
+  <div class="page-frame">
 
     <!-- HOME ──────────────────────────────────────────────────── -->
     <div id="page-home" class="page active">
@@ -105,29 +106,29 @@
           <div>
             <div style="font-size:84px;font-weight:500;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
             <div class="body-text" style="margin-bottom:16px">I'm <strong>Mike Hnath</strong> (silent H), former touring drummer who builds brands from zero. With 15+ years of experience across startups, agencies, and my own consultancy, I help brands find their footing, tell their story, and grow with purpose.</div>
-              <a onclick="nav('about')" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more about me →</a></div>
+              <a onclick="nav('about')" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more about me →</a>
+            <div style="display:flex;gap:8px;margin-top:16px">
+              <button class="btn primary" onclick="nav('work')">View work</button>
+              <button class="btn secondary" onclick="openModal()">Get in touch ↗</button>
+            </div>
+          </div>
           <div id="shortcut-tip" style="background:var(--bg2);border:none;border-radius:var(--r-lg);padding:18px 16px;position:relative;margin-top:10px">
             <button onclick="document.getElementById('shortcut-tip').style.display='none'" style="position:absolute;top:8px;right:10px;background:none;border:none;cursor:pointer;font-size:14px;color:var(--text3);line-height:1">✕</button>
             <div style="font-size:12px;font-weight:800;color:var(--text);margin-bottom:6px">Navigate quickly</div>
             <div style="font-size:12px;color:var(--text2);line-height:1.6">Use keyboard shortcuts <strong style="color:var(--text)">1 → 9</strong> to jump between pages. Try pressing <strong style="color:var(--text)">2</strong>, <strong style="color:var(--text)">3</strong> or <strong style="color:var(--text)">4</strong>.</div>
-          </div>
-            <div style="display:flex;gap:8px">
-              <button class="btn primary" onclick="nav('work')">View work</button>
-              <button class="btn secondary" onclick="openModal()">Get in touch ↗</button>
-            </div>
           </div>
 
         </div>
       </div>
 
       <div class="section">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;padding-bottom:0;border-bottom:none">
-          <div class="section-label" style="margin-bottom:0;padding-bottom:0;border-bottom:none">Personal updates</div>
+        <div class="section-header">
+          <div class="section-label" style="margin-bottom:0">Personal updates</div>
           <span class="show-more" onclick="nav('about')" style="margin-top:0">View all →</span>
         </div>
         <div class="update-item">
-          <div style="width:46px;height:46px;min-width:46px;border-radius:var(--r);background:var(--bg2);border:none;display:flex;align-items:center;justify-content:center;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div class="update-thumb">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div class="update-body">
             <div class="update-title">Earned Google Data Analytics Certificate ↗</div>
@@ -137,8 +138,8 @@
           <div class="update-arrow">↗</div>
         </div>
         <div class="update-item">
-          <div style="width:46px;height:46px;min-width:46px;border-radius:var(--r);background:var(--bg2);border:none;display:flex;align-items:center;justify-content:center;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          <div class="update-thumb">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
           </div>
           <div class="update-body">
             <div class="update-title">THIS goes full-time — consultancy becomes primary</div>
@@ -148,8 +149,8 @@
           <div class="update-arrow">→</div>
         </div>
         <div class="update-item" style="border-bottom:none">
-          <div style="width:46px;height:46px;min-width:46px;border-radius:var(--r);background:var(--bg2);border:none;display:flex;align-items:center;justify-content:center;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="update-thumb">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div class="update-body">
             <div class="update-title">SIGIL launches — $22K+ crowdfunded ↗</div>
@@ -161,8 +162,8 @@
       </div>
 
       <div class="section">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;padding-bottom:0;border-bottom:none">
-          <div class="section-label" style="margin-bottom:0;padding-bottom:0;border-bottom:none">Featured work</div>
+        <div class="section-header">
+          <div class="section-label" style="margin-bottom:0">Featured work</div>
           <span class="show-more" onclick="nav('work')" style="margin-top:0">View all →</span>
         </div>
         <div class="work-grid">
@@ -216,17 +217,17 @@
       <div class="section">
         <div class="section-label">Portfolio</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-          <div style="background:var(--bg2);border-radius:var(--r-lg);border:none;padding:16px;cursor:pointer" onclick="nav('websites')">
+          <div class="nav-tile" onclick="nav('websites')">
             <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Websites</div>
             <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Live builds + GitHub projects. WordPress, Webflow, custom HTML.</div>
             <div style="font-size:11px;color:var(--text3)">View websites →</div>
           </div>
-          <div style="background:var(--bg2);border-radius:var(--r-lg);border:none;padding:16px;cursor:pointer" onclick="nav('media')">
+          <div class="nav-tile" onclick="nav('media')">
             <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Photo / Video</div>
             <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Photography and videography. Brand shoots, product content, live event coverage.</div>
             <div style="font-size:11px;color:var(--text3)">View photo / video →</div>
           </div>
-          <div style="background:var(--bg2);border-radius:var(--r-lg);border:none;padding:16px;cursor:pointer" onclick="window.open('https://www.behance.net/mikehnath','_blank')">
+          <div class="nav-tile" onclick="window.open('https://www.behance.net/mikehnath','_blank')">
             <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Design ↗</div>
             <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Brand identity, packaging, digital shelf. Full portfolio on Behance.</div>
             <div style="font-size:11px;color:var(--text3)">View on Behance ↗</div>
@@ -248,39 +249,39 @@
       </div>
 
       <div class="section">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;padding-bottom:0;border-bottom:none">
-          <div class="section-label" style="margin-bottom:0;padding-bottom:0;border-bottom:none">Recent writing</div>
+        <div class="section-header" style="margin-bottom:16px">
+          <div class="section-label" style="margin-bottom:0">Recent writing</div>
           <span class="show-more" onclick="nav('writing')" style="margin-top:0">View all →</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
-          <div class="work-card" onclick="nav('writing')" style="cursor:pointer">
-            <div class="work-thumb" style="height:120px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3)">[Hero image]</div>
+          <div class="work-card" onclick="nav('writing')">
+            <div class="work-thumb" style="height:120px">[Hero image]</div>
             <div class="work-body">
-              <div class="work-client" style="font-size:10px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em">Brand · Strategy</div>
+              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
               <div class="work-title">Why brand strategy and performance media aren't opposites</div>
               <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
             </div>
           </div>
-          <div class="work-card" onclick="nav('writing')" style="cursor:pointer">
-            <div class="work-thumb" style="height:120px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3)">[Hero image]</div>
+          <div class="work-card" onclick="nav('writing')">
+            <div class="work-thumb" style="height:120px">[Hero image]</div>
             <div class="work-body">
-              <div class="work-client" style="font-size:10px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em">GTM · Personal</div>
+              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">GTM · Personal</div>
               <div class="work-title">What 22 countries on a tour bus taught me about operations</div>
               <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
             </div>
           </div>
-          <div class="work-card" onclick="nav('writing')" style="cursor:pointer">
-            <div class="work-thumb" style="height:120px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3)">[Hero image]</div>
+          <div class="work-card" onclick="nav('writing')">
+            <div class="work-thumb" style="height:120px">[Hero image]</div>
             <div class="work-body">
-              <div class="work-client" style="font-size:10px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em">Brand · Regulated CPG</div>
+              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Regulated CPG</div>
               <div class="work-title">Building a regulated consumer brand — the Scandalous playbook</div>
               <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
             </div>
           </div>
-          <div class="work-card" onclick="nav('writing')" style="cursor:pointer">
-            <div class="work-thumb" style="height:120px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3)">[Hero image]</div>
+          <div class="work-card" onclick="nav('writing')">
+            <div class="work-thumb" style="height:120px">[Hero image]</div>
             <div class="work-body">
-              <div class="work-client" style="font-size:10px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em">AI · Creative</div>
+              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">AI · Creative</div>
               <div class="work-title">How I think about AI in a creative production workflow</div>
               <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
             </div>
@@ -336,6 +337,7 @@
           <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$1M+</div><div class="stat-label">Paid media managed</div></div>
           <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">15+ yrs</div><div class="stat-label">Brand &amp; marketing</div></div>
           <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$500K+</div><div class="stat-label">Client funding raised</div></div>
+        </div>
       </div>
 
       <div class="section">
@@ -598,7 +600,7 @@
           <div class="nav-card" onclick="openCase('pocn')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">POCN — Pharma media at scale</div><div class="nav-card-tag">Performance · Healthcare</div></div>
           <div class="nav-card right" onclick="openCase('sigil')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></div>
         </div>
-        <div style="text-align:center;margin-top:16px"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
       </div>
     </div>
 
@@ -661,7 +663,7 @@
           <div class="nav-card" onclick="openCase('scandalous')"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">Scandalous — Brand system</div><div class="nav-card-tag">Brand · GTM</div></div>
           <div class="nav-card right" onclick="openCase('sigil')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></div>
         </div>
-        <div style="text-align:center;margin-top:16px"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
       </div>
     </div>
 
@@ -696,7 +698,7 @@
           <div class="nav-card" onclick="openCase('pocn')"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">POCN — Pharma media</div><div class="nav-card-tag">Performance · Healthcare</div></div>
           <div class="nav-card right" onclick="openCase('kh')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">Kraft Heinz — Digital shelf</div><div class="nav-card-tag">Design · CPG</div></div>
         </div>
-        <div style="text-align:center;margin-top:16px"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
       </div>
     </div>
 
@@ -731,7 +733,7 @@
           <div class="nav-card" onclick="openCase('sigil')"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></div>
           <div class="nav-card right" onclick="nav('work')"><div class="nav-card-dir">All work</div><div class="nav-card-title">Back to work index</div><div class="nav-card-tag">10 projects</div></div>
         </div>
-        <div style="text-align:center;margin-top:16px"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
       </div>
     </div>
 
@@ -822,10 +824,10 @@
       </div>
     </div>
 
-    <!-- WRITING ────────────────────────────────────────────────── -->
-    <div id="page-writing" class="page">
+    <!-- BLOG ────────────────────────────────────────────────── -->
+    <div id="page-blog" class="page">
       <div class="section">
-        <div class="page-title">Writing</div>
+        <div class="page-title">Blog</div>
         <div class="page-subtitle">Brand strategy, marketing ops, and the occasional op-ed. More coming as THIS relaunches.</div>
         <div class="writing-row">
           <div class="writing-date">Coming soon</div>
@@ -1025,7 +1027,7 @@
             <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="marketing" href="https://www.salesforce.com" target="_blank">
-            <div class="tool-icon"><img src="Icons/salesforce8.svg" alt="Salesforce"></div>
+            <div class="tool-icon"><img src="Icons/salesforce.svg" alt="Salesforce"></div>
             <div class="tool-info"><div class="tool-name">Salesforce</div><div class="tool-desc">CRM and pipeline management. Used heavily at Triax for enterprise sales.</div></div>
             <div class="tool-arrow">↗</div>
           </a>
@@ -1083,6 +1085,7 @@
       </div>
     </div>
 
+  </div><!-- /.page-frame -->
   </main>
 </div>
   

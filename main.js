@@ -63,10 +63,9 @@ function openCase(slug) {
 // Keyboard shortcuts 1–9
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  const pages = ['home','about','work','websites','media','writing','tools'];
-  const n = parseInt(e.key);
-  if (n >= 1 && n <= 7) nav(pages[n-1]);
-  if (e.key === '8') nav('tools');
+  const map = {'1':'home','2':'about','3':'work','4':'websites','5':'media','7':'writing','8':'tools'};
+  if (map[e.key]) nav(map[e.key]);
+  if (e.key === '6') window.open('https://www.behance.net/mikehnath','_blank');
   if (e.key === '9') openModal();
   if (e.key === 'Escape') closeModal();
 });
