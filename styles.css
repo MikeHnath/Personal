@@ -498,4 +498,5 @@ img[src="Icons/github.svg"],img[src="Icons/adobe-portfolio.svg"]{filter:var(--lo
   .home-work-grid{grid-template-columns:1fr}
   .section{padding:20px 17px}
   #home-greeting{font-size:clamp(52px,18vw,136px)!important;letter-spacing:-1px!important}
+  .markanthony-thumb iframe{transform:scale(0.6);transform-origin:top center}
 }
