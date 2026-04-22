@@ -230,6 +230,23 @@ function renderFeaturedWork() {
 }
 renderFeaturedWork();
 
+(function() {
+  const el = document.getElementById('experience-work');
+  if (!el) return;
+  el.className = 'exp-work-grid';
+  el.innerHTML = workItems.slice(0, 2).map(w => {
+    const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
+    const pills = w.tags.map(t => `<span class="work-domain-tag">${t}</span>`).join('');
+    return `<div class="fw-card" onclick="${action}">
+      <div class="fw-tags">${pills}</div>
+      <div class="fw-title">${w.title}</div>
+      <div class="fw-client">${w.client}</div>
+      <div class="fw-outcome">${w.outcome}</div>
+      <div class="fw-footer"><span class="fw-industry">${w.industry}</span><span class="fw-arrow">→</span></div>
+    </div>`;
+  }).join('');
+})();
+
 
 // ── GREETING ─────────────────────────────────────────────────────
 (function() {

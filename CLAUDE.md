@@ -18,7 +18,7 @@ Single-page application with no framework, bundler, or dependencies. Three files
 
 Each page has `id="page-{name}"`. Nav items have `data-page="{name}"` and call `nav(pageId)`. Case studies use `id="page-case-{slug}"` and are opened via `openCase(slug)` — they share the Work nav item as the active state.
 
-Pages in HTML not reachable from the sidebar: `page-design` and `page-resume` (no nav items point to them).
+All pages in the HTML are reachable from the sidebar. The Media nav item opens `hnath.myportfolio.com` externally (no internal page).
 
 ### Keyboard shortcuts
 
@@ -27,5 +27,5 @@ Sidebar shortcut badges (1–9) must stay in sync with the `map` object in the `
 ### Assets
 
 - `Icons/` — tool/software SVGs used on the About and Tools pages
-- `Company Logos/` — client brand assets used in the ticker and case studies
-- Brand images are embedded as base64 `data:` URIs directly in `main.js` (the `brands` array at the top of the file)
+- `Logos/` — client brand assets used in the ticker and case studies
+- Brand images are referenced by path in the `brands` array at the top of `main.js`
