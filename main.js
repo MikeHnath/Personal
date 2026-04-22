@@ -52,7 +52,7 @@ const updates = [
   {
     img: 'Icons/scandalous-icon-dark.png',
     darkImg: 'Icons/scandalous-icon-light.png',
-    title: 'Scandalous — made intro to Brooklyn Operator',
+    title: 'Scandalous — made intro to Brooklyn operator',
     desc: 'Personally made the introduction connecting Scandalous to their Brooklyn licensing partner.',
     date: 'Sep 2025'
   },
@@ -65,14 +65,20 @@ const updates = [
   {
     emoji: '🏠',
     title: 'Bought our house',
-    desc: '',
+    desc: 'Allison and I bought our first house together — right near friends and family in CT.',
     date: 'Jul 2025'
   },
   {
     emoji: '💍',
     title: 'Got married',
-    desc: '',
+    desc: 'Married my beautiful wife Allison on the beach at Surfside Hotel in Lordship, CT.',
     date: 'Jun 2025'
+  },
+  {
+    emoji: '📷',
+    title: 'Went all-in on photo and video production',
+    desc: 'Invested $10K+ in professional camera and video gear. Creative production is now fully in-house.',
+    date: 'Apr 2025'
   },
   {
     img: 'Icons/meta.svg',
@@ -83,13 +89,27 @@ const updates = [
   {
     img: 'Icons/this-icon.svg',
     darkInvert: true,
+    thumbSize: 28,
     title: 'THIS goes full-time — consultancy becomes primary',
     desc: 'After wrapping POCN, THIS became the primary. Brand, GTM, and media work for SMB and regulated consumer clients.',
     date: 'Aug 2024'
   },
   {
+    img: 'Icons/asp-logo.svg',
+    title: 'Volunteered with Appalachia Service Project in Kentucky',
+    desc: 'Spent a week repairing homes with ASP alongside Allie and her dad — something we\'d planned to do together before the wedding.',
+    date: 'Jul 2024'
+  },
+  {
+    img: 'Logos/apa-logo.svg',
+    title: 'Competed in the APA 9-Ball World Tournament',
+    desc: 'Represented my local league at the world tournament in Las Vegas against global competition. Won my matches.',
+    date: 'Aug 2023'
+  },
+  {
     img: 'Icons/sigil-icon-white.png',
     lightInvert: true,
+    thumbSize: 28,
     title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded',
     desc: 'Full GTM from zero: positioning, packaging, campaign, fulfillment.',
     date: 'May 2023'
@@ -97,8 +117,8 @@ const updates = [
   {
     emoji: '🔑',
     title: 'Bought my condo — first home',
-    desc: '',
-    date: 'Mar 2021'
+    desc: 'First home purchase. Moved out on my own for the first time — a milestone that was a long time coming.',
+    date: 'May 2021'
   }
 ];
 
@@ -109,7 +129,8 @@ function renderUpdates() {
     const isDark = getComputedStyle(document.documentElement).getPropertyValue('--logo-filter').trim() === 'invert(1)';
     const src = (u.darkImg && isDark) ? u.darkImg : u.img;
     const filter = u.darkInvert ? 'filter:var(--logo-filter,none)' : u.lightInvert ? `filter:${isDark ? 'none' : 'invert(1)'}` : '';
-    const imgStyle = filter ? ` style="${filter}"` : '';
+    const sz = u.thumbSize ? `width:${u.thumbSize}px;height:${u.thumbSize}px;` : '';
+    const imgStyle = (filter || sz) ? ` style="${sz}${filter}"` : '';
     return `<div class="update-thumb"${style}><img src="${src}" class="update-thumb-img"${imgStyle}></div>`;
   }
   const homeEl = document.getElementById('home-updates');
