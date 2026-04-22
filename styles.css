@@ -494,7 +494,8 @@ img[src="Icons/github.svg"],img[src="Icons/adobe-portfolio.svg"]{filter:var(--lo
   .nav-icon svg{width:20px;height:20px}
   .nav-icon img{width:20px;height:20px;opacity:0.6}
 
-  .update-grid{grid-template-columns:repeat(2,1fr)}
+  .update-grid{grid-template-columns:1fr}
+  .update-card{min-height:0;padding:14px}
   .home-work-grid{grid-template-columns:1fr}
   .section{padding:20px 17px}
   #home-greeting{font-size:clamp(52px,18vw,136px)!important;letter-spacing:-1px!important}
