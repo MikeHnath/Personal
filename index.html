@@ -39,10 +39,28 @@
         <span class="nav-label">About</span>
         <span class="nav-shortcut">2</span>
       </div>
+      <div class="nav-item" data-page="blog" onclick="nav('blog')">
+        <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <span class="nav-label">Blog</span>
+        <span class="nav-shortcut">3</span>
+      </div>
+
+      <div class="nav-divider">Career</div>
+
+      <div class="nav-item" data-page="experience" onclick="nav('experience')">
+        <div class="nav-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+        <span class="nav-label">Experience</span>
+        <span class="nav-shortcut">4</span>
+      </div>
       <div class="nav-item" data-page="work" onclick="nav('work')">
         <div class="nav-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <span class="nav-label">Work</span>
-        <span class="nav-shortcut">3</span>
+        <span class="nav-label">Case Studies</span>
+        <span class="nav-shortcut">5</span>
+      </div>
+      <div class="nav-item" data-page="tools" onclick="nav('tools')">
+        <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <span class="nav-label">Tools</span>
+        <span class="nav-shortcut">6</span>
       </div>
 
       <div class="nav-divider">Portfolio</div>
@@ -50,30 +68,12 @@
       <div class="nav-item" data-page="websites" onclick="nav('websites')">
         <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <span class="nav-label">Websites</span>
-        <span class="nav-shortcut">4</span>
-      </div>
-      <div class="nav-item" data-page="media" onclick="nav('media')">
-        <div class="nav-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-        <span class="nav-label">Photo / Video</span>
-        <span class="nav-shortcut">5</span>
-      </div>
-      <div class="nav-mobile-logo"><img src="Company Logos/mikehnath-icon-small.png" alt="Mike Hnath" class="sidebar-logo-img"></div>
-      <div class="nav-item nav-ext" onclick="window.open('https://www.behance.net/mikehnath','_blank')">
-        <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-        <span class="nav-label">Design ↗</span>
-        <span class="nav-shortcut">6</span>
-      </div>
-
-      <div class="nav-divider">Resources</div>
-
-      <div class="nav-item" data-page="blog" onclick="nav('blog')">
-        <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <span class="nav-label">Blog</span>
         <span class="nav-shortcut">7</span>
       </div>
-      <div class="nav-item" data-page="tools" onclick="nav('tools')">
-        <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <span class="nav-label">Tools</span>
+      <div class="nav-mobile-logo"><img src="Company Logos/mikehnath-icon-small.png" alt="Mike Hnath" class="sidebar-logo-img"></div>
+      <div class="nav-item nav-ext" onclick="window.open('https://hnath.myportfolio.com','_blank')">
+        <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <span class="nav-label">Media</span>
         <span class="nav-shortcut">8</span>
       </div>
 
@@ -81,12 +81,12 @@
 
       <div class="nav-item nav-ext" onclick="openModal()">
         <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <span class="nav-label">Contact ↗</span>
+        <span class="nav-label">Contact</span>
         <span class="nav-shortcut">9</span>
       </div>
       <div class="nav-item nav-ext" onclick="window.open('https://www.linkedin.com/in/michaelhnath/','_blank')">
         <div class="nav-icon"><img src="Icons/linkedin.svg" alt="LinkedIn"></div>
-        <span class="nav-label">LinkedIn ↗</span>
+        <span class="nav-label">LinkedIn</span>
       </div>
     </div>
 
@@ -116,8 +116,8 @@
             <div id="home-greeting" style="font-size:136px;font-weight:300;color:var(--text);line-height:1;margin-bottom:16px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
             <div class="body-text" style="margin-bottom:16px">I'm <strong>Mike Hnath</strong> (pronounced Nath), former touring drummer who runs my own consultancy. I help brands find their footing, tell their story, and grow with purpose.</div>
             <div style="display:flex;gap:8px;margin-bottom:16px">
-              <button class="btn primary" onclick="nav('work')">View work</button>
-              <button class="btn secondary" onclick="openModal()">Get in touch ↗</button>
+              <button class="btn primary" onclick="nav('work')">View case studies</button>
+              <button class="btn secondary" onclick="openModal()">Get in touch</button>
             </div>
               <a onclick="nav('about')" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more about me ⇣</a>
           </div>
@@ -136,6 +136,31 @@
           <span class="show-more" onclick="nav('about')" style="margin-top:0">View all →</span>
         </div>
         <div class="update-grid" id="home-updates"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header" style="margin-bottom:16px">
+          <div class="section-label" style="margin-bottom:0">Recent writing</div>
+          <span class="show-more" onclick="nav('writing')" style="margin-top:0">View all →</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+          <div class="work-card" onclick="nav('writing')">
+            <div class="work-thumb" style="height:120px">[Hero image]</div>
+            <div class="work-body">
+              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
+              <div class="work-title">Why brand strategy and performance media aren't opposites</div>
+              <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
+            </div>
+          </div>
+          <div class="work-card" onclick="nav('writing')">
+            <div class="work-thumb" style="height:120px">[Hero image]</div>
+            <div class="work-body">
+              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">GTM · Personal</div>
+              <div class="work-title">What 22 countries on a tour bus taught me about operations</div>
+              <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="section" style="padding-top:25px">
@@ -171,62 +196,20 @@
             <div style="font-size:11px;color:var(--text3)">View photo / video →</div>
           </div>
           <div class="nav-tile" onclick="window.open('https://www.behance.net/mikehnath','_blank')">
-            <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Design ↗</div>
+            <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Design</div>
             <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Brand identity, packaging, digital shelf. Full portfolio on Behance.</div>
-            <div style="font-size:11px;color:var(--text3)">View on Behance ↗</div>
+            <div style="font-size:11px;color:var(--text3)">View on Behance</div>
           </div>
         </div>
       </div>
-
-      <div class="section">
-        <div class="section-header" style="margin-bottom:16px">
-          <div class="section-label" style="margin-bottom:0">Recent writing</div>
-          <span class="show-more" onclick="nav('writing')" style="margin-top:0">View all →</span>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
-          <div class="work-card" onclick="nav('writing')">
-            <div class="work-thumb" style="height:120px">[Hero image]</div>
-            <div class="work-body">
-              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
-              <div class="work-title">Why brand strategy and performance media aren't opposites</div>
-              <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-          <div class="work-card" onclick="nav('writing')">
-            <div class="work-thumb" style="height:120px">[Hero image]</div>
-            <div class="work-body">
-              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">GTM · Personal</div>
-              <div class="work-title">What 22 countries on a tour bus taught me about operations</div>
-              <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-          <div class="work-card" onclick="nav('writing')">
-            <div class="work-thumb" style="height:120px">[Hero image]</div>
-            <div class="work-body">
-              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Regulated CPG</div>
-              <div class="work-title">Building a regulated consumer brand — the Scandalous playbook</div>
-              <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-          <div class="work-card" onclick="nav('writing')">
-            <div class="work-thumb" style="height:120px">[Hero image]</div>
-            <div class="work-body">
-              <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">AI · Creative</div>
-              <div class="work-title">How I think about AI in a creative production workflow</div>
-              <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
 
       <div class="section" style="border-bottom:none">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-          <div style="font-size:13px;font-weight:500;color:var(--text)">Mike Hnath</div>
-          <div style="display:flex;gap:16px">
-            <a href="https://www.linkedin.com/in/michaelhnath/" target="_blank" style="font-size:11px;color:var(--text3)">LinkedIn ↗</a>
-            <a href="https://github.com/MikeHnath" target="_blank" style="font-size:11px;color:var(--text3)">GitHub ↗</a>
-            <a href="https://hnath.myportfolio.com" target="_blank" style="font-size:11px;color:var(--text3)">Portfolio ↗</a>
+          <img src="Company Logos/mikehnath-logo.png" style="height:12px;width:auto;display:block;filter:var(--logo-filter,none)">
+          <div class="social-pills">
+            <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank"><img src="Icons/linkedin.svg" style="width:16px;height:16px;display:block">LinkedIn</a>
+            <a class="social-pill" href="https://github.com/MikeHnath" target="_blank"><img src="Icons/github.svg" style="width:16px;height:16px;display:block">GitHub</a>
+            <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank"><img src="Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block">Portfolio</a>
           </div>
           <div style="font-size:11px;color:var(--text3)">Connecticut, USA · Available for select work</div>
         </div>
@@ -249,7 +232,51 @@
         <div id="about-updates"></div>
       </div>
 
-        <div class="section">
+      <div class="section">
+        <div class="section-label">Contact</div>
+        <div class="contact-row">
+          <div class="contact-row-left">
+            <div class="contact-row-label">Local time</div>
+            <div class="local-time-big" id="about-time">--:-- --</div>
+            <div class="local-time-sub">Connecticut, USA (ET)</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-left">
+            <div class="contact-row-label">Email</div>
+            <div class="contact-row-title">Always happy to connect</div>
+            <div class="contact-row-sub">Brand, performance, and creative consulting inquiries welcome.</div>
+          </div>
+          <div class="contact-row-right">
+            <a class="action-btn" href="mailto:hello@michaelhnath.com">Compose</a>
+            <button class="action-btn" onclick="copyEmail()">Copy</button>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row-left">
+            <div class="contact-row-label">Stay in touch</div>
+            <div class="contact-row-title">Most responsive on LinkedIn</div>
+          </div>
+          <div class="contact-row-right">
+            <div class="social-pills">
+              <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank"><img src="Icons/linkedin.svg" style="width:16px;height:16px;display:block">LinkedIn</a>
+              <a class="social-pill" href="https://github.com/MikeHnath" target="_blank"><img src="Icons/github.svg" style="width:16px;height:16px;display:block">GitHub</a>
+              <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank"><img src="Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block">Portfolio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE ──────────────────────────────────────────────── -->
+    <div id="page-experience" class="page">
+
+      <div class="section">
+        <div class="page-title">Experience</div>
+        <div class="body-text">I brought the operator instinct I built in music into the corporate world — through a series of deliberate W2 roles in enterprise CPG, licensed consumer brands, B2B SaaS, and regulated pharma media, while running <strong>THIS</strong> as a side consultancy throughout. Each role was a skill build. The consultancy never stopped.</div>
+      </div>
+
+      <div class="section">
         <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:12px;font-family:var(--font-display)">The foundation — music industry, live production, early business</div>
         <div class="foundation-card">
           <div class="foundation-desc">Before I had a marketing title, I was booking 350+ shows across North America, managing international tours across 22 countries, negotiating distribution deals, and building a band brand from zero to 20K organic followers — all while founding and running a 501(c)(3) concert production company at 17. Nobody was telling me what to do. I had to learn fast, operate lean, and figure it out in real time. That's where the operating instinct was built.</div>
@@ -270,7 +297,6 @@
 
       <div class="section">
         <div class="section-label">Career</div>
-        <div class="body-text" style="margin-bottom:20px">I brought the operator instinct I built in music into the corporate world — through a series of deliberate W2 roles in enterprise CPG, licensed consumer brands, B2B SaaS, and regulated pharma media, while running <strong>THIS</strong> as a side consultancy throughout. Each role was a skill build. The consultancy never stopped.</div>
         <div class="tl-row"><div class="tl-year">2024–now</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-role">Owner — THIS (full-time)</div><div class="tl-co">Brand strategy · Creative direction · GTM consulting</div><div class="tl-tags"><span class="tl-tag">Brand</span><span class="tl-tag">GTM</span><span class="tl-tag">Packaging</span></div></div></div>
         <div class="tl-row"><div class="tl-year">2022–2024</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-role">Digital Marketing Manager — POCN</div><div class="tl-co">Pharma paid media · $1M+ managed · Lilly, Pfizer, J&amp;J</div><div class="tl-tags"><span class="tl-tag">Performance</span><span class="tl-tag">Healthcare</span></div></div></div>
         <div class="tl-row"><div class="tl-year">2021–2022</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-role">Marketing Content Manager — Triax Technologies</div><div class="tl-co">B2B SaaS · Enterprise demand gen · Fortune 50 pipeline</div><div class="tl-tags"><span class="tl-tag">B2B SaaS</span><span class="tl-tag">GTM</span></div></div></div>
@@ -278,7 +304,7 @@
         <div class="tl-row"><div class="tl-year">2018–2019</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-role">Creative Director — Infinity Lifestyle Brands</div><div class="tl-co">Licensed CPG · $10M+ licensing · Disney, MLBPA, Viacom</div><div class="tl-tags"><span class="tl-tag">Brand</span><span class="tl-tag">Licensing</span></div></div></div>
         <div class="tl-row"><div class="tl-year">2017–2018</div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-role">Graphic and Production Designer — Mitchells Stores</div><div class="tl-co">Luxury retail · $6K in 3 days from digital magalogue</div><div class="tl-tags"><span class="tl-tag">Design</span><span class="tl-tag">Retail</span></div></div></div>
         <div class="tl-row"><div class="tl-year">2008–2016</div><div class="tl-dot-col"><div class="tl-dot"></div></div><div class="tl-body"><div class="tl-role">The foundation</div><div class="tl-co">Music industry · Live production · Early business building</div><div class="tl-tags"><span class="tl-tag">Founder</span><span class="tl-tag">Touring</span><span class="tl-tag">Production</span></div><div class="tl-note">Full detail above</div></div></div>
-        <a class="resume-link" href="#" download>Download résumé ↓</a>
+        <a class="resume-link" href="#" download>Download résumé</a>
       </div>
 
       <div class="section">
@@ -311,47 +337,13 @@
         </div>
       </div>
 
-      <div class="section">
-        <div class="section-label">Contact</div>
-        <div class="contact-row">
-          <div class="contact-row-left">
-            <div class="contact-row-label">Local time</div>
-            <div class="local-time-big" id="about-time">--:-- --</div>
-            <div class="local-time-sub">Connecticut, USA (ET)</div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-row-left">
-            <div class="contact-row-label">Email</div>
-            <div class="contact-row-title">Always happy to connect</div>
-            <div class="contact-row-sub">Brand, performance, and creative consulting inquiries welcome.</div>
-          </div>
-          <div class="contact-row-right">
-            <a class="action-btn" href="mailto:hello@michaelhnath.com">Compose ↗</a>
-            <button class="action-btn" onclick="copyEmail()">Copy</button>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-row-left">
-            <div class="contact-row-label">Stay in touch</div>
-            <div class="contact-row-title">Most responsive on LinkedIn</div>
-          </div>
-          <div class="contact-row-right">
-            <div class="social-pills">
-              <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank"><div class="social-icon">in</div>LinkedIn ↗</a>
-              <a class="social-pill" href="https://github.com/MikeHnath" target="_blank"><div class="social-icon">gh</div>GitHub ↗</a>
-              <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank"><div class="social-icon">pf</div>Portfolio ↗</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- WORK INDEX ─────────────────────────────────────────────── -->
     <div id="page-work" class="page">
       <div class="section">
         <div class="page-header">
-          <div class="page-title">Work</div>
+          <div class="page-title">Case Studies</div>
           <div class="page-count">10 projects</div>
         </div>
         <div class="page-subtitle">Selected case studies across brand strategy, performance media, GTM, and creative direction.</div>
@@ -411,7 +403,7 @@
     <!-- CASE STUDY — SCANDALOUS ────────────────────────────────── -->
     <div id="page-case-scandalous" class="page">
       <div class="section">
-        <div class="breadcrumb" onclick="nav('work')">← <span>Work</span> / Scandalous</div>
+        <div class="breadcrumb" onclick="nav('work')">← <span>Case Studies</span> / Scandalous</div>
         <div class="cs-header-grid">
           <div>
             <div class="cs-tags"><span class="cs-tag">Brand strategy</span><span class="cs-tag">Packaging</span><span class="cs-tag">GTM</span><span class="cs-tag">Regulated CPG</span></div>
@@ -484,14 +476,14 @@
           <div class="nav-card" onclick="openCase('pocn')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">POCN — Pharma media at scale</div><div class="nav-card-tag">Performance · Healthcare</div></div>
           <div class="nav-card right" onclick="openCase('sigil')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></div>
         </div>
-        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All case studies</button></div>
       </div>
     </div>
 
     <!-- CASE STUDY — POCN ──────────────────────────────────────── -->
     <div id="page-case-pocn" class="page">
       <div class="section">
-        <div class="breadcrumb" onclick="nav('work')">← <span>Work</span> / POCN</div>
+        <div class="breadcrumb" onclick="nav('work')">← <span>Case Studies</span> / POCN</div>
         <div class="cs-header-grid">
           <div>
             <div class="cs-tags"><span class="cs-tag">Performance</span><span class="cs-tag">Media buying</span><span class="cs-tag">Healthcare</span><span class="cs-tag">Programmatic</span></div>
@@ -547,14 +539,14 @@
           <div class="nav-card" onclick="openCase('scandalous')"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">Scandalous — Brand system</div><div class="nav-card-tag">Brand · GTM</div></div>
           <div class="nav-card right" onclick="openCase('sigil')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></div>
         </div>
-        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All case studies</button></div>
       </div>
     </div>
 
     <!-- CASE STUDY — SIGIL ─────────────────────────────────────── -->
     <div id="page-case-sigil" class="page">
       <div class="section">
-        <div class="breadcrumb" onclick="nav('work')">← <span>Work</span> / SIGIL</div>
+        <div class="breadcrumb" onclick="nav('work')">← <span>Case Studies</span> / SIGIL</div>
         <div class="cs-header-grid">
           <div>
             <div class="cs-tags"><span class="cs-tag">GTM</span><span class="cs-tag">Brand strategy</span><span class="cs-tag">Packaging</span><span class="cs-tag">Crowdfunding</span></div>
@@ -582,14 +574,14 @@
           <div class="nav-card" onclick="openCase('pocn')"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">POCN — Pharma media</div><div class="nav-card-tag">Performance · Healthcare</div></div>
           <div class="nav-card right" onclick="openCase('kh')"><div class="nav-card-dir">Next →</div><div class="nav-card-title">Kraft Heinz — Digital shelf</div><div class="nav-card-tag">Design · CPG</div></div>
         </div>
-        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All case studies</button></div>
       </div>
     </div>
 
     <!-- CASE STUDY — KH ────────────────────────────────────────── -->
     <div id="page-case-kh" class="page">
       <div class="section">
-        <div class="breadcrumb" onclick="nav('work')">← <span>Work</span> / Kraft Heinz</div>
+        <div class="breadcrumb" onclick="nav('work')">← <span>Case Studies</span> / Kraft Heinz</div>
         <div class="cs-header-grid">
           <div>
             <div class="cs-tags"><span class="cs-tag">Art direction</span><span class="cs-tag">eCommerce</span><span class="cs-tag">UX/UI</span><span class="cs-tag">CPG</span></div>
@@ -615,9 +607,9 @@
       <div class="section" style="border-bottom:none">
         <div class="next-prev">
           <div class="nav-card" onclick="openCase('sigil')"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></div>
-          <div class="nav-card right" onclick="nav('work')"><div class="nav-card-dir">All work</div><div class="nav-card-title">Back to work index</div><div class="nav-card-tag">10 projects</div></div>
+          <div class="nav-card right" onclick="nav('work')"><div class="nav-card-dir">All case studies</div><div class="nav-card-title">Back to case studies</div><div class="nav-card-tag">10 projects</div></div>
         </div>
-        <div class="btn-row"><button class="btn" onclick="nav('work')">← All work</button></div>
+        <div class="btn-row"><button class="btn" onclick="nav('work')">← All case studies</button></div>
       </div>
     </div>
 
@@ -634,7 +626,7 @@
               </div>
             </a>
             <div class="project-body">
-              <div class="project-title">Mark Anthony Home Improvement — Concept mobile-first website with lead gen ↗</div>
+              <div class="project-title">Mark Anthony Home Improvement — Concept mobile-first website with lead gen</div>
               <div class="project-desc">Spec build for a CT general contractor. Custom-coded responsive site with brand identity, gallery, and inline quote capture.</div>
               <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">Concept</span><span class="project-tag">GitHub</span></div>
             </div>
@@ -646,7 +638,7 @@
               </div>
             </a>
             <div class="project-body">
-              <div class="project-title">Stonewater — Concept website for a fictitious brand ↗</div>
+              <div class="project-title">Stonewater — Concept website for a fictitious brand</div>
               <div class="project-desc">Spec build exploring what a premium Fairfield County outdoor living brand could look like online. Custom-coded, zero templates.</div>
               <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">Concept</span><span class="project-tag">GitHub</span></div>
             </div>
@@ -658,7 +650,7 @@
               </div>
             </a>
             <div class="project-body">
-              <div class="project-title">Wildermere Beach Church — Brand and church website ↗</div>
+              <div class="project-title">Wildermere Beach Church — Brand and church website</div>
               <div class="project-desc">Full brand identity and website for a Connecticut shoreline congregation. Clean, welcoming design built to serve both new visitors and the existing community.</div>
               <div class="project-tags"><span class="project-tag">Ministry Designs</span><span class="project-tag">Photography</span><span class="project-tag">Branding</span><span class="project-tag">Client</span></div>
             </div>
@@ -672,7 +664,7 @@
               </div>
             </a>
             <div class="project-body">
-              <div class="project-title">Scandalous Chocolates — Brand and CPG website ↗</div>
+              <div class="project-title">Scandalous Chocolates — Brand and CPG website</div>
               <div class="project-desc">Brand identity and e-commerce-ready website for a premium chocolate brand. Packaging-forward design built to convert on shelf and online.</div>
               <div class="project-tags"><span class="project-tag">Wix</span><span class="project-tag">Cannabis</span><span class="project-tag">Client</span></div>
             </div>
@@ -767,7 +759,7 @@
       <div class="section">
         <div class="page-header">
           <div class="page-title">Résumé</div>
-          <button class="btn">Download PDF ↓</button>
+          <button class="btn">Download PDF</button>
         </div>
         <div class="resume-section">
           <div class="resume-section-title">Experience</div>
@@ -871,83 +863,76 @@
           <a class="tool-card" data-cat="creative" href="https://www.adobe.com/products/photoshop.html" target="_blank">
             <div class="tool-icon"><img src="Icons/adobe-photoshop.svg" alt="Adobe Photoshop"></div>
             <div class="tool-info"><div class="tool-name">Photoshop</div><div class="tool-desc">Photo editing, compositing, digital painting. Daily driver for asset production.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="creative" href="https://www.adobe.com/products/illustrator.html" target="_blank">
             <div class="tool-icon"><img src="Icons/adobe-illustrator.svg" alt="Adobe Illustrator"></div>
             <div class="tool-info"><div class="tool-name">Illustrator</div><div class="tool-desc">Vector illustration, logo systems, packaging dielines, and brand identity work.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="creative" href="https://www.adobe.com/products/indesign.html" target="_blank">
             <div class="tool-icon"><img src="Icons/adobe-indesign.svg" alt="Adobe InDesign"></div>
             <div class="tool-info"><div class="tool-name">InDesign</div><div class="tool-desc">Multi-page layout for pitch decks, investor materials, and print collateral.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="creative" href="https://www.adobe.com/products/premiere.html" target="_blank">
             <div class="tool-icon"><img src="Icons/adobe-premiere-pro.svg" alt="Adobe Premiere Pro"></div>
             <div class="tool-info"><div class="tool-name">Premiere Pro</div><div class="tool-desc">Video editing for brand content, product videos, and social cuts.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="creative" href="https://www.adobe.com/products/aftereffects.html" target="_blank">
             <div class="tool-icon"><img src="Icons/adobe-after-effects.svg" alt="Adobe After Effects"></div>
             <div class="tool-info"><div class="tool-name">After Effects</div><div class="tool-desc">Motion graphics, animated brand assets, and video post-production.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="creative" href="https://www.figma.com" target="_blank">
             <div class="tool-icon"><img src="Icons/figma.svg" alt="Figma"></div>
             <div class="tool-info"><div class="tool-name">Figma</div><div class="tool-desc">UI/UX design, prototyping, and collaborative design systems.</div></div>
-            <div class="tool-arrow">↗</div>
+          </a>
+          <a class="tool-card" data-cat="creative" href="https://www.canva.com" target="_blank">
+            <div class="tool-icon"><img src="Icons/canva.svg" alt="Canva"></div>
+            <div class="tool-info"><div class="tool-name">Canva</div><div class="tool-desc">Rapid content creation and social graphics for client and brand work.</div></div>
           </a>
           <a class="tool-card" data-cat="creative" href="https://www.apple.com/logic-pro/" target="_blank">
             <div class="tool-icon"><img src="Icons/logic-pro.png" alt="Logic Pro"></div>
             <div class="tool-info"><div class="tool-name">Logic Pro</div><div class="tool-desc">Audio production and mixing. Carried over from music career, still active.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
 
           <a class="tool-card" data-cat="marketing" href="https://www.facebook.com/business/ads" target="_blank">
             <div class="tool-icon"><img src="Icons/meta.svg" alt="Meta Ads"></div>
             <div class="tool-info"><div class="tool-name">Meta Ads</div><div class="tool-desc">Paid social campaign management across Facebook and Instagram.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="marketing" href="https://business.linkedin.com/marketing-solutions/ads" target="_blank">
             <div class="tool-icon"><img src="Icons/linkedin.svg" alt="LinkedIn Ads"></div>
             <div class="tool-info"><div class="tool-name">LinkedIn Ads</div><div class="tool-desc">B2B paid social. Audience targeting, lead gen, and ABM campaigns.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="marketing">
-            <div class="tool-icon"><img src="Icons/Lasso_DSP.svg" alt="Lasso DSP"></div>
+            <div class="tool-icon"><img src="Icons/lasso.svg" alt="Lasso DSP"></div>
             <div class="tool-info"><div class="tool-name">Lasso DSP</div><div class="tool-desc">Programmatic media buying platform. Power user across 25 concurrent campaigns.</div></div>
           </a>
           <a class="tool-card" data-cat="marketing" href="https://analytics.google.com" target="_blank">
             <div class="tool-icon"><img src="Icons/ga4.svg" alt="Google Analytics"></div>
             <div class="tool-info"><div class="tool-name">Google Analytics</div><div class="tool-desc">Web analytics, conversion tracking, and campaign performance measurement.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="marketing" href="https://www.hubspot.com" target="_blank">
             <div class="tool-icon"><img src="Icons/hubspot.svg" alt="HubSpot"></div>
             <div class="tool-info"><div class="tool-name">HubSpot</div><div class="tool-desc">CRM, email marketing, and marketing automation. Currently building out.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="marketing" href="https://www.salesforce.com" target="_blank">
             <div class="tool-icon"><img src="Icons/salesforce.svg" alt="Salesforce"></div>
             <div class="tool-info"><div class="tool-name">Salesforce</div><div class="tool-desc">CRM and pipeline management. Used heavily at Triax for enterprise sales.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
-          <a class="tool-card" data-cat="marketing" href="https://www.salesforce.com/products/marketing-cloud/marketing-automation/" target="_blank">
-            <div class="tool-icon"><img src="Icons/pardot.svg" alt="Pardot"></div>
-            <div class="tool-info"><div class="tool-name">Pardot</div><div class="tool-desc">Marketing automation and email workflows. Stood up from scratch at Triax.</div></div>
-            <div class="tool-arrow">↗</div>
+          <a class="tool-card" data-cat="marketing" href="https://www.marketo.com" target="_blank">
+            <div class="tool-icon"><img src="Icons/marketo.svg" alt="Marketo"></div>
+            <div class="tool-info"><div class="tool-name">Marketo</div><div class="tool-desc">Marketing automation and email workflows for demand gen and nurture programs.</div></div>
           </a>
           <a class="tool-card" data-cat="marketing" href="https://mailchimp.com" target="_blank">
             <div class="tool-icon"><img src="Icons/mail-chimp.svg" alt="Mailchimp"></div>
             <div class="tool-info"><div class="tool-name">Mailchimp</div><div class="tool-desc">Email marketing and campaign management for SMB clients.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
 
+          <a class="tool-card" data-cat="web" href="https://github.com" target="_blank">
+            <div class="tool-icon"><img src="Icons/github.svg" alt="GitHub"></div>
+            <div class="tool-info"><div class="tool-name">GitHub</div><div class="tool-desc">Version control and project hosting. All personal and client web builds live here.</div></div>
+          </a>
           <a class="tool-card" data-cat="web" href="https://wordpress.org" target="_blank">
             <div class="tool-icon"><img src="Icons/wordpress.svg" alt="WordPress"></div>
             <div class="tool-info"><div class="tool-name">WordPress</div><div class="tool-desc">CMS for client sites. Scandalous, Pine Island Games, Greenwich Film Festival.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="web">
             <div class="tool-icon"><img src="Icons/html5.svg" alt="HTML5"></div>
@@ -960,27 +945,22 @@
           <a class="tool-card" data-cat="web" href="https://www.wix.com" target="_blank">
             <div class="tool-icon"><img src="Icons/wix.svg" alt="Wix"></div>
             <div class="tool-info"><div class="tool-name">Wix</div><div class="tool-desc">Quick-deploy sites for SMB clients and project-based work.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="ai" href="https://claude.ai" target="_blank">
             <div class="tool-icon"><img src="Icons/claude.svg" alt="Claude"></div>
             <div class="tool-info"><div class="tool-name">Claude</div><div class="tool-desc">Strategy, writing, research, and workflow automation. Primary AI partner.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="ai" href="https://chat.openai.com" target="_blank">
             <div class="tool-icon"><img src="Icons/chatgpt.svg" alt="ChatGPT"></div>
             <div class="tool-info"><div class="tool-name">ChatGPT</div><div class="tool-desc">Content drafting, brainstorming, and creative production workflows.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="ai" href="https://suno.com" target="_blank">
-            <div class="tool-icon"><img src="Icons/suno-ai.png" alt="Suno"></div>
+            <div class="tool-icon"><img src="Icons/suno-ai.svg" alt="Suno"></div>
             <div class="tool-info"><div class="tool-name">Suno</div><div class="tool-desc">AI audio generation for brand content and creative exploration.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
           <a class="tool-card" data-cat="ai,productivity" href="https://notion.so" target="_blank">
             <div class="tool-icon"><img src="Icons/notion.svg" alt="Notion"></div>
             <div class="tool-info"><div class="tool-name">Notion</div><div class="tool-desc">Project management, documentation, and knowledge base. Building out.</div></div>
-            <div class="tool-arrow">↗</div>
           </a>
 
         </div>
@@ -1014,14 +994,11 @@
     <div class="form-field"><label class="form-label">What's the situation?</label><textarea class="form-textarea" placeholder="Brief description — what you're building, what you need, timeline if relevant."></textarea></div>
     <button class="form-submit">Send message</button>
     <div class="modal-footer">
-      <a class="modal-footer-link" href="https://www.linkedin.com/in/michaelhnath/" target="_blank">
-        <svg viewBox="0 0 24 24" class="modal-footer-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a class="modal-footer-link" href="https://github.com/MikeHnath" target="_blank">
-        <svg viewBox="0 0 24 24" class="modal-footer-svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        GitHub
-      </a>
+      <div class="social-pills">
+        <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank"><img src="Icons/linkedin.svg" style="width:16px;height:16px;display:block">LinkedIn</a>
+        <a class="social-pill" href="https://github.com/MikeHnath" target="_blank"><img src="Icons/github.svg" style="width:16px;height:16px;display:block">GitHub</a>
+        <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank"><img src="Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block">Portfolio</a>
+      </div>
     </div>
   </div>
 </div>

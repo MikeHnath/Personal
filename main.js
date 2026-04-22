@@ -53,7 +53,7 @@ const updates = [
   },
   {
     img: 'Icons/google.svg',
-    title: 'Earned Google Data Analytics Professional Certificate ↗',
+    title: 'Earned Google Data Analytics Professional Certificate',
     desc: 'Adding SQL and Python to the analytics stack across brand and performance work.',
     date: 'Aug 2025'
   },
@@ -71,7 +71,7 @@ const updates = [
   },
   {
     img: 'Icons/meta.svg',
-    title: 'Earned Meta Certified Digital Marketing Associate ↗',
+    title: 'Earned Meta Certified Digital Marketing Associate',
     desc: 'Active through Sep 2026. Formalized the paid social expertise built across years of campaign management.',
     date: 'Sep 2024'
   },
@@ -85,7 +85,7 @@ const updates = [
   {
     img: 'Company Logos/sigil-icon-white.png',
     lightInvert: true,
-    title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded ↗',
+    title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded',
     desc: 'Full GTM from zero: positioning, packaging, campaign, fulfillment.',
     date: 'May 2023'
   },
@@ -240,9 +240,9 @@ function openCase(slug) {
 // Keyboard shortcuts 1–9
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  const map = {'1':'home','2':'about','3':'work','4':'websites','5':'media','7':'blog','8':'tools'};
+  const map = {'1':'home','2':'about','3':'blog','4':'experience','5':'work','6':'tools','7':'websites'};
   if (map[e.key]) nav(map[e.key]);
-  if (e.key === '6') window.open('https://www.behance.net/mikehnath','_blank');
+  if (e.key === '8') window.open('https://hnath.myportfolio.com','_blank');
   if (e.key === '9') openModal();
   if (e.key === 'Escape') closeModal();
 });
