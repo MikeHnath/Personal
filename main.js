@@ -36,6 +36,80 @@ function buildTicker(id) {
 buildTicker('ticker1'); buildTicker('ticker2');
 buildTicker('ticker3'); buildTicker('ticker4');
 
+// ── PERSONAL UPDATES ─────────────────────────────────────────────
+const updates = [
+  {
+    img: 'Icons/google.svg',
+    title: 'Earned Google Data Analytics Professional Certificate ↗',
+    desc: 'Adding SQL and Python to the analytics stack across brand and performance work.',
+    date: '2025'
+  },
+  {
+    img: 'Icons/meta.svg',
+    title: 'Earned Meta Certified Digital Marketing Associate ↗',
+    desc: 'Active through Sep 2026. Formalized the paid social expertise built across years of campaign management.',
+    date: 'Sep 2024'
+  },
+  {
+    img: 'Company Logos/THIS-icon-black.png',
+    title: 'THIS goes full-time — consultancy becomes primary',
+    desc: 'After wrapping POCN, THIS became the primary. Brand, GTM, and media work for SMB and regulated consumer clients.',
+    date: 'Aug 2024'
+  },
+  {
+    img: 'Company Logos/scandalous-icon.png',
+    title: 'Scandalous — NY/Brooklyn licensing partnership initiated',
+    desc: 'Five-state footprint growing. Active warm intro on Brooklyn partnership.',
+    date: '2024'
+  },
+  {
+    img: 'Company Logos/sigil-icon-white.png',
+    thumbBg: 'var(--text)',
+    title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded ↗',
+    desc: 'Full GTM from zero: positioning, packaging, campaign, fulfillment.',
+    date: 'May 2023'
+  }
+];
+
+function renderUpdates() {
+  function thumb(u) {
+    const style = u.thumbBg ? ` style="background:${u.thumbBg};border-radius:6px;padding:4px"` : '';
+    return `<div class="update-thumb"${style}><img src="${u.img}" class="update-thumb-img"></div>`;
+  }
+  const homeEl = document.getElementById('home-updates');
+  if (homeEl) {
+    homeEl.innerHTML = updates.slice(0, 4).map(u => `
+      <div class="update-card">
+        ${thumb(u)}
+        <div class="update-body">
+          <div class="update-title">${u.title}</div>
+          <div class="update-desc">${u.desc}</div>
+          <div class="update-date">${u.date}</div>
+        </div>
+      </div>`).join('');
+  }
+  const aboutEl = document.getElementById('about-updates');
+  if (aboutEl) {
+    aboutEl.innerHTML = updates.map(u => `
+      <div class="update-item">
+        ${thumb(u)}
+        <div class="update-body">
+          <div class="update-title">${u.title}</div>
+          <div class="update-desc">${u.desc}</div>
+        </div>
+        <div class="update-date">${u.date}</div>
+      </div>`).join('');
+  }
+}
+renderUpdates();
+
+// ── GREETING ─────────────────────────────────────────────────────
+(function() {
+  const h = new Date().getHours();
+  const greeting = h < 12 ? 'Good morning!' : h < 18 ? 'Good afternoon!' : 'Good evening!';
+  document.getElementById('home-greeting').textContent = greeting;
+})();
+
 // ── NAVIGATION ───────────────────────────────────────────────────
 let currentPage = 'home';
 
@@ -48,6 +122,7 @@ function nav(pageId) {
   const navEl = document.querySelector(`.nav-item[data-page="${pageId}"]`);
   if (navEl) navEl.classList.add('active');
   currentPage = pageId;
+  closeMobileMenu();
 }
 
 function openCase(slug) {
@@ -105,9 +180,16 @@ function switchCar(btn, contentId) {
 // ── MODAL ────────────────────────────────────────────────────────
 function openModal() {
   document.getElementById('modal-overlay').classList.add('open');
+  closeMobileMenu();
 }
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
+}
+function toggleMobileMenu() {
+  document.querySelector('.sidebar').classList.toggle('mobile-open');
+}
+function closeMobileMenu() {
+  document.querySelector('.sidebar').classList.remove('mobile-open');
 }
 function handleOverlay(e) {
   if (e.target === document.getElementById('modal-overlay')) closeModal();
@@ -141,6 +223,7 @@ function setTheme(t) {
     document.documentElement.style.setProperty('--text','#f0ede8');
     document.documentElement.style.setProperty('--text2','#a09c94');
     document.documentElement.style.setProperty('--text3','#5a5852');
+    document.documentElement.style.setProperty('--mobile-menu-bg','rgba(35,35,32,0.7)');
   } else {
     document.documentElement.style.setProperty('--bg','#fafaf8');
     document.documentElement.style.setProperty('--bg2','#f2f0eb');
@@ -150,6 +233,7 @@ function setTheme(t) {
     document.documentElement.style.setProperty('--text','#1a1917');
     document.documentElement.style.setProperty('--text2','#5a5852');
     document.documentElement.style.setProperty('--text3','#9a968e');
+    document.documentElement.style.setProperty('--mobile-menu-bg','rgba(242,240,235,0.7)');
   }
 }
 

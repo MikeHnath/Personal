@@ -4,19 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mike Hnath — Portfolio</title>
-<link rel="preconnect" href="https://api.fontshare.com">
-<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="app">
 
+  <!-- ── MOBILE TOP BAR ──────────────────────────────────────── -->
+  <div class="mobile-topbar">
+    <img src="Company Logos/mikehnath-icon-small.png" alt="Mike Hnath" class="mobile-topbar-logo">
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="28" y2="6"/><line x1="3" y1="12" x2="28" y2="12"/><line x1="3" y1="18" x2="28" y2="18"/></svg>
+    </button>
+  </div>
+
   <!-- ── SIDEBAR ─────────────────────────────────────────────── -->
   <nav class="sidebar">
     <div class="sidebar-logo">
-      <div class="sidebar-logo-name">Mike Hnath</div>
+      <img src="Company Logos/mikehnath-logo.png" alt="Mike Hnath" class="sidebar-logo-img">
       <div class="sidebar-logo-sub">Brand · Performance · CD</div>
+      <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
     </div>
 
     <div class="sidebar-nav">
@@ -102,9 +112,9 @@
     <div id="page-home" class="page active">
 
       <div class="section">
-        <div style="display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:28px;align-items:start">
+        <div class="home-intro-grid" style="display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:28px;align-items:start">
           <div>
-            <div style="font-size:84px;font-weight:500;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
+            <div id="home-greeting" style="font-size:84px;font-weight:500;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
             <div class="body-text" style="margin-bottom:16px">I'm <strong>Mike Hnath</strong> (silent H), former touring drummer who builds brands from zero. With 15+ years of experience across startups, agencies, and my own consultancy, I help brands find their footing, tell their story, and grow with purpose.</div>
               <a onclick="nav('about')" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more about me →</a>
             <div style="display:flex;gap:8px;margin-top:16px">
@@ -126,39 +136,7 @@
           <div class="section-label" style="margin-bottom:0">Personal updates</div>
           <span class="show-more" onclick="nav('about')" style="margin-top:0">View all →</span>
         </div>
-        <div class="update-item">
-          <div class="update-thumb">
-            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div class="update-body">
-            <div class="update-title">Earned Google Data Analytics Certificate ↗</div>
-            <div class="update-desc">Adding SQL and Python to the analytics stack.</div>
-            <div class="update-date">2025</div>
-          </div>
-          <div class="update-arrow">↗</div>
-        </div>
-        <div class="update-item">
-          <div class="update-thumb">
-            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-          </div>
-          <div class="update-body">
-            <div class="update-title">THIS goes full-time — consultancy becomes primary</div>
-            <div class="update-desc">After wrapping POCN, THIS became the unambiguous primary.</div>
-            <div class="update-date">Aug 2024</div>
-          </div>
-          <div class="update-arrow">→</div>
-        </div>
-        <div class="update-item" style="border-bottom:none">
-          <div class="update-thumb">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <div class="update-body">
-            <div class="update-title">SIGIL launches — $22K+ crowdfunded ↗</div>
-            <div class="update-desc">Full GTM from zero: positioning, packaging, campaign, fulfillment.</div>
-            <div class="update-date">May 2023</div>
-          </div>
-          <div class="update-arrow">↗</div>
-        </div>
+        <div class="update-grid" id="home-updates"></div>
       </div>
 
       <div class="section">
@@ -385,52 +363,7 @@
 
       <div class="section">
         <div class="section-label">Personal updates</div>
-        <div class="update-item">
-          <div class="update-thumb">Google</div>
-          <div class="update-body">
-            <div class="update-title">Earned Google Data Analytics Professional Certificate ↗</div>
-            <div class="update-desc">Adding SQL and Python to the analytics stack across brand and performance work.</div>
-            <div class="update-date">2025</div>
-          </div>
-          <div class="update-arrow">↗</div>
-        </div>
-        <div class="update-item">
-          <div class="update-thumb">Meta</div>
-          <div class="update-body">
-            <div class="update-title">Earned Meta Certified Digital Marketing Associate ↗</div>
-            <div class="update-desc">Active through Sep 2026. Formalized the paid social expertise built across years of campaign management.</div>
-            <div class="update-date">Sep 2024</div>
-          </div>
-          <div class="update-arrow">↗</div>
-        </div>
-        <div class="update-item">
-          <div class="update-thumb">THIS</div>
-          <div class="update-body">
-            <div class="update-title">THIS goes full-time</div>
-            <div class="update-desc">After wrapping POCN, THIS became the primary. Brand, GTM, and media work for SMB and regulated consumer clients.</div>
-            <div class="update-date">Aug 2024</div>
-          </div>
-          <div class="update-arrow">→</div>
-        </div>
-        <div class="update-item">
-          <div class="update-thumb">SC NY</div>
-          <div class="update-body">
-            <div class="update-title">Scandalous — NY/Brooklyn licensing partnership initiated</div>
-            <div class="update-desc">Five-state footprint growing. Active warm intro on Brooklyn partnership.</div>
-            <div class="update-date">2024</div>
-          </div>
-          <div class="update-arrow">→</div>
-        </div>
-        <div class="update-item">
-          <div class="update-thumb">SIGIL</div>
-          <div class="update-body">
-            <div class="update-title">Launched SIGIL on Kickstarter — $22K+ crowdfunded ↗</div>
-            <div class="update-desc">Full GTM from zero: positioning, packaging, campaign, fulfillment.</div>
-            <div class="update-date">May 2023</div>
-          </div>
-          <div class="update-arrow">↗</div>
-        </div>
-        <span class="show-more" onclick="nav('about')">View all →</span>
+        <div id="about-updates"></div>
       </div>
 
       <div class="section">
