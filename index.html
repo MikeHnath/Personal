@@ -24,8 +24,7 @@
   <!-- ── SIDEBAR ─────────────────────────────────────────────── -->
   <nav class="sidebar">
     <div class="sidebar-logo">
-      <img src="Company Logos/mikehnath-logo.png" alt="Mike Hnath" class="sidebar-logo-img">
-      <div class="sidebar-logo-sub">Brand · Performance · CD</div>
+      <img src="Company Logos/mikehnath-icon-small.png" alt="Mike Hnath" class="sidebar-logo-img">
       <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
     </div>
 
@@ -58,6 +57,7 @@
         <span class="nav-label">Photo / Video</span>
         <span class="nav-shortcut">5</span>
       </div>
+      <div class="nav-mobile-logo"><img src="Company Logos/mikehnath-icon-small.png" alt="Mike Hnath" class="sidebar-logo-img"></div>
       <div class="nav-item nav-ext" onclick="window.open('https://www.behance.net/mikehnath','_blank')">
         <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
         <span class="nav-label">Design ↗</span>
@@ -144,52 +144,7 @@
           <div class="section-label" style="margin-bottom:0">Featured work</div>
           <span class="show-more" onclick="nav('work')" style="margin-top:0">View all →</span>
         </div>
-        <div class="work-grid">
-          <div class="work-card" onclick="openCase('scandalous')">
-            <div class="work-thumb">[Scandalous brand visual]
-              <div class="work-thumb-label"><span class="work-domain-tag">Brand</span><span class="work-domain-tag">Regulated CPG</span></div>
-            </div>
-            <div class="work-body">
-              <div class="work-client">THIS · 9-year client</div>
-              <div class="work-title">Scandalous — Brand system, packaging, and multi-state GTM</div>
-              <div class="work-outcome">$500K+ raised · 11–13 SKUs · 5 states · anchor retainer</div>
-              <div class="work-meta"><span class="work-industry">Cannabis · Regulated consumer</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-          <div class="work-card" onclick="openCase('pocn')">
-            <div class="work-thumb">[POCN pharma media]
-              <div class="work-thumb-label"><span class="work-domain-tag">Performance</span><span class="work-domain-tag">Healthcare</span></div>
-            </div>
-            <div class="work-body">
-              <div class="work-client">POCN · 2022–2024</div>
-              <div class="work-title">Pharma media management — DSP migration and campaign ops at scale</div>
-              <div class="work-outcome">$1M+ managed · 25 concurrent campaigns · Lilly, Pfizer, J&amp;J</div>
-              <div class="work-meta"><span class="work-industry">Healthcare · Pharma</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-          <div class="work-card" onclick="openCase('sigil')">
-            <div class="work-thumb">[SIGIL Kickstarter]
-              <div class="work-thumb-label"><span class="work-domain-tag">GTM</span><span class="work-domain-tag">Brand</span></div>
-            </div>
-            <div class="work-body">
-              <div class="work-client">Pine Island Games · 2023</div>
-              <div class="work-title">SIGIL — Zero-to-launch GTM for original IP</div>
-              <div class="work-outcome">$22K+ crowdfunded · full positioning + packaging + campaign</div>
-              <div class="work-meta"><span class="work-industry">Consumer · Gaming</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-          <div class="work-card" onclick="openCase('kh')">
-            <div class="work-thumb">[KH MiO digital shelf]
-              <div class="work-thumb-label"><span class="work-domain-tag">Design</span><span class="work-domain-tag">eComm</span></div>
-            </div>
-            <div class="work-body">
-              <div class="work-client">Kraft Heinz via Imaginary · 2020–2021</div>
-              <div class="work-title">Kraft Heinz — Digital shelf and eComm creative</div>
-              <div class="work-outcome">~8% Amazon lift · 800+ assets · 30 brands · 15 A+ pages</div>
-              <div class="work-meta"><span class="work-industry">CPG · eCommerce</span><span class="work-arrow">→</span></div>
-            </div>
-          </div>
-        </div>
+        <div id="home-work"></div>
       </div>
 
       <div class="section">
@@ -1045,17 +1000,13 @@
     <div class="form-field"><label class="form-label">What's the situation?</label><textarea class="form-textarea" placeholder="Brief description — what you're building, what you need, timeline if relevant."></textarea></div>
     <button class="form-submit">Send message</button>
     <div class="modal-footer">
-      <a class="modal-footer-link" href="https://twitter.com/MikeHnath" target="_blank">
-        <div class="modal-footer-link-icon"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></div>
-        Twitter
-      </a>
       <a class="modal-footer-link" href="https://www.linkedin.com/in/michaelhnath/" target="_blank">
-        <div class="modal-footer-link-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <svg viewBox="0 0 24 24" class="modal-footer-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
       <a class="modal-footer-link" href="https://github.com/MikeHnath" target="_blank">
-        <div class="modal-footer-link-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
-        Github
+        <svg viewBox="0 0 24 24" class="modal-footer-svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
       </a>
     </div>
   </div>
