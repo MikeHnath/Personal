@@ -3,21 +3,23 @@
 
 // ── BRANDS ──────────────────────────────────────────────────────
 const brands = [
-  {name:'KRAFT HEINZ',img:'Company Logos/kraftheinz-logo.png'},
-  {name:'ELI LILLY',img:'Company Logos/eli-lilly-logo.png'},
-  {name:'PFIZER',img:null},
-  {name:'JOHNSON & JOHNSON',img:'Company Logos/johnson-johnson-logo.png'},
-  {name:'DISNEY',img:'Company Logos/disney-logo.png'},
-  {name:'VIACOM',img:null},
-  {name:'ALTEC LANSING',img:'Company Logos/altec-lansing-logo.png'},
-  {name:'MLBPA',img:null},
-  {name:'NY YANKEES',img:'Company Logos/new-york-yankees-logo.png'},
-  {name:'MESA/BOOGIE',img:null},
-  {name:'LE TIGRE',img:'Company Logos/le-tigre-logo.webp'},
-  {name:'SIGIL',img:'Company Logos/sigil-logo-white.png'},
-  {name:'LAS VEGAS RAIDERS',img:null},
-  {name:'GREENWICH FILM FESTIVAL',img:null},
-  {name:'SCANDALOUS',img:'Company Logos/scandalous-logo.avif'}
+  {name:'KRAFT HEINZ',img:'Logos/kraftheinz-logo.svg',scale:.52},
+  {name:'ELI LILLY',img:'Logos/eli-lilly-logo.svg'},
+  {name:'JOHNSON & JOHNSON',img:'Logos/johnson-johnson-logo.svg',scale:.6},
+  {name:'DISNEY',img:'Logos/disney-logo.svg'},
+  {name:'NICKELODEON',img:'Logos/nickelodeon-logo.svg',scale:.53},
+  {name:'ALTEC LANSING',img:'Logos/altec-lansing-logo.svg',scale:1.2},
+  {name:'NY YANKEES',img:'Logos/new-york-yankees-logo.svg',scale:.72},
+  {name:'ST. LOUIS CARDINALS',img:'Logos/st-louis-cardinals-logo.svg',scale:1.32},
+  {name:'LAS VEGAS RAIDERS',img:'Logos/oakland-raiders.svg',scale:1.5},
+  {name:'LE TIGRE',img:'Logos/le-tigre.svg',scale:1.2,flip:true},
+  {name:'SIGIL',img:'Logos/sigil-logo-white.png',scale:.85,flip:true},
+  {name:'SCANDALOUS',img:'Logos/scandalous-logo.svg',scale:.8,boost:true},
+  {name:'POCN',img:'Logos/pocn-logo.svg'},
+  {name:'MITCHELLS',img:'Logos/mitchells.svg',scale:.43,boost:true},
+  {name:'WILDERMERE BEACH',img:'Logos/wbcc-logo.png',scale:3},
+  {name:'WITHIN THE RUINS',img:'Logos/within-the-ruins.svg',scale:1.5},
+  {name:'ARK OF THE COVENANT',img:'Logos/ark-of-the-covenant-logo.svg'}
 ];
 
 function buildTicker(id) {
@@ -26,13 +28,16 @@ function buildTicker(id) {
   let html = '';
   brands.forEach(b => {
     if (b.img) {
-      html += `<div class="ticker-logo"><img src="${b.img}" alt="${b.name}" style="height:22px;max-width:120px;object-fit:contain"></div><div class="ticker-sep"></div>`;
+      const h = Math.round(37 * (b.scale || 1));
+      const cls = (b.flip ? ' ticker-logo-flip' : '') + (b.boost ? ' ticker-logo-boost' : '');
+      html += `<div class="ticker-logo${cls}"><img src="${b.img}" alt="${b.name}" style="height:${h}px;max-width:200px;object-fit:contain"></div><div class="ticker-sep"></div>`;
     } else {
       html += `<div class="ticker-logo"><span class="ticker-logo-text">${b.name}</span></div><div class="ticker-sep"></div>`;
     }
   });
   el.innerHTML = html;
 }
+for (let i = brands.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [brands[i], brands[j]] = [brands[j], brands[i]]; }
 buildTicker('ticker1'); buildTicker('ticker2');
 buildTicker('ticker3'); buildTicker('ticker4');
 
@@ -45,8 +50,8 @@ const updates = [
     date: 'Apr 2026'
   },
   {
-    img: 'Company Logos/scandalous-icon-dark.png',
-    darkImg: 'Company Logos/scandalous-icon-light.png',
+    img: 'Icons/scandalous-icon-dark.png',
+    darkImg: 'Icons/scandalous-icon-light.png',
     title: 'Scandalous — made intro to Brooklyn Operator',
     desc: 'Personally made the introduction connecting Scandalous to their Brooklyn licensing partner.',
     date: 'Sep 2025'
@@ -76,14 +81,14 @@ const updates = [
     date: 'Sep 2024'
   },
   {
-    img: 'Company Logos/THIS-icon-black.png',
+    img: 'Icons/this-icon.svg',
     darkInvert: true,
     title: 'THIS goes full-time — consultancy becomes primary',
     desc: 'After wrapping POCN, THIS became the primary. Brand, GTM, and media work for SMB and regulated consumer clients.',
     date: 'Aug 2024'
   },
   {
-    img: 'Company Logos/sigil-icon-white.png',
+    img: 'Icons/sigil-icon-white.png',
     lightInvert: true,
     title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded',
     desc: 'Full GTM from zero: positioning, packaging, campaign, fulfillment.',
@@ -328,7 +333,9 @@ function setTheme(t) {
     document.documentElement.style.setProperty('--mobile-menu-bg','rgba(24,28,36,0.7)');
     document.documentElement.style.setProperty('--logo-filter','invert(1)');
     document.documentElement.style.setProperty('--ticker-bg','var(--bg)');
-    document.documentElement.style.setProperty('--ticker-logo-filter','brightness(0) invert(1)');
+    document.documentElement.style.setProperty('--ticker-logo-filter','grayscale(1) invert(1)');
+    document.documentElement.style.setProperty('--ticker-logo-filter-flip','grayscale(1)');
+    document.documentElement.style.setProperty('--ticker-logo-filter-boost','grayscale(1) invert(1) contrast(2) brightness(1.65)');
   } else {
     document.documentElement.style.setProperty('--bg','#f7f8fa');
     document.documentElement.style.setProperty('--bg2','#edf0f4');
@@ -341,7 +348,9 @@ function setTheme(t) {
     document.documentElement.style.setProperty('--mobile-menu-bg','rgba(237,240,244,0.7)');
     document.documentElement.style.setProperty('--logo-filter','none');
     document.documentElement.style.setProperty('--ticker-bg','var(--bg)');
-    document.documentElement.style.setProperty('--ticker-logo-filter','brightness(0) invert(0.5)');
+    document.documentElement.style.setProperty('--ticker-logo-filter','grayscale(1)');
+    document.documentElement.style.setProperty('--ticker-logo-filter-flip','grayscale(1) invert(1)');
+    document.documentElement.style.setProperty('--ticker-logo-filter-boost','grayscale(1) contrast(2) brightness(0.35)');
   }
   renderUpdates();
   const ind = document.getElementById('theme-indicator');

@@ -179,17 +179,19 @@ input,textarea{font-family:var(--font-sans)}
 .avail-sub{font-size:11px;color:var(--text3);margin-left:4px}
 
 /* ── LOGO TICKER ────────────────────────────────────────────── */
-.ticker-wrap{background:var(--ticker-bg,var(--bg));padding:28px 0;overflow:hidden;position:relative}
+.ticker-wrap{background:var(--ticker-bg,var(--bg));padding:48px 0;overflow:hidden;position:relative}
 .ticker-fade-l{position:absolute;left:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to right,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-fade-r{position:absolute;right:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to left,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-row{display:flex;white-space:nowrap;align-items:center}
 .ticker-track{display:inline-flex;align-items:center;animation:ticker 36s linear infinite}
 .ticker-wrap:hover .ticker-track{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-logo{height:28px;padding:0 26px;display:flex;align-items:center;justify-content:center;opacity:.5}
-.ticker-logo img{opacity:1;filter:var(--ticker-logo-filter,brightness(0) invert(0.5))}
+.ticker-logo{height:48px;padding:0 32px;display:flex;align-items:center;justify-content:center;opacity:.5}
+.ticker-logo img{opacity:1;filter:var(--ticker-logo-filter,grayscale(1))}
+.ticker-logo-flip img{filter:var(--ticker-logo-filter-flip,grayscale(1) invert(1))}
 .ticker-logo-text{font-size:11px;font-weight:500;color:var(--text3);letter-spacing:.06em;white-space:nowrap;font-family:var(--font-sans)}
-.ticker-sep{width:1px;height:16px;background:#333;flex-shrink:0}
+.ticker-logo-boost img{filter:var(--ticker-logo-filter-boost,grayscale(1) contrast(2) brightness(0.35))}
+.ticker-sep{display:none}
 
 /* ── PERSONAL UPDATES ───────────────────────────────────────── */
 .update-thumb{width:32px;height:32px;min-width:32px;background:none;border:none;display:flex;align-items:center;justify-content:center;padding:0;overflow:visible}
