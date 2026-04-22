@@ -93,10 +93,9 @@
     <div class="sidebar-footer">
       <div class="theme-bar">
         <div class="theme-toggle">
+          <div class="theme-indicator" id="theme-indicator"></div>
           <button class="theme-btn" id="btn-light" onclick="setTheme('light')">Light</button>
-          <span class="theme-sep">|</span>
           <button class="theme-btn" id="btn-dark" onclick="setTheme('dark')">Dark</button>
-          <span class="theme-sep">|</span>
           <button class="theme-btn on" id="btn-auto" onclick="setTheme('auto')">Auto</button>
         </div>
       </div>
@@ -131,7 +130,7 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section" style="padding-bottom:25px">
         <div class="section-header">
           <div class="section-label" style="margin-bottom:0">Personal updates</div>
           <span class="show-more" onclick="nav('about')" style="margin-top:0">View all →</span>
@@ -139,12 +138,23 @@
         <div class="update-grid" id="home-updates"></div>
       </div>
 
-      <div class="section">
+      <div class="section" style="padding-top:25px">
         <div class="section-header">
           <div class="section-label" style="margin-bottom:0">Featured work</div>
           <span class="show-more" onclick="nav('work')" style="margin-top:0">View all →</span>
         </div>
         <div id="home-work"></div>
+      </div>
+
+      <div class="section" style="padding:0;overflow:hidden">
+        <div class="ticker-wrap">
+          <div class="ticker-fade-l"></div>
+          <div class="ticker-fade-r"></div>
+          <div class="ticker-row">
+            <div class="ticker-track" id="ticker1"></div>
+            <div class="ticker-track" id="ticker2" aria-hidden="true"></div>
+          </div>
+        </div>
       </div>
 
       <div class="section">
@@ -164,19 +174,6 @@
             <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Design ↗</div>
             <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Brand identity, packaging, digital shelf. Full portfolio on Behance.</div>
             <div style="font-size:11px;color:var(--text3)">View on Behance ↗</div>
-          </div>
-        </div>
-      </div>
-
-      <br>
-      
-      <div class="section" style="padding:0;overflow:hidden">
-        <div class="ticker-wrap">
-          <div class="ticker-fade-l"></div>
-          <div class="ticker-fade-r"></div>
-          <div class="ticker-row">
-            <div class="ticker-track" id="ticker1"></div>
-            <div class="ticker-track" id="ticker2" aria-hidden="true"></div>
           </div>
         </div>
       </div>
@@ -247,6 +244,11 @@
             The short version: <strong>I figure out how to get it done...and then I get it done.</strong></div>
       </div>
 
+      <div class="section">
+        <div class="section-label">Personal updates</div>
+        <div id="about-updates"></div>
+      </div>
+
         <div class="section">
         <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:12px;font-family:var(--font-display)">The foundation — music industry, live production, early business</div>
         <div class="foundation-card">
@@ -263,13 +265,6 @@
               <div class="foundation-bullet"><div class="foundation-dot"></div><div>Self-directed, self-funded, fully owned throughout</div></div>
             </div>
           </div>
-        </div>
-        <br>
-        <div class="section-label">By the numbers</div>
-        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
-          <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$1M+</div><div class="stat-label">Paid media managed</div></div>
-          <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">15+ yrs</div><div class="stat-label">Brand &amp; marketing</div></div>
-          <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$500K+</div><div class="stat-label">Client funding raised</div></div>
         </div>
       </div>
 
@@ -314,11 +309,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="section">
-        <div class="section-label">Personal updates</div>
-        <div id="about-updates"></div>
       </div>
 
       <div class="section">
@@ -372,6 +362,12 @@
           <button class="filter-pill" onclick="filterWork(this,'gtm')">GTM</button>
           <button class="filter-pill" onclick="filterWork(this,'design')">Design</button>
           <button class="filter-pill" onclick="filterWork(this,'web')">Web</button>
+        </div>
+        <div class="section-label" style="margin-bottom:10px">By the numbers</div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:24px">
+          <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$1M+</div><div class="stat-label">Paid media managed</div></div>
+          <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">15+ yrs</div><div class="stat-label">Brand &amp; marketing</div></div>
+          <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$500K+</div><div class="stat-label">Client funding raised</div></div>
         </div>
         <div class="section-row-label">Featured</div>
         <div class="work-grid" style="margin-bottom:24px">

@@ -26,7 +26,7 @@ function buildTicker(id) {
   let html = '';
   brands.forEach(b => {
     if (b.img) {
-      html += `<div class="ticker-logo"><img src="${b.img}" alt="${b.name}" style="height:22px;max-width:120px;object-fit:contain;filter:brightness(0) invert(1);opacity:1"></div><div class="ticker-sep"></div>`;
+      html += `<div class="ticker-logo"><img src="${b.img}" alt="${b.name}" style="height:22px;max-width:120px;object-fit:contain"></div><div class="ticker-sep"></div>`;
     } else {
       html += `<div class="ticker-logo"><span class="ticker-logo-text">${b.name}</span></div><div class="ticker-sep"></div>`;
     }
@@ -297,11 +297,13 @@ function setTheme(t) {
     document.documentElement.style.setProperty('--bg3','#222730');
     document.documentElement.style.setProperty('--border','#2a2f3d');
     document.documentElement.style.setProperty('--border2','#363c4d');
-    document.documentElement.style.setProperty('--text','#edf0f8');
-    document.documentElement.style.setProperty('--text2','#8892a8');
-    document.documentElement.style.setProperty('--text3','#464f62');
+    document.documentElement.style.setProperty('--text','#f2f5fc');
+    document.documentElement.style.setProperty('--text2','#adb5c8');
+    document.documentElement.style.setProperty('--text3','#6e7a93');
     document.documentElement.style.setProperty('--mobile-menu-bg','rgba(24,28,36,0.7)');
     document.documentElement.style.setProperty('--logo-filter','invert(1)');
+    document.documentElement.style.setProperty('--ticker-bg','var(--bg)');
+    document.documentElement.style.setProperty('--ticker-logo-filter','brightness(0) invert(1)');
   } else {
     document.documentElement.style.setProperty('--bg','#f7f8fa');
     document.documentElement.style.setProperty('--bg2','#edf0f4');
@@ -313,8 +315,12 @@ function setTheme(t) {
     document.documentElement.style.setProperty('--text3','#7f899a');
     document.documentElement.style.setProperty('--mobile-menu-bg','rgba(237,240,244,0.7)');
     document.documentElement.style.setProperty('--logo-filter','none');
+    document.documentElement.style.setProperty('--ticker-bg','var(--bg)');
+    document.documentElement.style.setProperty('--ticker-logo-filter','brightness(0) invert(0.5)');
   }
   renderUpdates();
+  const ind = document.getElementById('theme-indicator');
+  if (ind) ind.style.transform = `translateX(calc(${({light:0,dark:1,auto:2}[t]??2)} * 100%))`;
 }
 
 function copyEmail() {
@@ -325,3 +331,6 @@ function copyEmail() {
     setTimeout(() => btn.textContent = orig, 1800);
   });
 }
+
+// init theme indicator position
+(function(){const ind=document.getElementById('theme-indicator');if(ind)ind.style.transform='translateX(calc(2 * 100%))'})();
