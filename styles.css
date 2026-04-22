@@ -179,7 +179,7 @@ input,textarea{font-family:var(--font-sans)}
 .avail-sub{font-size:11px;color:var(--text3);margin-left:4px}
 
 /* ── LOGO TICKER ────────────────────────────────────────────── */
-.ticker-wrap{background:var(--ticker-bg,var(--bg));padding:23px 0;overflow:hidden;position:relative}
+.ticker-wrap{background:var(--ticker-bg,var(--bg));padding:28px 0;overflow:hidden;position:relative}
 .ticker-fade-l{position:absolute;left:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to right,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-fade-r{position:absolute;right:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to left,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-row{display:flex;white-space:nowrap;align-items:center}
@@ -371,7 +371,7 @@ input,textarea{font-family:var(--font-sans)}
 .project-grid{display:grid;grid-template-columns:1fr;gap:24px}
 .project-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:border-color var(--transition),transform var(--transition)}
 .project-card:hover{border-color:var(--border2);transform:translateY(-1px)}
-.project-thumb{height:120px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3)}
+.project-thumb{aspect-ratio:1041/585;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3);overflow:hidden}
 .project-body{padding:14px 16px}
 .project-title{font-size:12px;font-weight:500;color:var(--text);margin-bottom:4px}
 .project-desc{font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px}

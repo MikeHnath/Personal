@@ -39,10 +39,35 @@ buildTicker('ticker3'); buildTicker('ticker4');
 // ── PERSONAL UPDATES ─────────────────────────────────────────────
 const updates = [
   {
+    emoji: '🎆',
+    title: 'Received PGI 1.4 Pro Certificate of Training',
+    desc: 'Licensed to handle 1.4 professional-use-only fireworks under PGI certification.',
+    date: 'Apr 2026'
+  },
+  {
+    img: 'Company Logos/scandalous-icon-dark.png',
+    darkImg: 'Company Logos/scandalous-icon-light.png',
+    title: 'Scandalous — made intro to Brooklyn Operator',
+    desc: 'Personally made the introduction connecting Scandalous to their Brooklyn licensing partner.',
+    date: 'Sep 2025'
+  },
+  {
     img: 'Icons/google.svg',
     title: 'Earned Google Data Analytics Professional Certificate ↗',
     desc: 'Adding SQL and Python to the analytics stack across brand and performance work.',
-    date: '2025'
+    date: 'Aug 2025'
+  },
+  {
+    emoji: '🏠',
+    title: 'Bought our house',
+    desc: '',
+    date: 'Jul 2025'
+  },
+  {
+    emoji: '💍',
+    title: 'Got married',
+    desc: '',
+    date: 'Jun 2025'
   },
   {
     img: 'Icons/meta.svg',
@@ -58,23 +83,23 @@ const updates = [
     date: 'Aug 2024'
   },
   {
-    img: 'Company Logos/scandalous-icon-dark.png',
-    darkImg: 'Company Logos/scandalous-icon-light.png',
-    title: 'Scandalous — NY/Brooklyn licensing partnership initiated',
-    desc: 'Five-state footprint growing. Active warm intro on Brooklyn partnership.',
-    date: '2024'
-  },
-  {
     img: 'Company Logos/sigil-icon-white.png',
     lightInvert: true,
     title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded ↗',
     desc: 'Full GTM from zero: positioning, packaging, campaign, fulfillment.',
     date: 'May 2023'
+  },
+  {
+    emoji: '🔑',
+    title: 'Bought my condo — first home',
+    desc: '',
+    date: 'Mar 2021'
   }
 ];
 
 function renderUpdates() {
   function thumb(u) {
+    if (u.emoji) return `<div class="update-thumb" style="display:flex;align-items:center;justify-content:center;font-size:28px">${u.emoji}</div>`;
     const style = u.thumbBg ? ` style="background:${u.thumbBg};border-radius:6px;padding:4px"` : '';
     const isDark = getComputedStyle(document.documentElement).getPropertyValue('--logo-filter').trim() === 'invert(1)';
     const src = (u.darkImg && isDark) ? u.darkImg : u.img;
