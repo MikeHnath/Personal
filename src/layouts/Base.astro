@@ -4,11 +4,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  pageId?: string;
 }
 
 const {
   title,
-  description = 'Mike Hnath — brand strategist, creative director, and performance marketer based in Connecticut. Founder of THIS, a brand strategy and creative consultancy.'
+  description = 'Mike Hnath — brand strategist, creative director, and performance marketer based in Connecticut. Founder of THIS, a brand strategy and creative consultancy.',
+  pageId
 } = Astro.props;
 
 const path = Astro.url.pathname;
@@ -126,7 +128,7 @@ const isActive = (prefix: string) => {
   <!-- ── MAIN CONTENT ─────────────────────────────────────────── -->
   <main class="main">
   <div class="page-frame">
-    <div class="page active">
+    <div class="page active" id={pageId}>
       <slot />
     </div>
   </div>
