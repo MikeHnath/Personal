@@ -15,7 +15,8 @@ const brands = [
   {name:'LE TIGRE',img:'Logos/le-tigre.svg',scale:1.2,flip:true},
   {name:'SIGIL',img:'Logos/sigil-logo-white.png',scale:.85,flip:true},
   {name:'SCANDALOUS',img:'Logos/scandalous-logo.svg',scale:.8,boost:true},
-  {name:'POCN',img:'Logos/pocn-logo.svg'},
+  {name:'ABBVIE',img:'Logos/abbvie-logo.svg',scale:.5},
+  {name:'REGENERON',img:'Logos/regeneron-logo.svg',scale:.52},
   {name:'MITCHELLS',img:'Logos/mitchells.svg',scale:.43,boost:true},
   {name:'WILDERMERE BEACH',img:'Logos/wbcc-logo.png',scale:3},
   {name:'WITHIN THE RUINS',img:'Logos/within-the-ruins.svg',scale:1.5},
@@ -113,6 +114,13 @@ const updates = [
     title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded',
     desc: 'Full GTM from zero: positioning, packaging, campaign, fulfillment.',
     date: 'May 2023'
+  },
+  {
+    img: 'Icons/pocn-icon.svg',
+    darkInvert: true,
+    title: 'Joined POCN as Senior Digital Marketing Manager',
+    desc: 'Came on board at POCN, a medical advertising agency specializing in pharma brand engagement with clinical audiences.',
+    date: 'May 2022'
   },
   {
     emoji: '🔑',
