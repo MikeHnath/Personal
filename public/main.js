@@ -1,26 +1,59 @@
 /* Mike Hnath Portfolio — main.js */
-/* Generated from wireframe, April 2026 */
+
+// ── NAVIGATION ───────────────────────────────────────────────────
+const PAGE_PATHS = {
+  home: '/',
+  about: '/about/',
+  blog: '/writing/',
+  writing: '/writing/',
+  experience: '/experience/',
+  work: '/work/',
+  tools: '/tools/',
+  websites: '/websites/'
+};
+
+function nav(pageId) {
+  const path = PAGE_PATHS[pageId];
+  if (path) window.location.href = path;
+  closeMobileMenu();
+}
+
+function openCase(slug) {
+  const slugMap = { kh: 'kraft-heinz' };
+  const final = slugMap[slug] || slug;
+  window.location.href = '/work/' + final + '/';
+}
+
+// Keyboard shortcuts 1–9
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  const map = {'1':'home','2':'about','3':'writing','4':'experience','5':'work','6':'tools','7':'websites'};
+  if (map[e.key]) nav(map[e.key]);
+  if (e.key === '8') window.open('https://hnath.myportfolio.com','_blank');
+  if (e.key === '9') openModal();
+  if (e.key === 'Escape') closeModal();
+});
 
 // ── BRANDS ──────────────────────────────────────────────────────
 const brands = [
-  {name:'KRAFT HEINZ',img:'Logos/kraftheinz-logo.svg',scale:.52},
-  {name:'ELI LILLY',img:'Logos/eli-lilly-logo.svg'},
-  {name:'JOHNSON & JOHNSON',img:'Logos/johnson-johnson-logo.svg',scale:.6},
-  {name:'DISNEY',img:'Logos/disney-logo.svg'},
-  {name:'NICKELODEON',img:'Logos/nickelodeon-logo.svg',scale:.53},
-  {name:'ALTEC LANSING',img:'Logos/altec-lansing-logo.svg',scale:1.2},
-  {name:'NY YANKEES',img:'Logos/new-york-yankees-logo.svg',scale:.72},
-  {name:'ST. LOUIS CARDINALS',img:'Logos/st-louis-cardinals-logo.svg',scale:1.32},
-  {name:'LAS VEGAS RAIDERS',img:'Logos/oakland-raiders.svg',scale:1.5},
-  {name:'LE TIGRE',img:'Logos/le-tigre.svg',scale:1.2,flip:true},
-  {name:'SIGIL',img:'Logos/sigil-logo-white.png',scale:.85,flip:true},
-  {name:'SCANDALOUS',img:'Logos/scandalous-logo.svg',scale:.8,boost:true},
-  {name:'ABBVIE',img:'Logos/abbvie-logo.svg',scale:.5},
-  {name:'REGENERON',img:'Logos/regeneron-logo.svg',scale:.52},
-  {name:'MITCHELLS',img:'Logos/mitchells.svg',scale:.43,boost:true},
-  {name:'WILDERMERE BEACH',img:'Logos/wbcc-logo.png',scale:3},
-  {name:'WITHIN THE RUINS',img:'Logos/within-the-ruins.svg',scale:1.5},
-  {name:'ARK OF THE COVENANT',img:'Logos/ark-of-the-covenant-logo.svg'}
+  {name:'KRAFT HEINZ',img:'/Logos/kraftheinz-logo.svg',scale:.52},
+  {name:'ELI LILLY',img:'/Logos/eli-lilly-logo.svg'},
+  {name:'JOHNSON & JOHNSON',img:'/Logos/johnson-johnson-logo.svg',scale:.6},
+  {name:'DISNEY',img:'/Logos/disney-logo.svg'},
+  {name:'NICKELODEON',img:'/Logos/nickelodeon-logo.svg',scale:.53},
+  {name:'ALTEC LANSING',img:'/Logos/altec-lansing-logo.svg',scale:1.2},
+  {name:'NY YANKEES',img:'/Logos/new-york-yankees-logo.svg',scale:.72},
+  {name:'ST. LOUIS CARDINALS',img:'/Logos/st-louis-cardinals-logo.svg',scale:1.32},
+  {name:'LAS VEGAS RAIDERS',img:'/Logos/oakland-raiders.svg',scale:1.5},
+  {name:'LE TIGRE',img:'/Logos/le-tigre.svg',scale:1.2,flip:true},
+  {name:'SIGIL',img:'/Logos/sigil-logo-white.png',scale:.85,flip:true},
+  {name:'SCANDALOUS',img:'/Logos/scandalous-logo.svg',scale:.8,boost:true},
+  {name:'ABBVIE',img:'/Logos/abbvie-logo.svg',scale:.5},
+  {name:'REGENERON',img:'/Logos/regeneron-logo.svg',scale:.52},
+  {name:'MITCHELLS',img:'/Logos/mitchells.svg',scale:.43,boost:true},
+  {name:'WILDERMERE BEACH',img:'/Logos/wbcc-logo.png',scale:3},
+  {name:'WITHIN THE RUINS',img:'/Logos/within-the-ruins.svg',scale:1.5},
+  {name:'ARK OF THE COVENANT',img:'/Logos/ark-of-the-covenant-logo.svg'}
 ];
 
 function buildTicker(id) {
@@ -40,7 +73,6 @@ function buildTicker(id) {
 }
 for (let i = brands.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [brands[i], brands[j]] = [brands[j], brands[i]]; }
 buildTicker('ticker1'); buildTicker('ticker2');
-buildTicker('ticker3'); buildTicker('ticker4');
 
 // ── PERSONAL UPDATES ─────────────────────────────────────────────
 const updates = [
@@ -51,14 +83,14 @@ const updates = [
     date: 'Apr 2026'
   },
   {
-    img: 'Icons/scandalous-icon-dark.png',
-    darkImg: 'Icons/scandalous-icon-light.png',
+    img: '/Icons/scandalous-icon-dark.png',
+    darkImg: '/Icons/scandalous-icon-light.png',
     title: 'Scandalous — made intro to Brooklyn operator',
     desc: 'Personally made the introduction connecting Scandalous to their Brooklyn licensing partner.',
     date: 'Sep 2025'
   },
   {
-    img: 'Icons/google.svg',
+    img: '/Icons/google.svg',
     title: 'Earned Google Data Analytics Professional Certificate',
     desc: 'Adding SQL and Python to the analytics stack across brand and performance work.',
     date: 'Aug 2025'
@@ -82,13 +114,13 @@ const updates = [
     date: 'Apr 2025'
   },
   {
-    img: 'Icons/meta.svg',
+    img: '/Icons/meta.svg',
     title: 'Earned Meta Certified Digital Marketing Associate',
     desc: 'Active through Sep 2026. Formalized the paid social expertise built across years of campaign management.',
     date: 'Sep 2024'
   },
   {
-    img: 'Icons/this-icon.svg',
+    img: '/Icons/this-icon.svg',
     darkInvert: true,
     thumbSize: 28,
     title: 'THIS goes full-time — consultancy becomes primary',
@@ -96,19 +128,19 @@ const updates = [
     date: 'Aug 2024'
   },
   {
-    img: 'Icons/asp-logo.svg',
+    img: '/Icons/asp-logo.svg',
     title: 'Volunteered with Appalachia Service Project in Kentucky',
     desc: 'Spent a week repairing homes with ASP alongside Allie and her dad — something we\'d planned to do together before the wedding.',
     date: 'Jul 2024'
   },
   {
-    img: 'Logos/apa-logo.svg',
+    img: '/Logos/apa-logo.svg',
     title: 'Competed in the APA 9-Ball World Tournament',
     desc: 'Represented my local league at the world tournament in Las Vegas against global competition. Won my matches.',
     date: 'Aug 2023'
   },
   {
-    img: 'Icons/sigil-icon-white.png',
+    img: '/Icons/sigil-icon-white.png',
     lightInvert: true,
     thumbSize: 28,
     title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded',
@@ -116,9 +148,9 @@ const updates = [
     date: 'May 2023'
   },
   {
-    img: 'Icons/pocn-icon.svg',
+    img: '/Icons/pocn-icon.svg',
     darkInvert: true,
-    title: 'Joined POCN as Senior Digital Marketing Manager',
+    title: 'Joined POCN as Digital Marketing Manager',
     desc: 'Came on board at POCN, a medical advertising agency specializing in pharma brand engagement with clinical audiences.',
     date: 'May 2022'
   },
@@ -182,7 +214,7 @@ const workItems = [
     slug: 'pocn',
     client: 'POCN · 2022–2024',
     title: 'Pharma media management — DSP migration and campaign ops at scale',
-    outcome: '$1M+ managed · 25 concurrent campaigns · Lilly, Pfizer, J&J',
+    outcome: '$1.7M+ managed · 30 concurrent campaigns · 50+ pharma therapies',
     industry: 'Healthcare · Pharma',
     tags: ['Performance', 'Healthcare']
   },
@@ -203,7 +235,7 @@ const workItems = [
     tags: ['Design', 'eComm']
   },
   {
-    slug: null,
+    slug: 'infinity',
     client: 'Infinity Lifestyle Brands · 2018–2019',
     title: 'Infinity — Licensed CPG brand direction and packaging at scale',
     outcome: '$10M+ licensing ecosystem · 50+ SKUs · Disney, MLBPA, Viacom',
@@ -258,45 +290,12 @@ renderFeaturedWork();
 
 // ── GREETING ─────────────────────────────────────────────────────
 (function() {
+  const el = document.getElementById('home-greeting');
+  if (!el) return;
   const h = new Date().getHours();
   const greeting = h < 12 ? 'Good morning!' : h < 18 ? 'Good afternoon!' : 'Good evening!';
-  document.getElementById('home-greeting').textContent = greeting;
+  el.textContent = greeting;
 })();
-
-// ── NAVIGATION ───────────────────────────────────────────────────
-let currentPage = 'home';
-
-function nav(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item[data-page]').forEach(n => n.classList.remove('active'));
-  const page = document.getElementById('page-' + pageId);
-  if (page) { page.classList.add('active'); page.scrollTop = 0; }
-  document.querySelector('.main').scrollTo(0, 0);
-  const navEl = document.querySelector(`.nav-item[data-page="${pageId}"]`);
-  if (navEl) navEl.classList.add('active');
-  currentPage = pageId;
-  closeMobileMenu();
-}
-
-function openCase(slug) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item[data-page]').forEach(n => n.classList.remove('active'));
-  const page = document.getElementById('page-case-' + slug);
-  if (page) page.classList.add('active');
-  document.querySelector('.main').scrollTo(0, 0);
-  const navEl = document.querySelector('.nav-item[data-page="work"]');
-  if (navEl) navEl.classList.add('active');
-}
-
-// Keyboard shortcuts 1–9
-document.addEventListener('keydown', e => {
-  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  const map = {'1':'home','2':'about','3':'blog','4':'experience','5':'work','6':'tools','7':'websites'};
-  if (map[e.key]) nav(map[e.key]);
-  if (e.key === '8') window.open('https://hnath.myportfolio.com','_blank');
-  if (e.key === '9') openModal();
-  if (e.key === 'Escape') closeModal();
-});
 
 // ── WORK FILTER ──────────────────────────────────────────────────
 function filterWork(btn, tag) {
@@ -332,17 +331,21 @@ function switchCar(btn, contentId) {
 
 // ── MODAL ────────────────────────────────────────────────────────
 function openModal() {
-  document.getElementById('modal-overlay').classList.add('open');
+  const el = document.getElementById('modal-overlay');
+  if (el) el.classList.add('open');
   closeMobileMenu();
 }
 function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
+  const el = document.getElementById('modal-overlay');
+  if (el) el.classList.remove('open');
 }
 function toggleMobileMenu() {
-  document.querySelector('.sidebar').classList.toggle('mobile-open');
+  const el = document.querySelector('.sidebar');
+  if (el) el.classList.toggle('mobile-open');
 }
 function closeMobileMenu() {
-  document.querySelector('.sidebar').classList.remove('mobile-open');
+  const el = document.querySelector('.sidebar');
+  if (el) el.classList.remove('mobile-open');
 }
 function handleOverlay(e) {
   if (e.target === document.getElementById('modal-overlay')) closeModal();

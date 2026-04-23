@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Mike Hnath — Portfolio">
+
+  <div class="section">
+    <div class="home-intro-grid" style="display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:28px;align-items:start">
+      <div>
+        <div id="home-greeting" style="font-size:136px;font-weight:300;color:var(--text);line-height:1;margin-top:24px;margin-bottom:16px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
+        <div class="body-text" style="margin-bottom:16px">I'm <strong>Mike Hnath</strong> (pronounced Nath), former touring drummer who runs my own consultancy. I help brands find their footing, tell their story, and grow with purpose.</div>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <a class="btn primary" href="/work/">View case studies</a>
+          <button class="btn secondary" onclick="openModal()">Get in touch</button>
+        </div>
+        <a href="/about/" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more about me ⇢</a>
+      </div>
+      <div id="shortcut-tip" style="background:var(--bg2);border:none;border-radius:var(--r-lg);padding:18px 16px;position:relative;margin-top:10px">
+        <button onclick="document.getElementById('shortcut-tip').style.display='none'" style="position:absolute;top:8px;right:10px;background:none;border:none;cursor:pointer;font-size:14px;color:var(--text3);line-height:1">✕</button>
+        <div style="font-size:12px;font-weight:800;color:var(--text);margin-bottom:6px">Navigate quickly</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.6">Use keyboard shortcuts <strong style="color:var(--text)">1 → 9</strong> to jump between pages. Try pressing <strong style="color:var(--text)">2</strong>, <strong style="color:var(--text)">3</strong> or <strong style="color:var(--text)">4</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-bottom:25px">
+    <div class="section-header">
+      <div class="section-label" style="margin-bottom:0">Personal updates</div>
+      <a class="show-more" href="/about/" style="margin-top:0">View all</a>
+    </div>
+    <div class="update-grid" id="home-updates"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-header" style="margin-bottom:16px">
+      <div class="section-label" style="margin-bottom:0">Read my latest thoughts</div>
+      <a class="show-more" href="/writing/" style="margin-top:0">View all</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+      <a class="work-card" href="/writing/">
+        <div class="work-thumb" style="height:120px">[Hero image]</div>
+        <div class="work-body">
+          <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
+          <div class="work-title">Why brand strategy and performance media aren't opposites</div>
+          <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
+        </div>
+      </a>
+      <a class="work-card" href="/writing/">
+        <div class="work-thumb" style="height:120px">[Hero image]</div>
+        <div class="work-body">
+          <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">GTM · Personal</div>
+          <div class="work-title">What 22 countries on a tour bus taught me about operations</div>
+          <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section" style="padding:0;overflow:hidden">
+    <div class="ticker-wrap">
+      <div class="ticker-fade-l"></div>
+      <div class="ticker-fade-r"></div>
+      <div class="ticker-row">
+        <div class="ticker-track" id="ticker1"></div>
+        <div class="ticker-track" id="ticker2" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:25px">
+    <div class="section-header">
+      <div class="section-label" style="margin-bottom:0">Featured work</div>
+      <a class="show-more" href="/work/" style="margin-top:0">View all</a>
+    </div>
+    <div id="home-work"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Portfolio</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <a class="nav-tile" href="/work/">
+        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Case Studies</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Brand, GTM, performance media, and eComm. Full write-ups with context and results.</div>
+        <div style="font-size:11px;color:var(--text3)">View case studies →</div>
+      </a>
+      <a class="nav-tile" href="/websites/">
+        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Websites</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Live builds + GitHub projects. WordPress, Webflow, custom HTML.</div>
+        <div style="font-size:11px;color:var(--text3)">View websites →</div>
+      </a>
+      <a class="nav-tile" href="https://hnath.myportfolio.com" target="_blank" rel="noopener noreferrer">
+        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Media</div>
+        <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Photography and videography. Brand shoots, product content, live event coverage.</div>
+        <div style="font-size:11px;color:var(--text3)">View media →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section" style="border-bottom:none">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <img src="/Logos/mikehnath-logo.svg" style="height:12px;width:auto;display:block;filter:var(--logo-filter,none)" />
+      <div class="social-pills">
+        <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank"><img src="/Icons/linkedin.svg" style="width:16px;height:16px;display:block" />LinkedIn</a>
+        <a class="social-pill" href="https://github.com/MikeHnath" target="_blank"><img src="/Icons/github.svg" style="width:16px;height:16px;display:block" />GitHub</a>
+        <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank"><img src="/Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block" />Portfolio</a>
+      </div>
+      <div style="font-size:11px;color:var(--text3)">Connecticut, USA · Available for select work</div>
+    </div>
+  </div>
+
+</Base>

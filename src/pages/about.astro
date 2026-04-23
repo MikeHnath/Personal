@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About — Mike Hnath">
+
+  <div class="section">
+    <div class="page-title">About</div>
+    <div class="body-text">Most people in marketing came up through internships and agency ladders. I came up through a van.</div>
+    <div class="body-text">At 17, I started my first band and never looked back. By my mid-20s I was managing international tours across 22 countries, negotiating multiple distribution deals, and figuring out how to sell over $150K in merch out of a trailer. Nobody gave me a playbook. I just had to figure it out — logistics, budgets, branding, audience growth, all of it — in real time.</div>
+    <div class="body-text">That instinct — figure it out, own the outcome, ship it — carried me through Kraft Heinz, Pfizer, Disney, and a decade of building brands for founders through my consultancy, THIS. The details are in the work.</div>
+    <div class="body-text">Outside of work, I'm usually at the gym, at the beach, or racking up a game of pool. I love creating media of all kinds — music, video, design, anything I can make with my hands or a screen — and I'm at my best when I'm around people. Connecticut's shoreline is home base, and I try not to take that for granted.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Personal updates</div>
+    <div id="about-updates"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-header" style="margin-bottom:16px">
+      <div class="section-label" style="margin-bottom:0">Read my latest thoughts</div>
+      <a class="show-more" href="/writing/" style="margin-top:0">View all</a>
+    </div>
+    <a class="work-card" href="/writing/">
+      <div class="work-thumb" style="height:120px">[Hero image]</div>
+      <div class="work-body">
+        <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
+        <div class="work-title">Why brand strategy and performance media aren't opposites</div>
+        <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
+      </div>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Contact</div>
+    <div class="contact-row">
+      <div class="contact-row-left">
+        <div class="contact-row-label">Local time</div>
+        <div class="local-time-big" id="about-time">--:-- --</div>
+        <div class="local-time-sub">Connecticut, USA (ET)</div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-row-left">
+        <div class="contact-row-label">Email</div>
+        <div class="contact-row-title">Always happy to connect</div>
+        <div class="contact-row-sub">Brand, performance, and creative consulting inquiries welcome.</div>
+      </div>
+      <div class="contact-row-right">
+        <a class="action-btn" href="mailto:hello@michaelhnath.com">Compose</a>
+        <button class="action-btn" onclick="copyEmail()">Copy</button>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-row-left">
+        <div class="contact-row-label">Stay in touch</div>
+        <div class="contact-row-title">Most responsive on LinkedIn</div>
+      </div>
+      <div class="contact-row-right">
+        <div class="social-pills">
+          <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank"><img src="/Icons/linkedin.svg" style="width:16px;height:16px;display:block" />LinkedIn</a>
+          <a class="social-pill" href="https://github.com/MikeHnath" target="_blank"><img src="/Icons/github.svg" style="width:16px;height:16px;display:block" />GitHub</a>
+          <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank"><img src="/Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block" />Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</Base>
