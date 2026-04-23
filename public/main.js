@@ -8,7 +8,7 @@ const PAGE_PATHS = {
   blog: BASE + '/writing/',
   writing: BASE + '/writing/',
   experience: BASE + '/experience/',
-  work: BASE + '/work/',
+  work: BASE + '/case-studies/',
   tools: BASE + '/tools/',
   websites: BASE + '/websites/'
 };
@@ -22,7 +22,7 @@ function nav(pageId) {
 function openCase(slug) {
   const slugMap = { kh: 'kraft-heinz' };
   const final = slugMap[slug] || slug;
-  window.location.href = BASE + '/work/' + final + '/';
+  window.location.href = BASE + '/case-studies/' + final + '/';
 }
 
 // Keyboard shortcuts 1–9
