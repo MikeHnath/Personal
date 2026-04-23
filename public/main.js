@@ -1,15 +1,16 @@
 /* Mike Hnath Portfolio — main.js */
 
 // ── NAVIGATION ───────────────────────────────────────────────────
+const BASE = '/Personal';
 const PAGE_PATHS = {
-  home: '/',
-  about: '/about/',
-  blog: '/writing/',
-  writing: '/writing/',
-  experience: '/experience/',
-  work: '/work/',
-  tools: '/tools/',
-  websites: '/websites/'
+  home: BASE + '/',
+  about: BASE + '/about/',
+  blog: BASE + '/writing/',
+  writing: BASE + '/writing/',
+  experience: BASE + '/experience/',
+  work: BASE + '/work/',
+  tools: BASE + '/tools/',
+  websites: BASE + '/websites/'
 };
 
 function nav(pageId) {
@@ -21,7 +22,7 @@ function nav(pageId) {
 function openCase(slug) {
   const slugMap = { kh: 'kraft-heinz' };
   const final = slugMap[slug] || slug;
-  window.location.href = '/work/' + final + '/';
+  window.location.href = BASE + '/work/' + final + '/';
 }
 
 // Keyboard shortcuts 1–9
@@ -36,24 +37,24 @@ document.addEventListener('keydown', e => {
 
 // ── BRANDS ──────────────────────────────────────────────────────
 const brands = [
-  {name:'KRAFT HEINZ',img:'/Logos/kraftheinz-logo.svg',scale:.52},
-  {name:'ELI LILLY',img:'/Logos/eli-lilly-logo.svg'},
-  {name:'JOHNSON & JOHNSON',img:'/Logos/johnson-johnson-logo.svg',scale:.6},
-  {name:'DISNEY',img:'/Logos/disney-logo.svg'},
-  {name:'NICKELODEON',img:'/Logos/nickelodeon-logo.svg',scale:.53},
-  {name:'ALTEC LANSING',img:'/Logos/altec-lansing-logo.svg',scale:1.2},
-  {name:'NY YANKEES',img:'/Logos/new-york-yankees-logo.svg',scale:.72},
-  {name:'ST. LOUIS CARDINALS',img:'/Logos/st-louis-cardinals-logo.svg',scale:1.32},
-  {name:'LAS VEGAS RAIDERS',img:'/Logos/oakland-raiders.svg',scale:1.5},
-  {name:'LE TIGRE',img:'/Logos/le-tigre.svg',scale:1.2,flip:true},
-  {name:'SIGIL',img:'/Logos/sigil-logo-white.png',scale:.85,flip:true},
-  {name:'SCANDALOUS',img:'/Logos/scandalous-logo.svg',scale:.8,boost:true},
-  {name:'ABBVIE',img:'/Logos/abbvie-logo.svg',scale:.5},
-  {name:'REGENERON',img:'/Logos/regeneron-logo.svg',scale:.52},
-  {name:'MITCHELLS',img:'/Logos/mitchells.svg',scale:.43,boost:true},
-  {name:'WILDERMERE BEACH',img:'/Logos/wbcc-logo.png',scale:3},
-  {name:'WITHIN THE RUINS',img:'/Logos/within-the-ruins.svg',scale:1.5},
-  {name:'ARK OF THE COVENANT',img:'/Logos/ark-of-the-covenant-logo.svg'}
+  {name:'KRAFT HEINZ',img:'/Personal/Logos/kraftheinz-logo.svg',scale:.52},
+  {name:'ELI LILLY',img:'/Personal/Logos/eli-lilly-logo.svg'},
+  {name:'JOHNSON & JOHNSON',img:'/Personal/Logos/johnson-johnson-logo.svg',scale:.6},
+  {name:'DISNEY',img:'/Personal/Logos/disney-logo.svg'},
+  {name:'NICKELODEON',img:'/Personal/Logos/nickelodeon-logo.svg',scale:.53},
+  {name:'ALTEC LANSING',img:'/Personal/Logos/altec-lansing-logo.svg',scale:1.2},
+  {name:'NY YANKEES',img:'/Personal/Logos/new-york-yankees-logo.svg',scale:.72},
+  {name:'ST. LOUIS CARDINALS',img:'/Personal/Logos/st-louis-cardinals-logo.svg',scale:1.32},
+  {name:'LAS VEGAS RAIDERS',img:'/Personal/Logos/oakland-raiders.svg',scale:1.5},
+  {name:'LE TIGRE',img:'/Personal/Logos/le-tigre.svg',scale:1.2,flip:true},
+  {name:'SIGIL',img:'/Personal/Logos/sigil-logo-white.png',scale:.85,flip:true},
+  {name:'SCANDALOUS',img:'/Personal/Logos/scandalous-logo.svg',scale:.8,boost:true},
+  {name:'ABBVIE',img:'/Personal/Logos/abbvie-logo.svg',scale:.5},
+  {name:'REGENERON',img:'/Personal/Logos/regeneron-logo.svg',scale:.52},
+  {name:'MITCHELLS',img:'/Personal/Logos/mitchells.svg',scale:.43,boost:true},
+  {name:'WILDERMERE BEACH',img:'/Personal/Logos/wbcc-logo.png',scale:3},
+  {name:'WITHIN THE RUINS',img:'/Personal/Logos/within-the-ruins.svg',scale:1.5},
+  {name:'ARK OF THE COVENANT',img:'/Personal/Logos/ark-of-the-covenant-logo.svg'}
 ];
 
 function buildTicker(id) {
@@ -83,14 +84,14 @@ const updates = [
     date: 'Apr 2026'
   },
   {
-    img: '/Icons/scandalous-icon-dark.png',
-    darkImg: '/Icons/scandalous-icon-light.png',
+    img: '/Personal/Icons/scandalous-icon-dark.png',
+    darkImg: '/Personal/Icons/scandalous-icon-light.png',
     title: 'Scandalous — made intro to Brooklyn operator',
     desc: 'Personally made the introduction connecting Scandalous to their Brooklyn licensing partner.',
     date: 'Sep 2025'
   },
   {
-    img: '/Icons/google.svg',
+    img: '/Personal/Icons/google.svg',
     title: 'Earned Google Data Analytics Professional Certificate',
     desc: 'Adding SQL and Python to the analytics stack across brand and performance work.',
     date: 'Aug 2025'
@@ -114,13 +115,13 @@ const updates = [
     date: 'Apr 2025'
   },
   {
-    img: '/Icons/meta.svg',
+    img: '/Personal/Icons/meta.svg',
     title: 'Earned Meta Certified Digital Marketing Associate',
     desc: 'Active through Sep 2026. Formalized the paid social expertise built across years of campaign management.',
     date: 'Sep 2024'
   },
   {
-    img: '/Icons/this-icon.svg',
+    img: '/Personal/Icons/this-icon.svg',
     darkInvert: true,
     thumbSize: 28,
     title: 'THIS goes full-time — consultancy becomes primary',
@@ -128,19 +129,19 @@ const updates = [
     date: 'Aug 2024'
   },
   {
-    img: '/Icons/asp-logo.svg',
+    img: '/Personal/Icons/asp-logo.svg',
     title: 'Volunteered with Appalachia Service Project in Kentucky',
     desc: 'Spent a week repairing homes with ASP alongside Allie and her dad — something we\'d planned to do together before the wedding.',
     date: 'Jul 2024'
   },
   {
-    img: '/Logos/apa-logo.svg',
+    img: '/Personal/Logos/apa-logo.svg',
     title: 'Competed in the APA 9-Ball World Tournament',
     desc: 'Represented my local league at the world tournament in Las Vegas against global competition. Won my matches.',
     date: 'Aug 2023'
   },
   {
-    img: '/Icons/sigil-icon-white.png',
+    img: '/Personal/Icons/sigil-icon-white.png',
     lightInvert: true,
     thumbSize: 28,
     title: 'Launched SIGIL on Kickstarter — $22K+ crowdfunded',
@@ -148,7 +149,7 @@ const updates = [
     date: 'May 2023'
   },
   {
-    img: '/Icons/pocn-icon.svg',
+    img: '/Personal/Icons/pocn-icon.svg',
     darkInvert: true,
     title: 'Joined POCN as Digital Marketing Manager',
     desc: 'Came on board at POCN, a medical advertising agency specializing in pharma brand engagement with clinical audiences.',
