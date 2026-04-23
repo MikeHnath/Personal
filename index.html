@@ -121,7 +121,7 @@
               <button class="btn primary" onclick="nav('work')">View case studies</button>
               <button class="btn secondary" onclick="openModal()">Get in touch</button>
             </div>
-              <a onclick="nav('about')" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more about me ⇣</a>
+              <a onclick="nav('about')" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more about me ⇢</a>
           </div>
           <div id="shortcut-tip" style="background:var(--bg2);border:none;border-radius:var(--r-lg);padding:18px 16px;position:relative;margin-top:10px">
             <button onclick="document.getElementById('shortcut-tip').style.display='none'" style="position:absolute;top:8px;right:10px;background:none;border:none;cursor:pointer;font-size:14px;color:var(--text3);line-height:1">✕</button>
@@ -135,18 +135,18 @@
       <div class="section" style="padding-bottom:25px">
         <div class="section-header">
           <div class="section-label" style="margin-bottom:0">Personal updates</div>
-          <span class="show-more" onclick="nav('about')" style="margin-top:0">View all →</span>
+          <span class="show-more" onclick="nav('about')" style="margin-top:0">View all</span>
         </div>
         <div class="update-grid" id="home-updates"></div>
       </div>
 
       <div class="section">
         <div class="section-header" style="margin-bottom:16px">
-          <div class="section-label" style="margin-bottom:0">Recent writing</div>
-          <span class="show-more" onclick="nav('writing')" style="margin-top:0">View all →</span>
+          <div class="section-label" style="margin-bottom:0">Read my latest thoughts</div>
+          <span class="show-more" onclick="nav('blog')" style="margin-top:0">View all</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
-          <div class="work-card" onclick="nav('writing')">
+          <div class="work-card" onclick="nav('blog')">
             <div class="work-thumb" style="height:120px">[Hero image]</div>
             <div class="work-body">
               <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
@@ -154,7 +154,7 @@
               <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
             </div>
           </div>
-          <div class="work-card" onclick="nav('writing')">
+          <div class="work-card" onclick="nav('blog')">
             <div class="work-thumb" style="height:120px">[Hero image]</div>
             <div class="work-body">
               <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">GTM · Personal</div>
@@ -179,7 +179,7 @@
       <div class="section" style="padding-top:25px">
         <div class="section-header">
           <div class="section-label" style="margin-bottom:0">Featured work</div>
-          <span class="show-more" onclick="nav('work')" style="margin-top:0">View all →</span>
+          <span class="show-more" onclick="nav('work')" style="margin-top:0">View all</span>
         </div>
         <div id="home-work"></div>
       </div>
@@ -232,6 +232,21 @@
       <div class="section">
         <div class="section-label">Personal updates</div>
         <div id="about-updates"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header" style="margin-bottom:16px">
+          <div class="section-label" style="margin-bottom:0">Read my latest thoughts</div>
+          <span class="show-more" onclick="nav('blog')" style="margin-top:0">View all</span>
+        </div>
+        <div class="work-card" onclick="nav('blog')">
+          <div class="work-thumb" style="height:120px">[Hero image]</div>
+          <div class="work-body">
+            <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
+            <div class="work-title">Why brand strategy and performance media aren't opposites</div>
+            <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
+          </div>
+        </div>
       </div>
 
       <div class="section">
@@ -305,7 +320,7 @@
       <div class="section">
         <div class="section-header">
           <div class="section-label" style="margin-bottom:0">Featured case studies</div>
-          <span class="show-more" onclick="nav('work')" style="margin-top:0">View all →</span>
+          <span class="show-more" onclick="nav('work')" style="margin-top:0">View all</span>
         </div>
         <div id="experience-work"></div>
       </div>
@@ -350,7 +365,7 @@
           </div>
         </div>
         <div style="margin-top:20px">
-          <span class="show-more" onclick="nav('tools')">View tools and stack →</span>
+          <button class="btn resume-link" onclick="nav('tools')">View tools and stack</button>
         </div>
       </div>
 
@@ -408,6 +423,7 @@
             <div class="work-body"><div class="work-client">Ark of the Covenant · 2008–2016</div><div class="work-title">Ark of the Covenant — Independent artist brand built from zero</div><div class="work-outcome">350+ shows · 20K+ followers · 2 distribution deals · Mesa/Boogie endorsement</div><div class="work-meta"><span class="work-industry">Music · Independent</span><span class="work-arrow">→</span></div></div>
           </div>
         </div>
+        <div style="margin-top:24px"><span class="show-more show-more-em" onclick="nav('tools')">See the tools I use to make these happen ⇢</span></div>
       </div>
     </div>
 
@@ -811,11 +827,11 @@
             <div class="tool-icon"><img src="Icons/wordpress.svg" alt="WordPress"></div>
             <div class="tool-info"><div class="tool-name">WordPress</div><div class="tool-desc">CMS for client sites. Scandalous, Pine Island Games, Greenwich Film Festival.</div></div>
           </a>
-          <a class="tool-card" data-cat="web">
+          <a class="tool-card" data-cat="web" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
             <div class="tool-icon"><img src="Icons/html5.svg" alt="HTML5"></div>
             <div class="tool-info"><div class="tool-name">HTML5</div><div class="tool-desc">Semantic markup, landing pages, email templates, and custom builds.</div></div>
           </a>
-          <a class="tool-card" data-cat="web">
+          <a class="tool-card" data-cat="web" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
             <div class="tool-icon"><img src="Icons/css3.svg" alt="CSS3"></div>
             <div class="tool-info"><div class="tool-name">CSS3</div><div class="tool-desc">Layout, responsive design, animation, and design system implementation.</div></div>
           </a>
