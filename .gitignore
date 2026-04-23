@@ -1,1 +1,18 @@
 /.DS_Store
+**/.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Env
+.env
+.env.production
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
