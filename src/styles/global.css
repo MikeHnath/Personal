@@ -291,7 +291,7 @@ input,textarea{font-family:var(--font-sans)}
 .filter-sep{width:1px;background:var(--border);margin:0 3px;align-self:stretch}
 
 /* ── FEATURED WORK GRID (home page) ────────────────────────────── */
-.home-work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.home-work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .exp-work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .fw-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 18px;cursor:pointer;transition:background var(--transition);display:flex;flex-direction:column;gap:6px;overflow:hidden}
 .fw-card:hover{background:var(--bg3)}

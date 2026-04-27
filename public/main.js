@@ -258,7 +258,7 @@ function renderFeaturedWork() {
   const el = document.getElementById('home-work');
   if (!el) return;
   el.className = 'home-work-grid';
-  el.innerHTML = workItems.slice(0, 4).map(w => {
+  el.innerHTML = workItems.slice(0, 3).map(w => {
     const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
     const thumb = w.thumb
       ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>`
