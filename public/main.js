@@ -218,7 +218,8 @@ const workItems = [
     outcome: '$1.7M+ managed · 30 concurrent campaigns · 50+ pharma therapies',
     industry: 'Healthcare · Pharma',
     tags: ['Performance', 'Healthcare'],
-    thumb: '/Personal/Images/POCN/pocn-cs-gfx-2.jpg'
+    thumb: '/Personal/Images/POCN/pocn-cs-gfx-2.jpg',
+    thumbAspect: '11/4'
   },
   {
     slug: 'sigil',
@@ -260,8 +261,9 @@ function renderFeaturedWork() {
   el.className = 'home-work-grid';
   el.innerHTML = workItems.slice(0, 3).map(w => {
     const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
+    const aspect = w.thumbAspect ? ` style="aspect-ratio:${w.thumbAspect}"` : '';
     const thumb = w.thumb
-      ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>`
+      ? `<div class="fw-thumb"${aspect}><img src="${w.thumb}" alt="" /></div>`
       : `<div class="fw-thumb fw-thumb-empty"></div>`;
     return `<div class="fw-card" onclick="${action}">
       ${thumb}
@@ -280,8 +282,9 @@ renderFeaturedWork();
   el.className = 'exp-work-grid';
   el.innerHTML = workItems.slice(0, 2).map(w => {
     const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
+    const aspect = w.thumbAspect ? ` style="aspect-ratio:${w.thumbAspect}"` : '';
     const thumb = w.thumb
-      ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>`
+      ? `<div class="fw-thumb"${aspect}><img src="${w.thumb}" alt="" /></div>`
       : `<div class="fw-thumb fw-thumb-empty"></div>`;
     return `<div class="fw-card" onclick="${action}">
       ${thumb}
