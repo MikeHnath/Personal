@@ -260,11 +260,11 @@ function renderFeaturedWork() {
   el.className = 'home-work-grid';
   el.innerHTML = workItems.slice(0, 4).map(w => {
     const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
-    const pills = w.tags.map(t => `<span class="work-domain-tag">${t}</span>`).join('');
-    const thumb = w.thumb ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>` : '';
+    const thumb = w.thumb
+      ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>`
+      : `<div class="fw-thumb fw-thumb-empty"></div>`;
     return `<div class="fw-card" onclick="${action}">
       ${thumb}
-      <div class="fw-tags">${pills}</div>
       <div class="fw-title">${w.title}</div>
       <div class="fw-client">${w.client}</div>
       <div class="fw-outcome">${w.outcome}</div>
@@ -280,11 +280,11 @@ renderFeaturedWork();
   el.className = 'exp-work-grid';
   el.innerHTML = workItems.slice(0, 2).map(w => {
     const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
-    const pills = w.tags.map(t => `<span class="work-domain-tag">${t}</span>`).join('');
-    const thumb = w.thumb ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>` : '';
+    const thumb = w.thumb
+      ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>`
+      : `<div class="fw-thumb fw-thumb-empty"></div>`;
     return `<div class="fw-card" onclick="${action}">
       ${thumb}
-      <div class="fw-tags">${pills}</div>
       <div class="fw-title">${w.title}</div>
       <div class="fw-client">${w.client}</div>
       <div class="fw-outcome">${w.outcome}</div>
