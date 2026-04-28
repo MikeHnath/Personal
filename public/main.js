@@ -422,12 +422,32 @@ function setTheme(choice) {
 }
 
 function copyEmail() {
-  navigator.clipboard.writeText('hello@michaelhnath.com').then(() => {
+  navigator.clipboard.writeText('hnath928@gmail.com').then(() => {
     const btn = event.target;
     const orig = btn.textContent;
     btn.textContent = 'Copied ✓';
     setTimeout(() => btn.textContent = orig, 1800);
   });
+}
+
+function submitContact() {
+  const modal = document.getElementById('modal-overlay');
+  if (!modal) return;
+  const inputs = modal.querySelectorAll('.form-input');
+  const name = (inputs[0]?.value || '').trim();
+  const company = (inputs[1]?.value || '').trim();
+  const email = (inputs[2]?.value || '').trim();
+  const message = (modal.querySelector('.form-textarea')?.value || '').trim();
+  const intents = Array.from(modal.querySelectorAll('.intent-chip.selected'))
+    .map(b => b.textContent.trim()).join(', ');
+  const subject = `Inquiry from ${name || 'website'}${intents ? ` — ${intents}` : ''}`;
+  const lines = [];
+  if (name) lines.push(`Name: ${name}`);
+  if (company) lines.push(`Company: ${company}`);
+  if (email) lines.push(`Email: ${email}`);
+  if (intents) lines.push(`Looking for: ${intents}`);
+  if (message) lines.push('', message);
+  window.location.href = `mailto:hnath928@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
 }
 
 // init theme from saved choice (default: auto → system)
