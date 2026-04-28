@@ -6,7 +6,7 @@
 :root{
   --bg:#f7f8fa;
   --bg2:#edf0f4;
-  --bg3:#e0e4ea;
+  --bg3:#d6dae0;
   --bg4:#0f1117;
   --border:#ccd0d8;
   --border2:#b9bec9;
@@ -196,7 +196,7 @@ input,textarea{font-family:var(--font-sans)}
 /* ── PERSONAL UPDATES ───────────────────────────────────────── */
 .update-thumb{width:32px;height:32px;min-width:32px;background:none;border:none;display:flex;align-items:center;justify-content:center;padding:0;overflow:visible}
 .update-thumb-img{width:30px;height:30px;object-fit:contain;display:block}
-.update-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.4;font-family:var(--font-display)}
+.update-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.4;font-family:var(--font-display)}
 .update-desc{font-size:14px;color:var(--text2);line-height:1.5}
 .update-date{font-size:11px;color:var(--text3);font-family:var(--font-mono);white-space:nowrap}
 
@@ -232,7 +232,7 @@ input,textarea{font-family:var(--font-sans)}
 .tool-card:hover{background:var(--bg3)}
 .tool-icon{width:40px;height:40px;min-width:40px;border-radius:0;background:none;display:flex;align-items:flex-start;justify-content:center;font-size:10px;font-weight:700;color:var(--text3);font-family:var(--font-mono);flex-shrink:0}
 .tool-icon img{width:40px;height:40px;object-fit:contain}
-.tool-name{font-size:19px;font-weight:700;color:var(--text);font-family:var(--font-display);margin-bottom:2px}
+.tool-name{font-size:17px;font-weight:700;color:var(--text);font-family:var(--font-display);margin-bottom:2px}
 .tool-desc{font-size:14px;color:var(--text2);line-height:1.5}
 .tool-arrow{font-size:12px;color:var(--text3);flex-shrink:0}
 
@@ -250,17 +250,17 @@ input,textarea{font-family:var(--font-sans)}
 .tl-dot{width:7px;height:7px;border-radius:50%;background:var(--text2);min-height:7px;border:1px solid var(--text2)}
 .tl-line{width:1px;flex:1;background:var(--border);margin-top:4px;min-height:26px}
 .tl-body{flex:1}
-.tl-role{font-size:19px;font-weight:700;color:var(--text);margin-bottom:2px;font-family:var(--font-display)}
+.tl-role{font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px;font-family:var(--font-display)}
 .tl-co{font-size:14px;color:var(--text2);margin-bottom:5px}
 .tl-tags{display:flex;gap:5px;flex-wrap:wrap}
 .tl-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);color:var(--text3)}
 .tl-note{font-size:11px;color:var(--text3);margin-top:4px;font-style:italic}
-.resume-link{font-size:12px;font-weight:600;color:#fff;background:#111;border-radius:6px;padding:8px 16px;margin-top:16px;display:inline-block;cursor:pointer;text-decoration:none;transition:opacity var(--transition)}
+.resume-link{font-size:12px;font-weight:600;color:var(--bg);background:var(--text);border-radius:6px;padding:8px 16px;margin-top:16px;display:inline-block;cursor:pointer;text-decoration:none;transition:opacity var(--transition)}
 .resume-link:hover{opacity:.8}
 
 /* ── FOUNDATION ─────────────────────────────────────────────── */
 .foundation-card{background:var(--bg2);border-radius:var(--r-lg);border:1px solid var(--border);padding:20px}
-.foundation-section-title{font-size:22px;font-weight:500;color:var(--text);margin-bottom:12px}
+.foundation-section-title{font-size:20px;font-weight:500;color:var(--text);margin-bottom:12px}
 .foundation-desc{font-size:17px;color:var(--text2);line-height:1.75;margin-bottom:16px}
 .foundation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .foundation-bullets{display:flex;flex-direction:column;gap:7px}
@@ -297,7 +297,7 @@ input,textarea{font-family:var(--font-sans)}
 .fw-card:hover{background:var(--bg3)}
 .fw-thumb{margin:-16px -18px 8px;aspect-ratio:11/4;background:var(--bg2);overflow:hidden}
 .fw-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.fw-title{font-size:19px;font-weight:700;font-family:var(--font-display);line-height:1.35;color:var(--text)}
+.fw-title{font-size:17px;font-weight:700;font-family:var(--font-display);line-height:1.35;color:var(--text)}
 .fw-client{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}
 .fw-outcome{font-size:14px;color:var(--text2);line-height:1.45;flex:1}
 .fw-footer{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
@@ -312,7 +312,7 @@ input,textarea{font-family:var(--font-sans)}
 .work-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .work-body{padding:14px 16px}
 .work-client{font-size:11px;color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em}
-.work-title{font-size:19px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.35;font-family:var(--font-display)}
+.work-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.35;font-family:var(--font-display)}
 .work-outcome{font-size:14px;color:var(--text2);line-height:1.5;margin-bottom:10px}
 .work-meta{display:flex;justify-content:space-between;align-items:center;padding-top:10px}
 .work-industry{font-size:10px;color:var(--text3)}
@@ -322,7 +322,7 @@ input,textarea{font-family:var(--font-sans)}
 .list-row:hover .list-title{text-decoration:underline;text-underline-offset:2px}
 .list-num{font-size:10px;color:var(--text3);font-family:var(--font-mono);min-width:24px}
 .list-thumb{width:48px;height:36px;background:var(--bg2);border-radius:6px;border:1px solid var(--border);min-width:48px}
-.list-title{font-size:18px;font-weight:500;color:var(--text);margin-bottom:2px}
+.list-title{font-size:16px;font-weight:500;color:var(--text);margin-bottom:2px}
 .list-sub{font-size:13px;color:var(--text2)}
 .list-body{flex:1}
 .list-tags{display:flex;gap:5px;margin-left:auto;padding-left:12px}
@@ -358,7 +358,7 @@ input,textarea{font-family:var(--font-sans)}
 .car-step-title{font-size:11px;font-weight:500;color:var(--text)}
 .car-content{background:transparent;border:none;padding:0;min-height:160px}
 .car-content-label{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:8px}
-.car-content-title{font-size:19px;font-weight:500;color:var(--text);margin-bottom:10px;line-height:1.4}
+.car-content-title{font-size:17px;font-weight:500;color:var(--text);margin-bottom:10px;line-height:1.4}
 .car-content-body{font-size:14px;color:var(--text2);line-height:1.7}
 .asset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .asset-thumb{height:80px;background:var(--bg2);border-radius:var(--r);border:1px dashed var(--border2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3)}
@@ -376,7 +376,7 @@ input,textarea{font-family:var(--font-sans)}
 .project-card:hover{border-color:var(--border2);transform:translateY(-1px)}
 .project-thumb{aspect-ratio:1041/585;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3);overflow:hidden}
 .project-body{padding:14px 16px}
-.project-title{font-size:18px;font-weight:500;color:var(--text);margin-bottom:4px}
+.project-title{font-size:16px;font-weight:500;color:var(--text);margin-bottom:4px}
 .project-desc{font-size:13px;color:var(--text2);line-height:1.55;margin-bottom:10px}
 .project-tags{display:flex;gap:5px;flex-wrap:wrap}
 .project-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);color:var(--text3)}
@@ -388,7 +388,7 @@ input,textarea{font-family:var(--font-sans)}
 .media-thumb{background:var(--bg2);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3);position:relative}
 .media-play{width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px}
 .media-meta{padding:10px 12px}
-.media-title{font-size:18px;font-weight:500;color:var(--text);margin-bottom:3px}
+.media-title{font-size:16px;font-weight:500;color:var(--text);margin-bottom:3px}
 .media-sub{font-size:10px;color:var(--text3)}
 
 /* ── DESIGN PAGE ────────────────────────────────────────────── */
@@ -401,7 +401,7 @@ input,textarea{font-family:var(--font-sans)}
 .writing-row:hover .writing-title{text-decoration:underline;text-underline-offset:2px}
 .writing-date{font-size:10px;font-family:var(--font-mono);color:var(--text3);min-width:60px;padding-top:2px}
 .writing-body{flex:1}
-.writing-title{font-size:19px;font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.4}
+.writing-title{font-size:17px;font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.4}
 .writing-excerpt{font-size:13px;color:var(--text2);line-height:1.55}
 .writing-tags{display:flex;gap:5px;margin-top:6px}
 .writing-tag{font-size:10px;padding:2px 7px;border-radius:10px;border:1px solid var(--border);color:var(--text3)}
@@ -412,7 +412,7 @@ input,textarea{font-family:var(--font-sans)}
 .resume-section-title{font-size:11px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px}
 .resume-entry{padding:10px 0}
 .resume-entry-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3px}
-.resume-entry-title{font-size:18px;font-weight:500;color:var(--text)}
+.resume-entry-title{font-size:16px;font-weight:500;color:var(--text)}
 .resume-entry-date{font-size:10px;font-family:var(--font-mono);color:var(--text3)}
 .resume-entry-sub{font-size:13px;color:var(--text2);margin-bottom:5px}
 .resume-bullets{display:flex;flex-direction:column;gap:4px;margin-top:6px}

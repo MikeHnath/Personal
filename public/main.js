@@ -380,7 +380,7 @@ function applyTheme(mode) {
   if (mode === 'dark') {
     s.setProperty('--bg','#0f1117');
     s.setProperty('--bg2','#181c24');
-    s.setProperty('--bg3','#222730');
+    s.setProperty('--bg3','#2a2f3a');
     s.setProperty('--border','#2a2f3d');
     s.setProperty('--border2','#363c4d');
     s.setProperty('--text','#f2f5fc');
@@ -395,7 +395,7 @@ function applyTheme(mode) {
   } else {
     s.setProperty('--bg','#f7f8fa');
     s.setProperty('--bg2','#edf0f4');
-    s.setProperty('--bg3','#e0e4ea');
+    s.setProperty('--bg3','#d6dae0');
     s.setProperty('--border','#ccd0d8');
     s.setProperty('--border2','#b9bec9');
     s.setProperty('--text','#0f1117');
