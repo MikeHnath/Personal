@@ -371,45 +371,55 @@ updateTimes();
 setInterval(updateTimes, 30000);
 
 // ── THEME SWITCHER ───────────────────────────────────────────
-function setTheme(t) {
+const THEME_KEY = 'mh-theme';
+const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+const resolveTheme = (choice) => choice === 'auto' ? (prefersDark() ? 'dark' : 'light') : choice;
+
+function applyTheme(mode) {
+  const s = document.documentElement.style;
+  if (mode === 'dark') {
+    s.setProperty('--bg','#0f1117');
+    s.setProperty('--bg2','#181c24');
+    s.setProperty('--bg3','#222730');
+    s.setProperty('--border','#2a2f3d');
+    s.setProperty('--border2','#363c4d');
+    s.setProperty('--text','#f2f5fc');
+    s.setProperty('--text2','#adb5c8');
+    s.setProperty('--text3','#6e7a93');
+    s.setProperty('--mobile-menu-bg','rgba(24,28,36,0.7)');
+    s.setProperty('--logo-filter','invert(1)');
+    s.setProperty('--ticker-bg','var(--bg)');
+    s.setProperty('--ticker-logo-filter','grayscale(1) invert(1)');
+    s.setProperty('--ticker-logo-filter-flip','grayscale(1)');
+    s.setProperty('--ticker-logo-filter-boost','grayscale(1) invert(1) contrast(2) brightness(1.65)');
+  } else {
+    s.setProperty('--bg','#f7f8fa');
+    s.setProperty('--bg2','#edf0f4');
+    s.setProperty('--bg3','#e0e4ea');
+    s.setProperty('--border','#ccd0d8');
+    s.setProperty('--border2','#b9bec9');
+    s.setProperty('--text','#0f1117');
+    s.setProperty('--text2','#46505f');
+    s.setProperty('--text3','#7f899a');
+    s.setProperty('--mobile-menu-bg','rgba(237,240,244,0.7)');
+    s.setProperty('--logo-filter','none');
+    s.setProperty('--ticker-bg','var(--bg)');
+    s.setProperty('--ticker-logo-filter','grayscale(1)');
+    s.setProperty('--ticker-logo-filter-flip','grayscale(1) invert(1)');
+    s.setProperty('--ticker-logo-filter-boost','grayscale(1) contrast(2) brightness(0.35)');
+  }
+}
+
+function setTheme(choice) {
+  try { localStorage.setItem(THEME_KEY, choice); } catch (e) {}
   ['light','auto','dark'].forEach(x => {
     const b = document.getElementById('btn-'+x);
-    if (b) b.classList.toggle('on', x === t);
+    if (b) b.classList.toggle('on', x === choice);
   });
-  if (t === 'dark') {
-    document.documentElement.style.setProperty('--bg','#0f1117');
-    document.documentElement.style.setProperty('--bg2','#181c24');
-    document.documentElement.style.setProperty('--bg3','#222730');
-    document.documentElement.style.setProperty('--border','#2a2f3d');
-    document.documentElement.style.setProperty('--border2','#363c4d');
-    document.documentElement.style.setProperty('--text','#f2f5fc');
-    document.documentElement.style.setProperty('--text2','#adb5c8');
-    document.documentElement.style.setProperty('--text3','#6e7a93');
-    document.documentElement.style.setProperty('--mobile-menu-bg','rgba(24,28,36,0.7)');
-    document.documentElement.style.setProperty('--logo-filter','invert(1)');
-    document.documentElement.style.setProperty('--ticker-bg','var(--bg)');
-    document.documentElement.style.setProperty('--ticker-logo-filter','grayscale(1) invert(1)');
-    document.documentElement.style.setProperty('--ticker-logo-filter-flip','grayscale(1)');
-    document.documentElement.style.setProperty('--ticker-logo-filter-boost','grayscale(1) invert(1) contrast(2) brightness(1.65)');
-  } else {
-    document.documentElement.style.setProperty('--bg','#f7f8fa');
-    document.documentElement.style.setProperty('--bg2','#edf0f4');
-    document.documentElement.style.setProperty('--bg3','#e0e4ea');
-    document.documentElement.style.setProperty('--border','#ccd0d8');
-    document.documentElement.style.setProperty('--border2','#b9bec9');
-    document.documentElement.style.setProperty('--text','#0f1117');
-    document.documentElement.style.setProperty('--text2','#46505f');
-    document.documentElement.style.setProperty('--text3','#7f899a');
-    document.documentElement.style.setProperty('--mobile-menu-bg','rgba(237,240,244,0.7)');
-    document.documentElement.style.setProperty('--logo-filter','none');
-    document.documentElement.style.setProperty('--ticker-bg','var(--bg)');
-    document.documentElement.style.setProperty('--ticker-logo-filter','grayscale(1)');
-    document.documentElement.style.setProperty('--ticker-logo-filter-flip','grayscale(1) invert(1)');
-    document.documentElement.style.setProperty('--ticker-logo-filter-boost','grayscale(1) contrast(2) brightness(0.35)');
-  }
+  applyTheme(resolveTheme(choice));
   renderUpdates();
   const ind = document.getElementById('theme-indicator');
-  if (ind) ind.style.transform = `translateX(calc(${({light:0,dark:1,auto:2}[t]??2)} * 100%))`;
+  if (ind) ind.style.transform = `translateX(calc(${({light:0,dark:1,auto:2}[choice]??2)} * 100%))`;
 }
 
 function copyEmail() {
@@ -421,5 +431,14 @@ function copyEmail() {
   });
 }
 
-// init theme indicator position
-(function(){const ind=document.getElementById('theme-indicator');if(ind)ind.style.transform='translateX(calc(2 * 100%))'})();
+// init theme from saved choice (default: auto → system)
+(function(){
+  let saved;
+  try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
+  setTheme(['light','dark','auto'].includes(saved) ? saved : 'auto');
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    let cur;
+    try { cur = localStorage.getItem(THEME_KEY); } catch (e) {}
+    if ((cur || 'auto') === 'auto') applyTheme(prefersDark() ? 'dark' : 'light');
+  });
+})();

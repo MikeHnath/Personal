@@ -31,6 +31,33 @@ const isActive = (prefix: string) => {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script is:inline>
+    (function () {
+      var c;
+      try { c = localStorage.getItem('mh-theme'); } catch (e) {}
+      if (!['light','dark','auto'].includes(c)) c = 'auto';
+      var mode = c === 'auto'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : c;
+      var s = document.documentElement.style;
+      if (mode === 'dark') {
+        s.setProperty('--bg','#0f1117');
+        s.setProperty('--bg2','#181c24');
+        s.setProperty('--bg3','#222730');
+        s.setProperty('--border','#2a2f3d');
+        s.setProperty('--border2','#363c4d');
+        s.setProperty('--text','#f2f5fc');
+        s.setProperty('--text2','#adb5c8');
+        s.setProperty('--text3','#6e7a93');
+        s.setProperty('--mobile-menu-bg','rgba(24,28,36,0.7)');
+        s.setProperty('--logo-filter','invert(1)');
+        s.setProperty('--ticker-bg','var(--bg)');
+        s.setProperty('--ticker-logo-filter','grayscale(1) invert(1)');
+        s.setProperty('--ticker-logo-filter-flip','grayscale(1)');
+        s.setProperty('--ticker-logo-filter-boost','grayscale(1) invert(1) contrast(2) brightness(1.65)');
+      }
+    })();
+  </script>
 </head>
 <body>
 
