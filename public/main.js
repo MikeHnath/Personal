@@ -150,7 +150,6 @@ const updates = [
   },
   {
     img: '/Personal/Icons/pocn-icon.svg',
-    darkInvert: true,
     title: 'Joined POCN as Digital Marketing Manager',
     desc: 'Came on board at POCN, a medical advertising agency specializing in pharma brand engagement with clinical audiences.',
     date: 'May 2022'

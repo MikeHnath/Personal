@@ -459,7 +459,7 @@ input,textarea{font-family:var(--font-sans)}
 
 /* ── SIDEBAR LOGO IMAGE ─────────────────────────────────────── */
 .sidebar-logo-img{height:24px;width:auto;display:block;filter:var(--logo-filter,none)}
-img[src="Icons/github.svg"],img[src="Icons/adobe-portfolio.svg"]{filter:var(--logo-filter,none)}
+img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--logo-filter,none)}
 .nav-mobile-logo{display:none}
 .mobile-topbar{display:none}
 .mobile-menu-close{display:none}
