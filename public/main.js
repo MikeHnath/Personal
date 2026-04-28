@@ -249,7 +249,8 @@ const workItems = [
     title: 'Triax — B2B SaaS demand gen and enterprise sales enablement',
     outcome: '11→55 webinar attendees · Fortune 50 pipeline · Salesforce/Pardot',
     industry: 'B2B SaaS · IoT · Energy',
-    tags: ['GTM', 'Performance']
+    tags: ['GTM', 'Performance'],
+    thumb: '/Personal/Images/Triax/triax-cs-gfx-2.jpg'
   }
 ];
 
