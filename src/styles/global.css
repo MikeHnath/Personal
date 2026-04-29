@@ -386,6 +386,9 @@ input,textarea{font-family:var(--font-sans)}
 .media-figure img{width:100%;height:auto;display:block}
 .media-caption{font-size:11px;color:var(--text3);padding:8px 12px;line-height:1.4}
 .media-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}
+.media-pair-equal{align-items:stretch}
+.media-pair-equal .media-figure{display:flex;flex-direction:column}
+.media-pair-equal .media-figure img{flex:1;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 @media (max-width:640px){
   .media-carousel{grid-template-columns:48px minmax(0,1fr);gap:8px}
   .carousel-thumbs{max-height:320px}
