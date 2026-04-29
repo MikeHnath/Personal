@@ -335,6 +335,24 @@ function switchCar(btn, contentId) {
   if (el) el.style.display = 'block';
 }
 
+// ── MEDIA CAROUSEL ──────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('[data-carousel-track]');
+    const prev = carousel.querySelector('[data-carousel-prev]');
+    const next = carousel.querySelector('[data-carousel-next]');
+    if (!track) return;
+    const step = () => {
+      const slide = track.querySelector('.carousel-slide');
+      if (!slide) return track.clientWidth;
+      const gap = parseInt(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0', 10) || 0;
+      return slide.getBoundingClientRect().width + gap;
+    };
+    if (prev) prev.addEventListener('click', () => track.scrollBy({left: -step(), behavior: 'smooth'}));
+    if (next) next.addEventListener('click', () => track.scrollBy({left: step(), behavior: 'smooth'}));
+  });
+});
+
 // ── MODAL ────────────────────────────────────────────────────────
 function openModal() {
   const el = document.getElementById('modal-overlay');
