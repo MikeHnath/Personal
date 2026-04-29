@@ -13,7 +13,7 @@ const indexHref = '/Personal/case-studies/';
   {prev ? (
     <a class="nav-card" href={prev.href}>
       <div class="nav-card-dir">← Previous</div>
-      <div class="nav-card-title">{prev.navTitle}</div>
+      <div class="nav-card-title">{prev.title}</div>
       <div class="nav-card-tag">{prev.navTag}</div>
     </a>
   ) : (
@@ -26,7 +26,7 @@ const indexHref = '/Personal/case-studies/';
   {next ? (
     <a class="nav-card right" href={next.href}>
       <div class="nav-card-dir">Next →</div>
-      <div class="nav-card-title">{next.navTitle}</div>
+      <div class="nav-card-title">{next.title}</div>
       <div class="nav-card-tag">{next.navTag}</div>
     </a>
   ) : (

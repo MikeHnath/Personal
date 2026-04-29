@@ -8,13 +8,13 @@ interface Props {
 const { study } = Astro.props;
 ---
 <a class="fw-card" href={study.href}>
-  {study.homeThumb ? (
-    <div class="fw-thumb"><img src={study.homeThumb} alt="" /></div>
+  {study.hero.src ? (
+    <div class="fw-thumb"><img src={study.hero.src} alt={study.hero.alt ?? ''} /></div>
   ) : (
     <div class="fw-thumb fw-thumb-empty"></div>
   )}
-  <div class="fw-title">{study.homeTitle}</div>
-  <div class="fw-client">{study.client}</div>
-  <div class="fw-outcome">{study.outcome}</div>
-  <div class="fw-footer"><span class="fw-industry">{study.industry}</span><span class="fw-arrow">→</span></div>
+  <div class="fw-title">{study.title}</div>
+  <div class="fw-client">{study.industry}</div>
+  <div class="fw-outcome">{study.subtitle}</div>
+  <div class="fw-footer"><span class="fw-industry">{study.navTag}</span><span class="fw-arrow">→</span></div>
 </a>
