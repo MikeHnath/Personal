@@ -5,7 +5,7 @@ import Base from '../../layouts/Base.astro';
 
   <div class="section">
     <a class="breadcrumb" href="/Personal/case-studies/">← <span>Case Studies</span> / SIGIL</a>
-    <div class="cs-hero" style="border:0;padding:0;overflow:hidden"><img src="/Personal/Images/Sigil/sigil-3d-board.webp" alt="SIGIL 3D board render" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+    <div class="cs-hero" style="border:0;padding:0;overflow:hidden"><img src="/Personal/Images/Sigil/sigil-box.webp" alt="SIGIL production box" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
     <div class="cs-tags"><span class="cs-tag">Brand Identity</span><span class="cs-tag">Packaging</span><span class="cs-tag">Product Design</span><span class="cs-tag">Tabletop</span></div>
     <div class="cs-title">Zero-to-launch brand and product system for a Kickstarter-funded tabletop game</div>
     <div class="cs-subtitle">Built the visual identity, board system, packaging, and production-ready assets for a strategy dueling game that raised $22K+ on Kickstarter at 303% of goal.</div>
@@ -53,24 +53,162 @@ import Base from '../../layouts/Base.astro';
   </div>
 
   <div class="section">
-    <div class="section-label">Key insight</div>
+    <div class="section-label">What this proves</div>
     <div class="foundation-card">
       <div class="foundation-section-title">Translating mechanics into product.</div>
       <div class="foundation-desc" style="margin-bottom:0">A strong system isn't enough — it has to be legible, intuitive, and physically executable. This project demonstrates how visual design and production thinking turn an abstract concept into a real, manufacturable product.</div>
     </div>
   </div>
 
+  <!-- ── SECTION 1: PROMO VIDEO ─────────────────────────────────── -->
   <div class="section">
-    <div class="section-label">Selected work</div>
-    <div class="media-stack">
-      <figure class="media-figure"><img src="/Personal/Images/Sigil/sigil-3d-board-extras.webp" alt="SIGIL board with opening setup" loading="lazy" /><figcaption class="media-caption">Board with opening setup</figcaption></figure>
-      <div class="media-pair media-pair-equal">
-        <figure class="media-figure"><img src="/Personal/Images/Sigil/sigil-box.webp" alt="SIGIL final production box" loading="lazy" /><figcaption class="media-caption">Final production box</figcaption></figure>
-        <figure class="media-figure"><img src="/Personal/Images/Sigil/sigil-delux-box.webp" alt="SIGIL collectors edition wooden box" loading="lazy" /><figcaption class="media-caption">Collectors edition wooden box</figcaption></figure>
+    <div class="section-label">Promo</div>
+    <div class="media-video">
+      <video src="/Personal/Images/Sigil/sigil-teaser-promo.mp4" poster="/Personal/Images/Sigil/sigil-box.webp" controls playsinline preload="metadata"></video>
+    </div>
+  </div>
+
+  <!-- ── SECTION 2: 3D LOGO ─────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Brand Identity</div>
+    <div class="sigil-logo-wrap">
+      <img src="/Personal/Images/Sigil/sigil-3d-logo.png" alt="SIGIL 3D rendered logo" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- ── SECTION 3: COLOR & TYPOGRAPHY ──────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Color &amp; Typography</div>
+    <div class="brand-system">
+      <div class="brand-swatches">
+        <div class="brand-swatch">
+          <div class="swatch-chip" style="background:#3658A8"></div>
+          <div class="swatch-name">Arcane Blue</div>
+          <div class="swatch-meta">#3658A8</div>
+          <div class="swatch-meta">PMS 7455 C</div>
+        </div>
+        <div class="brand-swatch">
+          <div class="swatch-chip" style="background:#EF3E32"></div>
+          <div class="swatch-name">Sigil Red</div>
+          <div class="swatch-meta">#EF3E32</div>
+          <div class="swatch-meta">PMS 179 C</div>
+        </div>
+        <div class="brand-swatch">
+          <div class="swatch-chip" style="background:#2B201D"></div>
+          <div class="swatch-name">Dark Foundation</div>
+          <div class="swatch-meta">#2B201D</div>
+          <div class="swatch-meta">PMS 440 C</div>
+        </div>
       </div>
-      <div class="media-video">
-        <video src="/Personal/Images/Sigil/sigil-teaser-promo.mp4" controls playsinline preload="metadata"></video>
+      <div class="brand-type">
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-name">1651 Alchemy</div>
+            <div class="type-role">Primary display</div>
+          </div>
+          <div class="type-sample type-sample-display">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />1234567890</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-name">Ten Oldstyle Medium</div>
+            <div class="type-role">Secondary</div>
+          </div>
+          <div class="type-sample type-sample-oldstyle">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />1234567890</div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-name">Chivo</div>
+            <div class="type-role">Body / UI</div>
+          </div>
+          <div class="type-sample type-sample-chivo">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />1234567890</div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 4: PRODUCT SYSTEM (2x2) ────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Product System</div>
+    <div class="sigil-grid-2x2">
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-ux-layout.jpg" alt="SIGIL board UX layout" loading="lazy" />
+        <figcaption class="media-caption">Board UX layout — information architecture</figcaption>
+      </figure>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-3d-board.webp" alt="Final SIGIL board with spell zones and pieces" loading="lazy" />
+        <figcaption class="media-caption">Final board with spell zones and pieces</figcaption>
+      </figure>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-box.webp" alt="SIGIL production box" loading="lazy" />
+        <figcaption class="media-caption">Production box</figcaption>
+      </figure>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-delux-box.webp" alt="SIGIL collector's edition box" loading="lazy" />
+        <figcaption class="media-caption">Collector's edition</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ── SECTION 5: SPELL COMPONENTS (3-col) ────────────────────── -->
+  <div class="section">
+    <div class="section-label">Spell Components</div>
+    <div class="sigil-grid-3col">
+      <figure class="media-figure spell-figure">
+        <img src="/Personal/Images/Sigil/sigil-spell-1stone.png" alt="SIGIL Comet spell, 1-stone" loading="lazy" />
+        <figcaption class="media-caption">Comet (1-stone)</figcaption>
+      </figure>
+      <figure class="media-figure spell-figure">
+        <img src="/Personal/Images/Sigil/sigil-spell-3stone.png" alt="SIGIL Fireblast spell, 3-stone" loading="lazy" />
+        <figcaption class="media-caption">Fireblast (3-stone)</figcaption>
+      </figure>
+      <figure class="media-figure spell-figure">
+        <img src="/Personal/Images/Sigil/sigil-spell-5stone.png" alt="SIGIL Starfall spell, 5-stone" loading="lazy" />
+        <figcaption class="media-caption">Starfall (5-stone)</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ── SECTION 6: LIFESTYLE CAROUSEL ──────────────────────────── -->
+  <div class="section">
+    <div class="section-label">In Play</div>
+    <div class="sigil-carousel" data-sigil-carousel>
+      <div class="sigil-carousel-main">
+        <button class="sigil-carousel-arrow prev" type="button" aria-label="Previous slide" data-sigil-prev>‹</button>
+        <div class="sigil-carousel-track" data-sigil-track>
+          <div class="sigil-carousel-slide active"><img src="/Personal/Images/Sigil/sigil-lifestyle-stonecloseup.jpg" alt="SIGIL stones close-up" loading="lazy" /></div>
+          <div class="sigil-carousel-slide"><img src="/Personal/Images/Sigil/sigil-lifestyle-bothplayers.jpg" alt="Two players mid-game" loading="lazy" /></div>
+          <div class="sigil-carousel-slide"><img src="/Personal/Images/Sigil/sigil-lifestyle-game-move.jpg" alt="Player executing a move" loading="lazy" /></div>
+          <div class="sigil-carousel-slide"><img src="/Personal/Images/Sigil/sigil-lifestyle-boardsetup.jpg" alt="Board mid-setup" loading="lazy" /></div>
+          <div class="sigil-carousel-slide"><img src="/Personal/Images/Sigil/sigil-lifestyle-skyview.jpg" alt="Overhead board view" loading="lazy" /></div>
+        </div>
+        <button class="sigil-carousel-arrow next" type="button" aria-label="Next slide" data-sigil-next>›</button>
+      </div>
+      <div class="sigil-carousel-thumbs">
+        <button class="sigil-thumb active" type="button" data-sigil-index="0" aria-label="Show slide 1"><img src="/Personal/Images/Sigil/sigil-lifestyle-stonecloseup.jpg" alt="" loading="lazy" /></button>
+        <button class="sigil-thumb" type="button" data-sigil-index="1" aria-label="Show slide 2"><img src="/Personal/Images/Sigil/sigil-lifestyle-bothplayers.jpg" alt="" loading="lazy" /></button>
+        <button class="sigil-thumb" type="button" data-sigil-index="2" aria-label="Show slide 3"><img src="/Personal/Images/Sigil/sigil-lifestyle-game-move.jpg" alt="" loading="lazy" /></button>
+        <button class="sigil-thumb" type="button" data-sigil-index="3" aria-label="Show slide 4"><img src="/Personal/Images/Sigil/sigil-lifestyle-boardsetup.jpg" alt="" loading="lazy" /></button>
+        <button class="sigil-thumb" type="button" data-sigil-index="4" aria-label="Show slide 5"><img src="/Personal/Images/Sigil/sigil-lifestyle-skyview.jpg" alt="" loading="lazy" /></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 7: KICKSTARTER ─────────────────────────────────── -->
+  <div class="section">
+    <div class="section-label">Kickstarter</div>
+    <figure class="media-figure">
+      <img src="/Personal/Images/Sigil/sigil-kickstarter-graphic.png" alt="SIGIL Kickstarter campaign page" loading="lazy" />
+      <figcaption class="media-caption">Campaign page design — brand system applied by Pine Island Games team</figcaption>
+    </figure>
+    <div class="sigil-bonus-stack">
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-box-back.webp" alt="SIGIL box back panel" loading="lazy" />
+        <figcaption class="media-caption">Box back — Graphics designed by Michael Hnath</figcaption>
+      </figure>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-box-front.jpg" alt="SIGIL box dieline" loading="lazy" />
+        <figcaption class="media-caption">Box dieline — production-ready flat layout</figcaption>
+      </figure>
     </div>
   </div>
 
@@ -84,3 +222,97 @@ import Base from '../../layouts/Base.astro';
   </div>
 
 </Base>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+  /* ── 3D LOGO ─────────────────────────────────────────────────── */
+  .sigil-logo-wrap{display:flex;justify-content:center}
+  .sigil-logo-wrap img{width:65%;max-width:560px;height:auto;display:block}
+
+  /* ── BRAND SYSTEM ────────────────────────────────────────────── */
+  .brand-system{display:flex;flex-direction:column;gap:32px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px}
+  .brand-swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .brand-swatch{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .swatch-chip{width:100%;aspect-ratio:1/1;max-width:160px;border-radius:50%;border:1px solid var(--border)}
+  .swatch-name{font-size:13px;font-weight:600;color:var(--text);margin-top:4px}
+  .swatch-meta{font-family:var(--font-mono);font-size:10px;color:var(--text3);letter-spacing:.04em}
+
+  .brand-type{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--border);padding-top:24px}
+  .type-row{display:grid;grid-template-columns:minmax(140px,180px) minmax(0,1fr);gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--border)}
+  .type-row:last-child{border-bottom:none;padding-bottom:0}
+  .type-meta{display:flex;flex-direction:column;gap:2px}
+  .type-name{font-size:13px;font-weight:600;color:var(--text)}
+  .type-role{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3)}
+  .type-sample{font-size:18px;line-height:1.3;color:var(--text);word-break:break-word}
+  .type-sample-display{font-family:'Playfair Display',serif;font-weight:600;font-size:22px;letter-spacing:.01em}
+  .type-sample-oldstyle{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px}
+  .type-sample-chivo{font-family:'Chivo',sans-serif;font-weight:400;font-size:16px}
+
+  /* ── PRODUCT SYSTEM 2x2 ──────────────────────────────────────── */
+  .sigil-grid-2x2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:14px}
+  .sigil-grid-2x2 .media-figure{display:flex;flex-direction:column}
+  .sigil-grid-2x2 .media-figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;flex:1}
+
+  /* ── SPELL COMPONENTS 3-col ──────────────────────────────────── */
+  .sigil-grid-3col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .spell-figure{background:var(--bg2)}
+  .spell-figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;padding:14px}
+
+  /* ── LIFESTYLE CAROUSEL ──────────────────────────────────────── */
+  .sigil-carousel{display:flex;flex-direction:column;gap:10px}
+  .sigil-carousel-main{position:relative;background:var(--bg2);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/10}
+  .sigil-carousel-track{position:relative;width:100%;height:100%}
+  .sigil-carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity 220ms ease;pointer-events:none}
+  .sigil-carousel-slide.active{opacity:1;pointer-events:auto}
+  .sigil-carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
+  .sigil-carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;transition:background var(--transition),border-color var(--transition);padding:0}
+  .sigil-carousel-arrow:hover{background:var(--bg2);border-color:var(--border2)}
+  .sigil-carousel-arrow.prev{left:10px}
+  .sigil-carousel-arrow.next{right:10px}
+  .sigil-carousel-thumbs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+  .sigil-thumb{padding:0;background:var(--bg2);border:2px solid transparent;border-radius:var(--r);overflow:hidden;cursor:pointer;aspect-ratio:1/1;opacity:.55;transition:border-color var(--transition),opacity var(--transition)}
+  .sigil-thumb:hover{opacity:.85}
+  .sigil-thumb.active{border-color:var(--text);opacity:1}
+  .sigil-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ── BONUS STACK ─────────────────────────────────────────────── */
+  .sigil-bonus-stack{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width:640px){
+    .sigil-logo-wrap img{width:80%}
+    .brand-swatches{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .swatch-chip{max-width:100%}
+    .type-row{grid-template-columns:1fr;gap:6px}
+    .sigil-grid-2x2{grid-template-columns:1fr}
+    .sigil-grid-3col{grid-template-columns:1fr}
+    .sigil-carousel-main{aspect-ratio:4/3}
+    .sigil-carousel-thumbs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+  }
+</style>
+
+<script is:inline>
+  (function(){
+    document.querySelectorAll('[data-sigil-carousel]').forEach(function(root){
+      var slides = root.querySelectorAll('.sigil-carousel-slide');
+      var thumbs = root.querySelectorAll('.sigil-thumb');
+      var prev = root.querySelector('[data-sigil-prev]');
+      var next = root.querySelector('[data-sigil-next]');
+      var idx = 0;
+      function show(i){
+        idx = (i + slides.length) % slides.length;
+        slides.forEach(function(s, j){ s.classList.toggle('active', j === idx); });
+        thumbs.forEach(function(t, j){ t.classList.toggle('active', j === idx); });
+      }
+      if (prev) prev.addEventListener('click', function(){ show(idx - 1); });
+      if (next) next.addEventListener('click', function(){ show(idx + 1); });
+      thumbs.forEach(function(t){
+        t.addEventListener('click', function(){
+          var i = parseInt(t.getAttribute('data-sigil-index'), 10) || 0;
+          show(i);
+        });
+      });
+    });
+  })();
+</script>
