@@ -1,5 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
+import FeaturedWorkCard from '../components/FeaturedWorkCard.astro';
+import { caseStudies } from '../data/caseStudies';
+
+const experienceWork = caseStudies.slice(0, 2);
 ---
 <Base title="Experience — Mike Hnath">
 
@@ -37,7 +41,9 @@ import Base from '../layouts/Base.astro';
       <div class="section-label" style="margin-bottom:0">Featured case studies</div>
       <a class="show-more" href="/Personal/case-studies/" style="margin-top:0">View all</a>
     </div>
-    <div id="experience-work"></div>
+    <div id="experience-work" class="exp-work-grid">
+      {experienceWork.map((study) => <FeaturedWorkCard study={study} />)}
+    </div>
   </div>
 
   <div class="section" style="padding-top:25px">

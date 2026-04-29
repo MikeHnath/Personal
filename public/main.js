@@ -19,12 +19,6 @@ function nav(pageId) {
   closeMobileMenu();
 }
 
-function openCase(slug) {
-  const slugMap = { kh: 'kraft-heinz' };
-  const final = slugMap[slug] || slug;
-  window.location.href = BASE + '/case-studies/' + final + '/';
-}
-
 // Keyboard shortcuts 1–9
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -199,100 +193,6 @@ function renderUpdates() {
   }
 }
 renderUpdates();
-
-// ── WORK ITEMS ───────────────────────────────────────────────────
-const workItems = [
-  {
-    slug: 'scandalous',
-    client: 'THIS · 9-year client',
-    title: 'Scandalous — Brand system, packaging, and multi-state GTM',
-    outcome: '$500K+ raised · 11–13 SKUs · 5 states · anchor retainer',
-    industry: 'Cannabis · Regulated consumer',
-    tags: ['Brand', 'Regulated CPG']
-  },
-  {
-    slug: 'pocn',
-    client: 'POCN · 2022–2024',
-    title: 'Pharma media management — DSP migration and campaign ops at scale',
-    outcome: '$1.7M+ managed · 30 concurrent campaigns · 50+ pharma therapies',
-    industry: 'Healthcare · Pharma',
-    tags: ['Performance', 'Healthcare'],
-    thumb: '/Personal/Images/POCN/pocn-cs-gfx-2.jpg'
-  },
-  {
-    slug: 'sigil',
-    client: 'Pine Island Games · 2023',
-    title: 'SIGIL — Zero-to-launch GTM for original IP',
-    outcome: '$22K+ crowdfunded · full positioning + packaging + campaign',
-    industry: 'Consumer · Gaming',
-    tags: ['GTM', 'Brand']
-  },
-  {
-    slug: 'kh',
-    client: 'Kraft Heinz via Imaginary · 2020–2021',
-    title: 'Kraft Heinz — Digital shelf and eComm creative',
-    outcome: '~8% Amazon lift · 800+ assets · 30 brands · 15 A+ pages',
-    industry: 'CPG · eCommerce',
-    tags: ['Design', 'eComm']
-  },
-  {
-    slug: 'infinity',
-    client: 'Infinity Lifestyle Brands · 2018–2019',
-    title: 'Infinity — Licensed CPG brand direction and packaging at scale',
-    outcome: '$10M+ licensing ecosystem · 50+ SKUs · Disney, MLBPA, Viacom',
-    industry: 'CPG · Licensed consumer',
-    tags: ['Brand', 'Licensing']
-  },
-  {
-    slug: null,
-    client: 'Triax Technologies · 2021–2022',
-    title: 'Triax — B2B SaaS demand gen and enterprise sales enablement',
-    outcome: '11→55 webinar attendees · Fortune 50 pipeline · Salesforce/Pardot',
-    industry: 'B2B SaaS · IoT · Energy',
-    tags: ['GTM', 'Performance'],
-    thumb: '/Personal/Images/Triax/triax-cs-gfx-2.jpg'
-  }
-];
-
-function renderFeaturedWork() {
-  const el = document.getElementById('home-work');
-  if (!el) return;
-  el.className = 'home-work-grid';
-  el.innerHTML = workItems.slice(0, 3).map(w => {
-    const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
-    const thumb = w.thumb
-      ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>`
-      : `<div class="fw-thumb fw-thumb-empty"></div>`;
-    return `<div class="fw-card" onclick="${action}">
-      ${thumb}
-      <div class="fw-title">${w.title}</div>
-      <div class="fw-client">${w.client}</div>
-      <div class="fw-outcome">${w.outcome}</div>
-      <div class="fw-footer"><span class="fw-industry">${w.industry}</span><span class="fw-arrow">→</span></div>
-    </div>`;
-  }).join('');
-}
-renderFeaturedWork();
-
-(function() {
-  const el = document.getElementById('experience-work');
-  if (!el) return;
-  el.className = 'exp-work-grid';
-  el.innerHTML = workItems.slice(0, 2).map(w => {
-    const action = w.slug ? `openCase('${w.slug}')` : `nav('work')`;
-    const thumb = w.thumb
-      ? `<div class="fw-thumb"><img src="${w.thumb}" alt="" /></div>`
-      : `<div class="fw-thumb fw-thumb-empty"></div>`;
-    return `<div class="fw-card" onclick="${action}">
-      ${thumb}
-      <div class="fw-title">${w.title}</div>
-      <div class="fw-client">${w.client}</div>
-      <div class="fw-outcome">${w.outcome}</div>
-      <div class="fw-footer"><span class="fw-industry">${w.industry}</span><span class="fw-arrow">→</span></div>
-    </div>`;
-  }).join('');
-})();
-
 
 // ── GREETING ─────────────────────────────────────────────────────
 (function() {

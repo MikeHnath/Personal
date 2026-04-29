@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
 ---
 <Base title="Kraft Heinz / MiO — Case Study">
 
@@ -100,10 +101,7 @@ import Base from '../../layouts/Base.astro';
   <div class="section" style="border-bottom:none">
     <div style="font-size:11px;color:var(--text3);font-style:italic;line-height:1.55;max-width:650px;margin-bottom:24px">Sales lift based on internal Kraft Heinz reporting, YoY same-period for MiO. Brand Store performance based on Amazon Brand Analytics. Contribution tied to the digital shelf redesign window; cannot isolate from pricing, media spend, or competitive dynamics.</div>
     <hr class="cs-rule" />
-    <div class="next-prev">
-      <a class="nav-card" href="/Personal/case-studies/sigil/"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></a>
-      <a class="nav-card right" href="/Personal/case-studies/triax/"><div class="nav-card-dir">Next →</div><div class="nav-card-title">Triax — B2B SaaS demand gen</div><div class="nav-card-tag">B2B SaaS · Demand Gen</div></a>
-    </div>
+    <CaseStudyNav slug="kraft-heinz" />
     <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
   </div>
 

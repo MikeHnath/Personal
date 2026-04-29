@@ -1,0 +1,23 @@
+---
+import type { CaseStudy } from '../data/caseStudies';
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+const tagAttr = study.tags.join(',');
+---
+<a class="work-card" data-tags={tagAttr} href={study.href}>
+  {study.cardThumb.src ? (
+    <div class="work-thumb" style="padding:0"><img src={study.cardThumb.src} alt={study.cardThumb.alt ?? ''} /></div>
+  ) : (
+    <div class="work-thumb">{study.cardThumb.placeholder}</div>
+  )}
+  <div class="work-body">
+    <div class="work-client">{study.client}</div>
+    <div class="work-title">{study.cardTitle}</div>
+    <div class="work-outcome">{study.outcome}</div>
+    <div class="work-meta"><span class="work-industry">{study.industry}</span><span class="work-arrow">→</span></div>
+  </div>
+</a>

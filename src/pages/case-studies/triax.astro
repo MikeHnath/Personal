@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
 ---
 <Base title="Triax — Case Study">
 
@@ -54,10 +55,7 @@ import Base from '../../layouts/Base.astro';
 
   <div class="section" style="border-bottom:none">
     <hr class="cs-rule" />
-    <div class="next-prev">
-      <a class="nav-card" href="/Personal/case-studies/kraft-heinz/"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">Kraft Heinz — Digital shelf</div><div class="nav-card-tag">Design · CPG</div></a>
-      <a class="nav-card right" href="/Personal/case-studies/infinity/"><div class="nav-card-dir">Next →</div><div class="nav-card-title">Infinity — Licensed CPG</div><div class="nav-card-tag">Brand · Design</div></a>
-    </div>
+    <CaseStudyNav slug="triax" />
     <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
   </div>
 

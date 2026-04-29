@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
 ---
 <Base title="Infinity — Case Study">
 
@@ -52,10 +53,7 @@ import Base from '../../layouts/Base.astro';
   </div>
   <div class="section" style="border-bottom:none">
     <hr class="cs-rule" />
-    <div class="next-prev">
-      <a class="nav-card" href="/Personal/case-studies/kraft-heinz/"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">Kraft Heinz — Digital shelf</div><div class="nav-card-tag">Design · eComm</div></a>
-      <a class="nav-card right" href="/Personal/case-studies/ark/"><div class="nav-card-dir">Next →</div><div class="nav-card-title">Ark of the Covenant — Independent artist</div><div class="nav-card-tag">Brand · GTM</div></a>
-    </div>
+    <CaseStudyNav slug="infinity" />
     <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
   </div>
 

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
 ---
 <Base title="SIGIL — Case Study">
 
@@ -160,16 +161,6 @@ import Base from '../../layouts/Base.astro';
           <figcaption class="media-caption">Starfall (5-stone)</figcaption>
         </figure>
       </div>
-      <div class="sigil-bonus-stack">
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-box-back.webp" alt="SIGIL box back panel" loading="lazy" />
-          <figcaption class="media-caption">Box back — Graphics designed by Michael Hnath</figcaption>
-        </figure>
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-box-front.jpg" alt="SIGIL box dieline" loading="lazy" />
-          <figcaption class="media-caption">Box dieline — production-ready flat layout</figcaption>
-        </figure>
-      </div>
       <div class="sigil-grid-2x2">
         <figure class="media-figure">
           <img src="/Personal/Images/Sigil/sigil-box.webp" alt="SIGIL production box" loading="lazy" />
@@ -211,18 +202,33 @@ import Base from '../../layouts/Base.astro';
   <!-- ── SECTION 7: KICKSTARTER ─────────────────────────────────── -->
   <div class="section">
     <div class="section-label">Kickstarter</div>
-    <figure class="media-figure">
-      <img src="/Personal/Images/Sigil/sigil-kickstarter-graphic.png" alt="SIGIL Kickstarter campaign page" loading="lazy" />
-      <figcaption class="media-caption">Campaign page design — brand system applied by Pine Island Games team</figcaption>
-    </figure>
+    <div class="phone-mockup">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-scroll-track">
+            <img src="/Personal/Images/Sigil/sigil-kickstarter-graphic.png" alt="SIGIL Kickstarter campaign page" loading="lazy" />
+            <img src="/Personal/Images/Sigil/sigil-kickstarter-graphic.png" alt="" aria-hidden="true" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="phone-caption">Campaign page design — brand system applied by Pine Island Games team</div>
+    </div>
+    <div class="sigil-grid-2x2 sigil-box-layouts">
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-box-front.jpg" alt="SIGIL box dieline" loading="lazy" />
+        <figcaption class="media-caption">Box dieline — production-ready flat layout</figcaption>
+      </figure>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-box-back.webp" alt="SIGIL box back panel" loading="lazy" />
+        <figcaption class="media-caption">Box back — Graphics Designed by Michael Hnath</figcaption>
+      </figure>
+    </div>
   </div>
 
   <div class="section" style="border-bottom:none">
     <hr class="cs-rule" />
-    <div class="next-prev">
-      <a class="nav-card" href="/Personal/case-studies/pocn/"><div class="nav-card-dir">← Previous</div><div class="nav-card-title">POCN — Pharma media</div><div class="nav-card-tag">Performance · Healthcare</div></a>
-      <a class="nav-card right" href="/Personal/case-studies/kraft-heinz/"><div class="nav-card-dir">Next →</div><div class="nav-card-title">Kraft Heinz — Digital shelf</div><div class="nav-card-tag">Design · CPG</div></a>
-    </div>
+    <CaseStudyNav slug="sigil" />
     <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
   </div>
 
@@ -285,6 +291,24 @@ import Base from '../../layouts/Base.astro';
   /* ── BONUS STACK ─────────────────────────────────────────────── */
   .sigil-bonus-stack{display:flex;flex-direction:column;gap:14px}
 
+  /* ── PHONE MOCKUP ────────────────────────────────────────────── */
+  .phone-mockup{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:28px}
+  .phone-frame{position:relative;width:360px;max-width:90%;aspect-ratio:9/19;background:#0a0a0a;border-radius:42px;padding:14px;box-shadow:0 0 0 2px #1a1a1a, 0 24px 60px rgba(0,0,0,.35)}
+  .phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:96px;height:22px;background:#0a0a0a;border-radius:0 0 14px 14px;z-index:2}
+  .phone-screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--bg2)}
+  .phone-scroll-track{display:flex;flex-direction:column;animation:phone-scroll 36s linear infinite;will-change:transform}
+  .phone-scroll-track:hover{animation-play-state:paused}
+  .phone-scroll-track img{width:100%;height:auto;display:block}
+  .phone-caption{font-size:11px;color:var(--text3);text-align:center;letter-spacing:.04em;text-transform:uppercase}
+  @keyframes phone-scroll{
+    0%{transform:translateY(0)}
+    100%{transform:translateY(-50%)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .phone-scroll-track{animation:none}
+    .phone-screen{overflow-y:auto}
+  }
+
   /* ── RESPONSIVE ──────────────────────────────────────────────── */
   @media (max-width:640px){
     .sigil-logo-wrap img{width:80%}
@@ -295,6 +319,8 @@ import Base from '../../layouts/Base.astro';
     .sigil-grid-3col{grid-template-columns:1fr}
     .sigil-carousel-main{aspect-ratio:4/3}
     .sigil-carousel-thumbs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+    .phone-frame{width:300px;border-radius:36px;padding:12px}
+    .phone-screen{border-radius:26px}
   }
 </style>
 

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
 ---
 <Base title="Scandalous — Case Study">
 
@@ -69,10 +70,7 @@ import Base from '../../layouts/Base.astro';
   </div>
   <div class="section" style="border-bottom:none">
     <hr class="cs-rule" />
-    <div class="next-prev">
-      <a class="nav-card" href="/Personal/case-studies/pocn/"><div class="nav-card-dir">Next →</div><div class="nav-card-title">POCN — Pharma media at scale</div><div class="nav-card-tag">Performance · Healthcare</div></a>
-      <a class="nav-card right" href="/Personal/case-studies/sigil/"><div class="nav-card-dir">Next →</div><div class="nav-card-title">SIGIL — GTM for original IP</div><div class="nav-card-tag">GTM · Brand</div></a>
-    </div>
+    <CaseStudyNav slug="scandalous" />
     <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
   </div>
 

@@ -1,0 +1,38 @@
+---
+import { getCaseStudyNeighbors } from '../data/caseStudies';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const { prev, next } = getCaseStudyNeighbors(slug);
+---
+<div class="next-prev">
+  {prev ? (
+    <a class="nav-card" href={prev.href}>
+      <div class="nav-card-dir">← Previous</div>
+      <div class="nav-card-title">{prev.navTitle}</div>
+      <div class="nav-card-tag">{prev.navTag}</div>
+    </a>
+  ) : (
+    <a class="nav-card" href="/Personal/case-studies/">
+      <div class="nav-card-dir">All case studies</div>
+      <div class="nav-card-title">Back to case studies</div>
+      <div class="nav-card-tag">See all projects</div>
+    </a>
+  )}
+  {next ? (
+    <a class="nav-card right" href={next.href}>
+      <div class="nav-card-dir">Next →</div>
+      <div class="nav-card-title">{next.navTitle}</div>
+      <div class="nav-card-tag">{next.navTag}</div>
+    </a>
+  ) : (
+    <a class="nav-card right" href="/Personal/case-studies/">
+      <div class="nav-card-dir">All case studies</div>
+      <div class="nav-card-title">Back to case studies</div>
+      <div class="nav-card-tag">See all projects</div>
+    </a>
+  )}
+</div>
