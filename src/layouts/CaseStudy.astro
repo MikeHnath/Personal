@@ -1,0 +1,26 @@
+---
+import Base from './Base.astro';
+import CaseStudyNav from '../components/CaseStudyNav.astro';
+import { getCaseStudy } from '../data/caseStudies';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const cs = getCaseStudy(slug);
+if (!cs) throw new Error(`Unknown case study slug: ${slug}`);
+---
+<Base title={cs.pageTitle}>
+  <div class="section">
+    <a class="breadcrumb" href="/Personal/case-studies/">← <span>Case Studies</span> / {cs.breadcrumb}</a>
+    <slot name="header" />
+  </div>
+  <slot />
+  <div class="section" style="border-bottom:none">
+    <slot name="footer-prelude" />
+    <hr class="cs-rule" />
+    <CaseStudyNav slug={slug} />
+    <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
+  </div>
+</Base>

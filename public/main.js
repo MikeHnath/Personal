@@ -5,7 +5,6 @@ const BASE = '/Personal';
 const PAGE_PATHS = {
   home: BASE + '/',
   about: BASE + '/about/',
-  blog: BASE + '/writing/',
   writing: BASE + '/writing/',
   experience: BASE + '/experience/',
   work: BASE + '/case-studies/',
@@ -157,10 +156,10 @@ const updates = [
 ];
 
 function renderUpdates() {
+  const isDark = document.documentElement.dataset.theme === 'dark';
   function thumb(u) {
     if (u.emoji) return `<div class="update-thumb" style="display:flex;align-items:center;justify-content:center;font-size:28px">${u.emoji}</div>`;
     const style = u.thumbBg ? ` style="background:${u.thumbBg};border-radius:6px;padding:4px"` : '';
-    const isDark = getComputedStyle(document.documentElement).getPropertyValue('--logo-filter').trim() === 'invert(1)';
     const src = (u.darkImg && isDark) ? u.darkImg : u.img;
     const filter = u.darkInvert ? 'filter:var(--logo-filter,none)' : u.lightInvert ? `filter:${isDark ? 'none' : 'invert(1)'}` : '';
     const sz = u.thumbSize ? `width:${u.thumbSize}px;height:${u.thumbSize}px;` : '';
@@ -235,8 +234,9 @@ function switchCar(btn, contentId) {
   if (el) el.style.display = 'block';
 }
 
-// ── MEDIA CAROUSEL ──────────────────────────────────────────────
+// ── MEDIA CAROUSELS ─────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  // Scroll-snap carousel (vertical thumbs, square slides) — used on Kraft Heinz
   document.querySelectorAll('[data-carousel]').forEach(carousel => {
     const track = carousel.querySelector('[data-carousel-track]');
     const prev = carousel.querySelector('[data-carousel-prev]');
@@ -271,6 +271,27 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollT = setTimeout(() => setActive(currentIndex()), 80);
     });
   });
+
+  // Opacity-fade carousel (row thumbs, wide slides) — used on SIGIL
+  document.querySelectorAll('[data-sigil-carousel]').forEach(root => {
+    const slides = root.querySelectorAll('.sigil-carousel-slide');
+    const thumbs = root.querySelectorAll('.sigil-thumb');
+    const prev = root.querySelector('[data-sigil-prev]');
+    const next = root.querySelector('[data-sigil-next]');
+    let idx = 0;
+    const show = (i) => {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, j) => s.classList.toggle('active', j === idx));
+      thumbs.forEach((t, j) => t.classList.toggle('active', j === idx));
+    };
+    if (prev) prev.addEventListener('click', () => show(idx - 1));
+    if (next) next.addEventListener('click', () => show(idx + 1));
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => {
+        show(parseInt(t.dataset.sigilIndex, 10) || 0);
+      });
+    });
+  });
 });
 
 // ── MODAL ────────────────────────────────────────────────────────
@@ -298,15 +319,17 @@ function toggleChip(el) { el.classList.toggle('selected'); }
 
 // ── TIME ─────────────────────────────────────────────────────────
 function updateTimes() {
+  const el = document.getElementById('about-time');
+  if (!el) return;
   const et = new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
   let h = et.getHours(), m = et.getMinutes(), ampm = h >= 12 ? 'PM' : 'AM';
   h = h % 12 || 12;
-  const t = h + ':' + String(m).padStart(2,'0') + ' ' + ampm;
-  const el = document.getElementById('about-time');
-  if (el) el.textContent = t;
+  el.textContent = h + ':' + String(m).padStart(2,'0') + ' ' + ampm;
 }
-updateTimes();
-setInterval(updateTimes, 30000);
+if (document.getElementById('about-time')) {
+  updateTimes();
+  setInterval(updateTimes, 30000);
+}
 
 // ── THEME SWITCHER ───────────────────────────────────────────
 const THEME_KEY = 'mh-theme';
@@ -314,38 +337,7 @@ const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matc
 const resolveTheme = (choice) => choice === 'auto' ? (prefersDark() ? 'dark' : 'light') : choice;
 
 function applyTheme(mode) {
-  const s = document.documentElement.style;
-  if (mode === 'dark') {
-    s.setProperty('--bg','#0f1117');
-    s.setProperty('--bg2','#181c24');
-    s.setProperty('--bg3','#2a2f3a');
-    s.setProperty('--border','#2a2f3d');
-    s.setProperty('--border2','#363c4d');
-    s.setProperty('--text','#f2f5fc');
-    s.setProperty('--text2','#adb5c8');
-    s.setProperty('--text3','#6e7a93');
-    s.setProperty('--mobile-menu-bg','rgba(24,28,36,0.7)');
-    s.setProperty('--logo-filter','invert(1)');
-    s.setProperty('--ticker-bg','var(--bg)');
-    s.setProperty('--ticker-logo-filter','grayscale(1) invert(1)');
-    s.setProperty('--ticker-logo-filter-flip','grayscale(1)');
-    s.setProperty('--ticker-logo-filter-boost','grayscale(1) invert(1) contrast(2) brightness(1.65)');
-  } else {
-    s.setProperty('--bg','#f7f8fa');
-    s.setProperty('--bg2','#edf0f4');
-    s.setProperty('--bg3','#d6dae0');
-    s.setProperty('--border','#ccd0d8');
-    s.setProperty('--border2','#b9bec9');
-    s.setProperty('--text','#0f1117');
-    s.setProperty('--text2','#46505f');
-    s.setProperty('--text3','#7f899a');
-    s.setProperty('--mobile-menu-bg','rgba(237,240,244,0.7)');
-    s.setProperty('--logo-filter','none');
-    s.setProperty('--ticker-bg','var(--bg)');
-    s.setProperty('--ticker-logo-filter','grayscale(1)');
-    s.setProperty('--ticker-logo-filter-flip','grayscale(1) invert(1)');
-    s.setProperty('--ticker-logo-filter-boost','grayscale(1) contrast(2) brightness(0.35)');
-  }
+  document.documentElement.dataset.theme = mode;
 }
 
 function setTheme(choice) {
@@ -360,9 +352,9 @@ function setTheme(choice) {
   if (ind) ind.style.transform = `translateX(calc(${({light:0,dark:1,auto:2}[choice]??2)} * 100%))`;
 }
 
-function copyEmail() {
+function copyEmail(e) {
+  const btn = e.currentTarget;
   navigator.clipboard.writeText('hnath928@gmail.com').then(() => {
-    const btn = event.target;
     const orig = btn.textContent;
     btn.textContent = 'Copied ✓';
     setTimeout(() => btn.textContent = orig, 1800);

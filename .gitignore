@@ -16,3 +16,6 @@ dist/
 # Editor
 .vscode/
 .idea/
+
+# Source files (working files — keep local, don't deploy)
+*.psd

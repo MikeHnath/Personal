@@ -17,6 +17,8 @@ export interface CaseStudy {
   homeThumb?: string;
   navTitle: string;
   navTag: string;
+  breadcrumb: string;
+  pageTitle: string;
   isFeaturedOnIndex?: boolean;
 }
 
@@ -33,6 +35,8 @@ export const caseStudies: CaseStudy[] = [
     homeTitle: 'Scandalous — Brand system, packaging, and multi-state GTM',
     navTitle: 'Scandalous — Brand system',
     navTag: 'Brand · GTM',
+    breadcrumb: 'Scandalous',
+    pageTitle: 'Scandalous — Case Study',
     isFeaturedOnIndex: true,
   },
   {
@@ -48,6 +52,8 @@ export const caseStudies: CaseStudy[] = [
     homeThumb: '/Personal/Images/POCN/pocn-cs-gfx-2.jpg',
     navTitle: 'POCN — Pharma media',
     navTag: 'Performance · Healthcare',
+    breadcrumb: 'POCN',
+    pageTitle: 'POCN — Case Study',
     isFeaturedOnIndex: true,
   },
   {
@@ -62,6 +68,8 @@ export const caseStudies: CaseStudy[] = [
     homeTitle: 'SIGIL — Zero-to-launch GTM for original IP',
     navTitle: 'SIGIL — GTM for original IP',
     navTag: 'GTM · Brand',
+    breadcrumb: 'SIGIL',
+    pageTitle: 'SIGIL — Case Study',
   },
   {
     slug: 'kraft-heinz',
@@ -75,6 +83,8 @@ export const caseStudies: CaseStudy[] = [
     homeTitle: 'Kraft Heinz — Digital shelf and eComm creative',
     navTitle: 'Kraft Heinz — Digital shelf',
     navTag: 'Design · CPG',
+    breadcrumb: 'Kraft Heinz / MiO',
+    pageTitle: 'Kraft Heinz / MiO — Case Study',
   },
   {
     slug: 'triax',
@@ -89,6 +99,8 @@ export const caseStudies: CaseStudy[] = [
     homeThumb: '/Personal/Images/Triax/triax-cs-gfx-2.jpg',
     navTitle: 'Triax — B2B SaaS demand gen',
     navTag: 'B2B SaaS · Demand Gen',
+    breadcrumb: 'Triax',
+    pageTitle: 'Triax — Case Study',
   },
   {
     slug: 'infinity',
@@ -102,6 +114,8 @@ export const caseStudies: CaseStudy[] = [
     homeTitle: 'Infinity — Licensed CPG brand direction and packaging at scale',
     navTitle: 'Infinity — Licensed CPG',
     navTag: 'Brand · Licensing',
+    breadcrumb: 'Infinity',
+    pageTitle: 'Infinity — Case Study',
   },
   {
     slug: 'ark',
@@ -115,6 +129,8 @@ export const caseStudies: CaseStudy[] = [
     homeTitle: 'Ark of the Covenant — Independent artist brand and operations',
     navTitle: 'Ark of the Covenant — Independent artist',
     navTag: 'Brand · GTM',
+    breadcrumb: 'Ark of the Covenant',
+    pageTitle: 'Ark of the Covenant — Case Study',
   },
 ];
 

@@ -7,6 +7,7 @@ interface Props {
 
 const { slug } = Astro.props;
 const { prev, next } = getCaseStudyNeighbors(slug);
+const indexHref = '/Personal/case-studies/';
 ---
 <div class="next-prev">
   {prev ? (
@@ -16,7 +17,7 @@ const { prev, next } = getCaseStudyNeighbors(slug);
       <div class="nav-card-tag">{prev.navTag}</div>
     </a>
   ) : (
-    <a class="nav-card" href="/Personal/case-studies/">
+    <a class="nav-card" href={indexHref}>
       <div class="nav-card-dir">All case studies</div>
       <div class="nav-card-title">Back to case studies</div>
       <div class="nav-card-tag">See all projects</div>
@@ -29,7 +30,7 @@ const { prev, next } = getCaseStudyNeighbors(slug);
       <div class="nav-card-tag">{next.navTag}</div>
     </a>
   ) : (
-    <a class="nav-card right" href="/Personal/case-studies/">
+    <a class="nav-card right" href={indexHref}>
       <div class="nav-card-dir">All case studies</div>
       <div class="nav-card-title">Back to case studies</div>
       <div class="nav-card-tag">See all projects</div>

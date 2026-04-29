@@ -39,23 +39,7 @@ const isActive = (prefix: string) => {
       var mode = c === 'auto'
         ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
         : c;
-      var s = document.documentElement.style;
-      if (mode === 'dark') {
-        s.setProperty('--bg','#0f1117');
-        s.setProperty('--bg2','#181c24');
-        s.setProperty('--bg3','#2a2f3a');
-        s.setProperty('--border','#2a2f3d');
-        s.setProperty('--border2','#363c4d');
-        s.setProperty('--text','#f2f5fc');
-        s.setProperty('--text2','#adb5c8');
-        s.setProperty('--text3','#6e7a93');
-        s.setProperty('--mobile-menu-bg','rgba(24,28,36,0.7)');
-        s.setProperty('--logo-filter','invert(1)');
-        s.setProperty('--ticker-bg','var(--bg)');
-        s.setProperty('--ticker-logo-filter','grayscale(1) invert(1)');
-        s.setProperty('--ticker-logo-filter-flip','grayscale(1)');
-        s.setProperty('--ticker-logo-filter-boost','grayscale(1) invert(1) contrast(2) brightness(1.65)');
-      }
+      document.documentElement.dataset.theme = mode;
     })();
   </script>
 </head>
@@ -186,9 +170,9 @@ const isActive = (prefix: string) => {
     <button type="button" class="form-submit" onclick="submitContact()">Send message</button>
     <div class="modal-footer">
       <div class="social-pills">
-        <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank"><img src="/Personal/Icons/linkedin.svg" style="width:16px;height:16px;display:block" />LinkedIn</a>
-        <a class="social-pill" href="https://github.com/MikeHnath" target="_blank"><img src="/Personal/Icons/github.svg" style="width:16px;height:16px;display:block" />GitHub</a>
-        <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank"><img src="/Personal/Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block" />Portfolio</a>
+        <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank" rel="noopener noreferrer"><img src="/Personal/Icons/linkedin.svg" style="width:16px;height:16px;display:block" />LinkedIn</a>
+        <a class="social-pill" href="https://github.com/MikeHnath" target="_blank" rel="noopener noreferrer"><img src="/Personal/Icons/github.svg" style="width:16px;height:16px;display:block" />GitHub</a>
+        <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank" rel="noopener noreferrer"><img src="/Personal/Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block" />Portfolio</a>
       </div>
     </div>
   </div>

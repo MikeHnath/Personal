@@ -1,11 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
-import CaseStudyNav from '../../components/CaseStudyNav.astro';
+import CaseStudy from '../../layouts/CaseStudy.astro';
 ---
-<Base title="Infinity — Case Study">
-
-  <div class="section">
-    <a class="breadcrumb" href="/Personal/case-studies/">← <span>Case Studies</span> / Infinity</a>
+<CaseStudy slug="infinity">
+  <Fragment slot="header">
     <div class="cs-hero">[Infinity — licensed CPG packaging lineup]</div>
     <div class="cs-tags"><span class="cs-tag">Brand</span><span class="cs-tag">Licensing</span><span class="cs-tag">CPG</span><span class="cs-tag">Packaging</span></div>
     <div class="cs-title">Infinity — Licensed CPG brand direction and packaging at scale</div>
@@ -16,7 +13,8 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
       <div class="cs-meta-row"><div class="cs-meta-label">Role</div><div class="cs-meta-value">Creative Director</div></div>
       <div class="cs-meta-row"><div class="cs-meta-label">Industry</div><div class="cs-meta-value">Licensed CPG</div></div>
     </div>
-  </div>
+  </Fragment>
+
   <div class="section">
     <div class="stat-strip">
       <div class="stat-box"><div class="stat-num">$10M+</div><div class="stat-label">Licensing ecosystem supported</div></div>
@@ -51,10 +49,4 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
       </div>
     </div>
   </div>
-  <div class="section" style="border-bottom:none">
-    <hr class="cs-rule" />
-    <CaseStudyNav slug="infinity" />
-    <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
-  </div>
-
-</Base>
+</CaseStudy>
