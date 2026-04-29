@@ -384,6 +384,7 @@ input,textarea{font-family:var(--font-sans)}
 .media-stack{display:flex;flex-direction:column;gap:18px}
 .media-figure{margin:0;background:var(--bg2);border-radius:var(--r-lg);overflow:hidden}
 .media-figure img{width:100%;height:auto;display:block}
+.media-caption{font-size:11px;color:var(--text3);padding:8px 12px;line-height:1.4}
 .media-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}
 @media (max-width:640px){
   .media-carousel{grid-template-columns:48px minmax(0,1fr);gap:8px}
