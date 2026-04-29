@@ -8,8 +8,8 @@ interface Props {
 const { study } = Astro.props;
 ---
 <a class="fw-card" href={study.href}>
-  {study.hero.src ? (
-    <div class="fw-thumb"><img src={study.hero.src} alt={study.hero.alt ?? ''} /></div>
+  {study.preview.src ? (
+    <div class="fw-thumb"><img src={study.preview.src} alt={study.preview.alt ?? ''} /></div>
   ) : (
     <div class="fw-thumb fw-thumb-empty"></div>
   )}

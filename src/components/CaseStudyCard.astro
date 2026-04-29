@@ -9,10 +9,10 @@ const { study } = Astro.props;
 const tagAttr = study.filterTags.join(',');
 ---
 <a class="work-card" data-tags={tagAttr} href={study.href}>
-  {study.hero.src ? (
-    <div class="work-thumb" style="padding:0"><img src={study.hero.src} alt={study.hero.alt ?? ''} /></div>
+  {study.preview.src ? (
+    <div class="work-thumb" style="padding:0"><img src={study.preview.src} alt={study.preview.alt ?? ''} /></div>
   ) : (
-    <div class="work-thumb">{study.hero.placeholder ?? ''}</div>
+    <div class="work-thumb">{study.preview.placeholder ?? ''}</div>
   )}
   <div class="work-body">
     <div class="work-client">{study.industry}</div>

@@ -12,6 +12,7 @@ export interface CaseStudy {
   title: string;
   subtitle: string;
   hero: CaseStudyHero;
+  preview: CaseStudyHero;
   tags: string[];
   filterTags: string[];
   industry: string;
@@ -29,6 +30,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       'Nine years building a cannabis brand from identity through multi-state licensing. Full ownership of brand strategy, visual system, packaging production, investor materials, and go-to-market across five states.',
     hero: { placeholder: '[Hero image — brand campaign, packaging lineup, or flagship visual]' },
+    preview: { placeholder: '[Scandalous brand preview]' },
     tags: ['Brand strategy', 'Packaging', 'GTM', 'Regulated CPG'],
     filterTags: ['brand', 'gtm'],
     industry: 'Regulated cannabis',
@@ -44,6 +46,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       'Managed $1.7M+ in pharmaceutical media across 30+ concurrent HCP campaigns — driving compounding efficiency gains while consistently hitting contracted KPIs in a regulated environment.',
     hero: { src: '/Personal/Images/POCN/pocn-cs-gfx-1.jpg', alt: 'POCN case study graphic' },
+    preview: { src: '/Personal/Images/POCN/pocn-cs-gfx-2.jpg', alt: 'POCN case study preview' },
     tags: ['Performance', 'Healthcare', 'Programmatic', 'HCP Marketing'],
     filterTags: ['performance'],
     industry: 'Healthcare · Pharma',
@@ -59,6 +62,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       'Built the visual identity, board system, packaging, and production-ready assets for a strategy dueling game that raised $22K+ on Kickstarter at 303% of goal.',
     hero: { src: '/Personal/Images/Sigil/sigil-cs-gfx-1.jpg', alt: 'SIGIL case study graphic' },
+    preview: { src: '/Personal/Images/Sigil/sigil-cs-gfx-2.jpg', alt: 'SIGIL case study preview' },
     tags: ['Brand Identity', 'Packaging', 'Product Design', 'Tabletop'],
     filterTags: ['brand', 'design'],
     industry: 'Brand Identity · Product Design',
@@ -73,6 +77,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       'Led the digital shelf transformation for MiO — rebuilding UX and multi-channel creative into a unified conversion system that contributed to measurable Amazon sales lift.',
     hero: { src: '/Personal/Images/MiO/mio-cs-gfx-1.jpg', alt: 'MiO digital shelf case study graphic' },
+    preview: { src: '/Personal/Images/MiO/mio-cs-gfx-2.jpg', alt: 'MiO digital shelf preview' },
     tags: ['CPG', 'eCommerce', 'Creative Direction', 'Enterprise'],
     filterTags: ['design'],
     industry: 'CPG · Enterprise eCommerce',
@@ -87,6 +92,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       'Rebuilt technical messaging, implemented Salesforce and Pardot workflows, and helped move Hess and Shell into late-stage enterprise sales conversations during a five-month turnaround before a company-wide RIF.',
     hero: { src: '/Personal/Images/Triax/triax-cs-gfx-1.jpg', alt: 'Triax case study graphic' },
+    preview: { src: '/Personal/Images/Triax/triax-cs-gfx-2.jpg', alt: 'Triax case study preview' },
     tags: ['B2B SaaS', 'Content', 'Demand Gen', 'Enterprise'],
     filterTags: ['performance', 'gtm'],
     industry: 'B2B SaaS · Demand Gen',
@@ -101,6 +107,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       'Creative Director at Infinity Lifestyle Brands. Led brand direction and packaging across a $10M+ licensed CPG portfolio spanning Disney, MLBPA, and Viacom IP — reconciling licensor guidelines with a coherent brand aesthetic across 50+ SKUs.',
     hero: { placeholder: '[Infinity — licensed CPG packaging lineup]' },
+    preview: { placeholder: '[Infinity preview]' },
     tags: ['Brand', 'Licensing', 'CPG', 'Packaging'],
     filterTags: ['brand', 'design'],
     industry: 'Licensed CPG',
@@ -115,6 +122,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       'Eight years founding and operating an independent music project. 350+ live shows, 2 distribution deals, 20K+ followers, 100K+ streams, and a Mesa/Boogie endorsement — all self-built across brand, booking, production, and audience.',
     hero: { placeholder: '[Ark of the Covenant — tour and album artwork]' },
+    preview: { placeholder: '[Ark of the Covenant preview]' },
     tags: ['Brand', 'GTM', 'Music', 'Independent'],
     filterTags: ['brand', 'gtm'],
     industry: 'Music · Independent',
