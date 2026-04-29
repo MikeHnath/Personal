@@ -88,20 +88,37 @@ import Base from '../../layouts/Base.astro';
   </div>
 
   <div class="section">
-    <div class="section-label">Carousel & motion</div>
+    <div class="section-label">Carousel sequence</div>
     <div class="media-carousel" data-carousel>
-      <button class="carousel-arrow prev" type="button" aria-label="Previous slide" data-carousel-prev>‹</button>
-      <div class="carousel-track" data-carousel-track>
-        <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-1.jpg" alt="MiO carousel slide 1" loading="lazy" /></div>
-        <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-2.jpg" alt="MiO carousel slide 2" loading="lazy" /></div>
-        <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-3.jpg" alt="MiO carousel slide 3" loading="lazy" /></div>
-        <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-4.jpg" alt="MiO carousel slide 4" loading="lazy" /></div>
-        <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-5.jpg" alt="MiO carousel slide 5" loading="lazy" /></div>
-        <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-6.jpg" alt="MiO carousel slide 6" loading="lazy" /></div>
-        <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-7.jpg" alt="MiO carousel slide 7" loading="lazy" /></div>
-        <div class="carousel-slide"><video src="/Personal/Images/MiO/MiO_09c.mp4" controls playsinline preload="metadata" muted></video></div>
+      <div class="carousel-thumbs" data-carousel-thumbs>
+        <button class="carousel-thumb active" type="button" data-index="0" aria-label="Show slide 1"><img src="/Personal/Images/MiO/mio-carousel-1.webp" alt="" loading="lazy" /></button>
+        <button class="carousel-thumb" type="button" data-index="1" aria-label="Show slide 2"><img src="/Personal/Images/MiO/mio-carousel-2.webp" alt="" loading="lazy" /></button>
+        <button class="carousel-thumb" type="button" data-index="2" aria-label="Show slide 3"><img src="/Personal/Images/MiO/mio-carousel-3.webp" alt="" loading="lazy" /></button>
+        <button class="carousel-thumb" type="button" data-index="3" aria-label="Show slide 4"><img src="/Personal/Images/MiO/mio-carousel-4.webp" alt="" loading="lazy" /></button>
+        <button class="carousel-thumb" type="button" data-index="4" aria-label="Show slide 5"><img src="/Personal/Images/MiO/mio-carousel-5.webp" alt="" loading="lazy" /></button>
+        <button class="carousel-thumb" type="button" data-index="5" aria-label="Show slide 6"><img src="/Personal/Images/MiO/mio-carousel-6.webp" alt="" loading="lazy" /></button>
+        <button class="carousel-thumb" type="button" data-index="6" aria-label="Show slide 7"><img src="/Personal/Images/MiO/mio-carousel-7.webp" alt="" loading="lazy" /></button>
       </div>
-      <button class="carousel-arrow next" type="button" aria-label="Next slide" data-carousel-next>›</button>
+      <div class="carousel-main">
+        <button class="carousel-arrow prev" type="button" aria-label="Previous slide" data-carousel-prev>‹</button>
+        <div class="carousel-track" data-carousel-track>
+          <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-1.webp" alt="MiO carousel slide 1" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-2.webp" alt="MiO carousel slide 2" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-3.webp" alt="MiO carousel slide 3" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-4.webp" alt="MiO carousel slide 4" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-5.webp" alt="MiO carousel slide 5" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-6.webp" alt="MiO carousel slide 6" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="/Personal/Images/MiO/mio-carousel-7.webp" alt="MiO carousel slide 7" loading="lazy" /></div>
+        </div>
+        <button class="carousel-arrow next" type="button" aria-label="Next slide" data-carousel-next>›</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Animated product video</div>
+    <div class="media-video">
+      <video src="/Personal/Images/MiO/MiO_09c.mp4" controls playsinline preload="metadata"></video>
     </div>
   </div>
 

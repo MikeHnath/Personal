@@ -341,15 +341,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = carousel.querySelector('[data-carousel-track]');
     const prev = carousel.querySelector('[data-carousel-prev]');
     const next = carousel.querySelector('[data-carousel-next]');
+    const thumbs = carousel.querySelectorAll('.carousel-thumb');
     if (!track) return;
-    const step = () => {
-      const slide = track.querySelector('.carousel-slide');
-      if (!slide) return track.clientWidth;
-      const gap = parseInt(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0', 10) || 0;
-      return slide.getBoundingClientRect().width + gap;
+    const slides = track.querySelectorAll('.carousel-slide');
+    const goTo = (i) => {
+      const idx = Math.max(0, Math.min(slides.length - 1, i));
+      const slide = slides[idx];
+      if (slide) track.scrollTo({left: slide.offsetLeft, behavior: 'smooth'});
     };
-    if (prev) prev.addEventListener('click', () => track.scrollBy({left: -step(), behavior: 'smooth'}));
-    if (next) next.addEventListener('click', () => track.scrollBy({left: step(), behavior: 'smooth'}));
+    const currentIndex = () => {
+      const w = track.clientWidth || 1;
+      return Math.round(track.scrollLeft / w);
+    };
+    const setActive = (i) => {
+      thumbs.forEach((t, j) => t.classList.toggle('active', j === i));
+    };
+    if (prev) prev.addEventListener('click', () => goTo(currentIndex() - 1));
+    if (next) next.addEventListener('click', () => goTo(currentIndex() + 1));
+    thumbs.forEach((t) => {
+      t.addEventListener('click', () => {
+        const i = parseInt(t.dataset.index, 10) || 0;
+        goTo(i);
+        setActive(i);
+      });
+    });
+    let scrollT;
+    track.addEventListener('scroll', () => {
+      clearTimeout(scrollT);
+      scrollT = setTimeout(() => setActive(currentIndex()), 80);
+    });
   });
 });
 
