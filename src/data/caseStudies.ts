@@ -64,7 +64,7 @@ export const caseStudies: CaseStudy[] = [
     outcome: '$22K+ funded · 303% of goal · 347 backers',
     tags: ['brand', 'design'],
     cardTitle: 'SIGIL — Brand identity & product design for a Kickstarter-funded tabletop launch',
-    cardThumb: { src: '/Personal/Images/Sigil/sigil-3d-board.webp', alt: 'SIGIL 3D board render' },
+    cardThumb: { src: '/Personal/Images/Sigil/sigil-cs-gfx-2.jpg', alt: 'SIGIL case study preview' },
     homeTitle: 'SIGIL — Zero-to-launch GTM for original IP',
     navTitle: 'SIGIL — GTM for original IP',
     navTag: 'GTM · Brand',
