@@ -83,12 +83,11 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
     <div class="brand-system">
       <div class="brand-swatches">
         <div class="brand-swatch">
-          <div class="swatch-chip" style="background:#2B201D"></div>
+          <div class="swatch-chip" style="background:#230A6F"></div>
           <div class="swatch-name">Dark Foundation</div>
-          <div class="swatch-meta">PMS 440 C</div>
-          <div class="swatch-meta">HEX #2B201D</div>
+          <div class="swatch-meta">CMYK 80/94/36/32</div>
+          <div class="swatch-meta">HEX #230A6F</div>
           <div class="swatch-meta">RGB 56 · 46 · 44</div>
-          <div class="swatch-meta">CMYK 80 · 94 · 36 · 32</div>
         </div>
         <div class="brand-swatch">
           <div class="swatch-chip" style="background:#EF3E32"></div>
@@ -163,6 +162,16 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
       </div>
       <div class="sigil-grid-2x2">
         <figure class="media-figure">
+          <img src="/Personal/Images/Sigil/sigil-box-front.jpg" alt="SIGIL box dieline" loading="lazy" />
+          <figcaption class="media-caption">Box dieline — production-ready flat layout</figcaption>
+        </figure>
+        <figure class="media-figure">
+          <img src="/Personal/Images/Sigil/sigil-box-back.webp" alt="SIGIL box back panel" loading="lazy" />
+          <figcaption class="media-caption">Box back — Graphics Designed by Michael Hnath</figcaption>
+        </figure>
+      </div>
+      <div class="sigil-grid-2x2">
+        <figure class="media-figure">
           <img src="/Personal/Images/Sigil/sigil-box.webp" alt="SIGIL production box" loading="lazy" />
           <figcaption class="media-caption">Production box</figcaption>
         </figure>
@@ -203,26 +212,8 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
   <div class="section">
     <div class="section-label">Kickstarter</div>
     <div class="phone-mockup">
-      <div class="phone-frame">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="phone-scroll-track">
-            <img src="/Personal/Images/Sigil/sigil-kickstarter-graphic.png" alt="SIGIL Kickstarter campaign page" loading="lazy" />
-            <img src="/Personal/Images/Sigil/sigil-kickstarter-graphic.png" alt="" aria-hidden="true" loading="lazy" />
-          </div>
-        </div>
-      </div>
+      <iframe class="phone-iframe" src="/Personal/Images/Sigil/sigil-kickstarter-phone-mockup.html" title="SIGIL Kickstarter campaign page mockup" loading="lazy" scrolling="no"></iframe>
       <div class="phone-caption">Campaign page design — brand system applied by Pine Island Games team</div>
-    </div>
-    <div class="sigil-grid-2x2 sigil-box-layouts">
-      <figure class="media-figure">
-        <img src="/Personal/Images/Sigil/sigil-box-front.jpg" alt="SIGIL box dieline" loading="lazy" />
-        <figcaption class="media-caption">Box dieline — production-ready flat layout</figcaption>
-      </figure>
-      <figure class="media-figure">
-        <img src="/Personal/Images/Sigil/sigil-box-back.webp" alt="SIGIL box back panel" loading="lazy" />
-        <figcaption class="media-caption">Box back — Graphics Designed by Michael Hnath</figcaption>
-      </figure>
     </div>
   </div>
 
@@ -236,6 +227,21 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+  @font-face{
+    font-family:'1651 Alchemy';
+    src:url('/Personal/Images/Sigil/1651%20Alchemy%20W00%20Normal.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:'1651 Alchemy';
+    src:url('/Personal/Images/Sigil/1651%20Alchemy%20W00%20Italic.ttf') format('truetype');
+    font-weight:normal;
+    font-style:italic;
+    font-display:swap;
+  }
 
   /* ── 3D LOGO ─────────────────────────────────────────────────── */
   .sigil-logo-wrap{display:flex;justify-content:center}
@@ -256,7 +262,7 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
   .type-name{font-size:13px;font-weight:600;color:var(--text)}
   .type-role{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3)}
   .type-sample{font-size:18px;line-height:1.3;color:var(--text);word-break:break-word}
-  .type-sample-display{font-family:'Playfair Display',serif;font-weight:600;font-size:22px;letter-spacing:.01em}
+  .type-sample-display{font-family:'1651 Alchemy','Playfair Display',serif;font-weight:normal;font-size:26px;letter-spacing:.01em}
   .type-sample-oldstyle{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px}
   .type-sample-chivo{font-family:'Chivo',sans-serif;font-weight:400;font-size:16px}
 
@@ -293,21 +299,8 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
 
   /* ── PHONE MOCKUP ────────────────────────────────────────────── */
   .phone-mockup{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:28px}
-  .phone-frame{position:relative;width:360px;max-width:90%;aspect-ratio:9/19;background:#0a0a0a;border-radius:42px;padding:14px;box-shadow:0 0 0 2px #1a1a1a, 0 24px 60px rgba(0,0,0,.35)}
-  .phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:96px;height:22px;background:#0a0a0a;border-radius:0 0 14px 14px;z-index:2}
-  .phone-screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--bg2)}
-  .phone-scroll-track{display:flex;flex-direction:column;animation:phone-scroll 36s linear infinite;will-change:transform}
-  .phone-scroll-track:hover{animation-play-state:paused}
-  .phone-scroll-track img{width:100%;height:auto;display:block}
+  .phone-iframe{width:100%;max-width:380px;height:800px;border:0;background:transparent;display:block;color-scheme:light}
   .phone-caption{font-size:11px;color:var(--text3);text-align:center;letter-spacing:.04em;text-transform:uppercase}
-  @keyframes phone-scroll{
-    0%{transform:translateY(0)}
-    100%{transform:translateY(-50%)}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .phone-scroll-track{animation:none}
-    .phone-screen{overflow-y:auto}
-  }
 
   /* ── RESPONSIVE ──────────────────────────────────────────────── */
   @media (max-width:640px){
@@ -319,8 +312,6 @@ import CaseStudyNav from '../../components/CaseStudyNav.astro';
     .sigil-grid-3col{grid-template-columns:1fr}
     .sigil-carousel-main{aspect-ratio:4/3}
     .sigil-carousel-thumbs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
-    .phone-frame{width:300px;border-radius:36px;padding:12px}
-    .phone-screen{border-radius:26px}
   }
 </style>
 
