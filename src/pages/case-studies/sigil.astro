@@ -135,19 +135,10 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
           <figcaption class="media-caption">Final board with spell zones and pieces</figcaption>
         </figure>
       </div>
-      <div class="sigil-grid-3col">
-        <figure class="media-figure spell-figure">
-          <img src="/Personal/Images/Sigil/sigil-spell-1stone.png" alt="SIGIL Comet spell, 1-stone" loading="lazy" />
-          <figcaption class="media-caption">Comet (1-stone)</figcaption>
-        </figure>
-        <figure class="media-figure spell-figure">
-          <img src="/Personal/Images/Sigil/sigil-spell-3stone.png" alt="SIGIL Fireblast spell, 3-stone" loading="lazy" />
-          <figcaption class="media-caption">Fireblast (3-stone)</figcaption>
-        </figure>
-        <figure class="media-figure spell-figure">
-          <img src="/Personal/Images/Sigil/sigil-spell-5stone.png" alt="SIGIL Starfall spell, 5-stone" loading="lazy" />
-          <figcaption class="media-caption">Starfall (5-stone)</figcaption>
-        </figure>
+      <div class="sigil-spell-stack">
+        <img class="spell-back" src="/Personal/Images/Sigil/sigil-spell-5stone.png" alt="SIGIL Starfall spell, 5-stone" loading="lazy" />
+        <img class="spell-mid" src="/Personal/Images/Sigil/sigil-spell-3stone.png" alt="SIGIL Fireblast spell, 3-stone" loading="lazy" />
+        <img class="spell-front" src="/Personal/Images/Sigil/sigil-spell-1stone.png" alt="SIGIL Comet spell, 1-stone" loading="lazy" />
       </div>
       <div class="sigil-grid-2x2">
         <figure class="media-figure">
@@ -258,9 +249,11 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .sigil-grid-2x2 .media-figure{display:flex;flex-direction:column}
   .sigil-grid-2x2 .media-figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;flex:1}
 
-  .sigil-grid-3col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-  .spell-figure{background:var(--bg2)}
-  .spell-figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;padding:14px}
+  .sigil-spell-stack{position:relative;background:var(--bg2);border-radius:var(--r-lg);aspect-ratio:2/1;overflow:hidden}
+  .sigil-spell-stack img{position:absolute;top:8%;height:84%;width:auto;aspect-ratio:1/1;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.32))}
+  .sigil-spell-stack .spell-back{left:8%;z-index:1}
+  .sigil-spell-stack .spell-mid{left:29%;z-index:2}
+  .sigil-spell-stack .spell-front{left:50%;z-index:3}
 
   .sigil-carousel{display:flex;flex-direction:column;gap:10px}
   .sigil-carousel-main{position:relative;background:var(--bg2);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/10}
@@ -287,7 +280,6 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
     .swatch-chip{max-width:100%}
     .type-row{grid-template-columns:1fr;gap:6px}
     .sigil-grid-2x2{grid-template-columns:1fr}
-    .sigil-grid-3col{grid-template-columns:1fr}
     .sigil-carousel-main{aspect-ratio:4/3}
     .sigil-carousel-thumbs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
   }
