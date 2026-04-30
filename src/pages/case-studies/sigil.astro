@@ -64,8 +64,13 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
 
   <div class="section">
     <div class="section-label">Brand System</div>
-    <div class="sigil-logo-wrap">
-      <img src="/Personal/Images/Sigil/sigil-3d-logo.png" alt="SIGIL 3D rendered logo" loading="lazy" />
+    <div class="sigil-logo-wrap sigil-logo-grid">
+      <div class="sigil-logo-cell sigil-logo-cell-logo">
+        <img src="/Personal/Images/Sigil/sigil-3d-logo.png" alt="SIGIL 3D rendered logo" loading="lazy" />
+      </div>
+      <div class="sigil-logo-cell sigil-logo-cell-icon">
+        <img src="/Personal/Images/Sigil/sigil-3d-icon.png" alt="SIGIL 3D rendered icon" loading="lazy" />
+      </div>
     </div>
     <div class="brand-system" style="margin-top:14px">
       <div class="brand-swatches">
@@ -221,6 +226,14 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .sigil-logo-wrap{display:flex;justify-content:center;background:#442554;border-radius:var(--r-lg);padding:32px}
   :root[data-theme="dark"] .sigil-logo-wrap{background:var(--bg2)}
   .sigil-logo-wrap img{width:100%;height:auto;display:block}
+  .sigil-logo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;align-items:center}
+  .sigil-logo-cell-logo{grid-column:span 3;display:flex;align-items:center;justify-content:center}
+  .sigil-logo-cell-icon{grid-column:span 1;display:flex;align-items:center;justify-content:center}
+  @media (max-width:640px){
+    .sigil-logo-grid{grid-template-columns:1fr;gap:20px}
+    .sigil-logo-cell-logo,.sigil-logo-cell-icon{grid-column:auto}
+    .sigil-logo-cell-icon img{max-width:50%;margin:0 auto}
+  }
 
   .brand-system{display:flex;flex-direction:column;gap:32px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px}
   .brand-swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
