@@ -54,6 +54,81 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   </div>
 
   <div class="section">
+    <div class="section-label">Brand System</div>
+    <div class="sc-logo-wrap">
+      <div class="sc-logo-cell sc-logo-cell-logo">
+        <img src="/Personal/Logos/scandalous-logo.svg" alt="Scandalous Chocolates wordmark" loading="lazy" />
+      </div>
+      <div class="sc-logo-cell sc-logo-cell-icon">
+        <img src="/Personal/Icons/scandalous-icon-light.png" alt="Scandalous Chocolates lip-motif icon" loading="lazy" />
+      </div>
+    </div>
+    <div class="brand-system" style="margin-top:14px">
+      <div class="brand-swatches">
+        <div class="brand-swatch">
+          <div class="swatch-chip" style="background:#000000"></div>
+          <div class="swatch-name">Scandalous Black</div>
+          <div class="swatch-meta">HEX #000000</div>
+          <div class="swatch-meta">RGB 0 · 0 · 0</div>
+          <div class="swatch-meta">CMYK 0 · 0 · 0 · 100</div>
+        </div>
+        <div class="brand-swatch">
+          <div class="swatch-chip" style="background:#E8254A"></div>
+          <div class="swatch-name">Lip Red</div>
+          <div class="swatch-meta">HEX #E8254A</div>
+          <div class="swatch-meta">RGB 232 · 37 · 74</div>
+          <div class="swatch-meta">CMYK 0 · 95 · 60 · 0</div>
+        </div>
+        <div class="brand-swatch">
+          <div class="swatch-chip" style="background:#F5EFE6"></div>
+          <div class="swatch-name">Wrapper Cream</div>
+          <div class="swatch-meta">HEX #F5EFE6</div>
+          <div class="swatch-meta">RGB 245 · 239 · 230</div>
+          <div class="swatch-meta">CMYK 2 · 4 · 8 · 0</div>
+        </div>
+      </div>
+      <div class="brand-type">
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-name">Display sans</div>
+            <div class="type-role">Primary display</div>
+          </div>
+          <div class="type-sample type-sample-display">
+            <div class="type-marquee">
+              <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+              <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+            </div>
+          </div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-name">Display sans Italic</div>
+            <div class="type-role">Secondary display</div>
+          </div>
+          <div class="type-sample type-sample-display-italic">
+            <div class="type-marquee">
+              <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+              <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+            </div>
+          </div>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">
+            <div class="type-name">Body serif</div>
+            <div class="type-role">Body / supporting</div>
+          </div>
+          <div class="type-sample type-sample-body">
+            <div class="type-marquee">
+              <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+              <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
     <div class="section-label">Website — scandalouschocolates.com</div>
     <div class="browser-mockup">
       <div class="browser-toolbar">
@@ -102,5 +177,46 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   @media (max-width:640px){
     .browser-url{font-size:10px}
     .browser-visit{font-size:10px;padding:4px 10px}
+  }
+
+  .sc-logo-wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+  .sc-logo-cell{display:flex;align-items:center;justify-content:center;background:#000000;border-radius:var(--r-lg);padding:32px}
+  :root[data-theme="dark"] .sc-logo-cell{background:var(--bg2)}
+  .sc-logo-cell img{width:100%;height:auto;display:block}
+  .sc-logo-cell-logo{grid-column:span 3}
+  .sc-logo-cell-icon{grid-column:span 1}
+
+  .brand-system{display:flex;flex-direction:column;gap:32px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px}
+  .brand-swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .brand-swatch{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+  .swatch-chip{width:100%;aspect-ratio:3/2;max-width:160px;border-radius:var(--r);border:1px solid var(--border);margin-bottom:6px}
+  .swatch-name{font-size:13px;font-weight:600;color:var(--text);margin-top:4px}
+  .swatch-meta{font-family:var(--font-mono);font-size:10px;color:var(--text3);letter-spacing:.04em}
+
+  .brand-type{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--border);padding-top:24px}
+  .type-row{display:grid;grid-template-columns:minmax(140px,180px) minmax(0,1fr);gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--border)}
+  .type-row:last-child{border-bottom:none;padding-bottom:0}
+  .type-meta{display:flex;flex-direction:column;gap:2px}
+  .type-name{font-size:13px;font-weight:600;color:var(--text)}
+  .type-role{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3)}
+  .type-sample{font-size:18px;line-height:1.3;color:var(--text);overflow:hidden;width:100%;min-width:0}
+  .type-marquee{display:inline-flex;white-space:nowrap;animation:type-marquee 40s linear infinite;will-change:transform}
+  .type-marquee-content{display:inline-block;flex-shrink:0}
+  .type-sample:hover .type-marquee{animation-play-state:paused}
+  @keyframes type-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){
+    .type-marquee{animation:none}
+  }
+  .type-sample-display{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:.01em}
+  .type-sample-display-italic{font-family:var(--font-display);font-weight:700;font-style:italic;font-size:20px;letter-spacing:.01em}
+  .type-sample-body{font-family:var(--font-sans);font-weight:400;font-size:18px}
+
+  @media (max-width:640px){
+    .sc-logo-wrap{grid-template-columns:1fr;gap:12px}
+    .sc-logo-cell-logo,.sc-logo-cell-icon{grid-column:auto}
+    .sc-logo-cell-icon img{max-width:50%;margin:0 auto}
+    .brand-swatches{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+    .swatch-chip{max-width:100%}
+    .type-row{grid-template-columns:1fr;gap:6px}
   }
 </style>
