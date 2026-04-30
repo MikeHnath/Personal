@@ -140,41 +140,20 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   <div class="section">
     <div class="section-label">Product System</div>
     <div class="sigil-product-stack">
-      <div class="sigil-grid-2x2">
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-ux-layout.webp" alt="SIGIL board UX layout" loading="lazy" />
-          <figcaption class="media-caption">Board UX layout — information architecture</figcaption>
-        </figure>
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-3d-board.webp" alt="Final SIGIL board with spell zones and pieces" loading="lazy" />
-          <figcaption class="media-caption">Final board with spell zones and pieces</figcaption>
-        </figure>
-      </div>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-product-system-1.webp" alt="SIGIL product system — overview 1" loading="lazy" />
+      </figure>
       <div class="sigil-spell-stack">
         <img class="spell-back" src="/Personal/Images/Sigil/sigil-spell-5stone.png" alt="SIGIL Starfall spell, 5-stone" loading="lazy" />
         <img class="spell-mid" src="/Personal/Images/Sigil/sigil-spell-3stone.png" alt="SIGIL Fireblast spell, 3-stone" loading="lazy" />
         <img class="spell-front" src="/Personal/Images/Sigil/sigil-spell-1stone.png" alt="SIGIL Comet spell, 1-stone" loading="lazy" />
       </div>
-      <div class="sigil-grid-2x2">
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-box-front.webp" alt="SIGIL box dieline" loading="lazy" />
-          <figcaption class="media-caption">Box dieline — production-ready flat layout</figcaption>
-        </figure>
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-box-back.webp" alt="SIGIL box back panel" loading="lazy" />
-          <figcaption class="media-caption">Box back — Graphics Designed by Michael Hnath</figcaption>
-        </figure>
-      </div>
-      <div class="sigil-grid-2x2">
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-box.webp" alt="SIGIL production box" loading="lazy" />
-          <figcaption class="media-caption">Production box</figcaption>
-        </figure>
-        <figure class="media-figure">
-          <img src="/Personal/Images/Sigil/sigil-delux-box.webp" alt="SIGIL collector's edition box" loading="lazy" />
-          <figcaption class="media-caption">Collector's edition</figcaption>
-        </figure>
-      </div>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-product-system-2.webp" alt="SIGIL product system — overview 2" loading="lazy" />
+      </figure>
+      <figure class="media-figure">
+        <img src="/Personal/Images/Sigil/sigil-product-system-3.webp" alt="SIGIL product system — overview 3" loading="lazy" />
+      </figure>
     </div>
   </div>
 
@@ -267,9 +246,6 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .type-sample-oldstyle{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px}
 
   .sigil-product-stack{display:flex;flex-direction:column;gap:14px}
-  .sigil-grid-2x2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:14px}
-  .sigil-grid-2x2 .media-figure{display:flex;flex-direction:column}
-  .sigil-grid-2x2 .media-figure img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;flex:1}
 
   .sigil-spell-stack{position:relative;background:var(--bg2);border-radius:var(--r-lg);aspect-ratio:2/1;overflow:hidden}
   .sigil-spell-stack img{position:absolute;bottom:8%;width:auto;aspect-ratio:1/1;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.32))}
@@ -301,7 +277,6 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
     .brand-swatches{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
     .swatch-chip{max-width:100%}
     .type-row{grid-template-columns:1fr;gap:6px}
-    .sigil-grid-2x2{grid-template-columns:1fr}
     .sigil-carousel-main{aspect-ratio:4/3}
     .sigil-carousel-thumbs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
   }
