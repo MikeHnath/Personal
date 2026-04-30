@@ -102,21 +102,36 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
             <div class="type-name">1651 Alchemy</div>
             <div class="type-role">Primary display</div>
           </div>
-          <div class="type-sample type-sample-display">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />1234567890</div>
+          <div class="type-sample type-sample-display">
+            <div class="type-marquee">
+              <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+              <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+            </div>
+          </div>
         </div>
         <div class="type-row">
           <div class="type-meta">
             <div class="type-name">1651 Alchemy Italic</div>
             <div class="type-role">Secondary display</div>
           </div>
-          <div class="type-sample type-sample-display-italic">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />1234567890</div>
+          <div class="type-sample type-sample-display-italic">
+            <div class="type-marquee">
+              <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+              <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+            </div>
+          </div>
         </div>
         <div class="type-row">
           <div class="type-meta">
             <div class="type-name">Ten Oldstyle Medium</div>
             <div class="type-role">Body / supporting</div>
           </div>
-          <div class="type-sample type-sample-oldstyle">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />1234567890</div>
+          <div class="type-sample type-sample-oldstyle">
+            <div class="type-marquee">
+              <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+              <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -239,7 +254,14 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .type-meta{display:flex;flex-direction:column;gap:2px}
   .type-name{font-size:13px;font-weight:600;color:var(--text)}
   .type-role{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3)}
-  .type-sample{font-size:18px;line-height:1.3;color:var(--text);word-break:break-word}
+  .type-sample{font-size:18px;line-height:1.3;color:var(--text);overflow:hidden;width:100%;min-width:0}
+  .type-marquee{display:inline-flex;white-space:nowrap;animation:type-marquee 40s linear infinite;will-change:transform}
+  .type-marquee-content{display:inline-block;flex-shrink:0}
+  .type-sample:hover .type-marquee{animation-play-state:paused}
+  @keyframes type-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){
+    .type-marquee{animation:none}
+  }
   .type-sample-display{font-family:'1651 Alchemy','Playfair Display',serif;font-weight:normal;font-size:17px;letter-spacing:.01em}
   .type-sample-display-italic{font-family:'1651 Alchemy','Playfair Display',serif;font-weight:normal;font-style:italic;font-size:17px;letter-spacing:.01em}
   .type-sample-oldstyle{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px}
