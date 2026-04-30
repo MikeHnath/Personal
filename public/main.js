@@ -77,13 +77,6 @@ const updates = [
     date: 'Apr 2026'
   },
   {
-    img: '/Personal/Icons/scandalous-icon-dark.png',
-    darkImg: '/Personal/Icons/scandalous-icon-light.png',
-    title: 'Scandalous — made intro to Brooklyn operator',
-    desc: 'Personally made the introduction connecting Scandalous to their Brooklyn licensing partner.',
-    date: 'Sep 2025'
-  },
-  {
     img: '/Personal/Icons/google.svg',
     title: 'Earned Google Data Analytics Professional Certificate',
     desc: 'Adding SQL and Python to the analytics stack across brand and performance work.',
