@@ -102,10 +102,10 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         </div>
         <div class="type-row">
           <div class="type-meta">
-            <div class="type-name">Berthold Akzidenz Grotesk Italic</div>
-            <div class="type-role">Secondary display</div>
+            <div class="type-name">Roboto Black</div>
+            <div class="type-role">Secondary headline</div>
           </div>
-          <div class="type-sample type-sample-display-italic">
+          <div class="type-sample type-sample-roboto-black">
             <div class="type-marquee">
               <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
               <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
@@ -114,10 +114,10 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         </div>
         <div class="type-row">
           <div class="type-meta">
-            <div class="type-name">Body serif</div>
+            <div class="type-name">Roboto</div>
             <div class="type-role">Body / supporting</div>
           </div>
-          <div class="type-sample type-sample-body">
+          <div class="type-sample type-sample-roboto">
             <div class="type-marquee">
               <span class="type-marquee-content">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
               <span class="type-marquee-content" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890&nbsp;&nbsp;·&nbsp;&nbsp;</span>
@@ -159,6 +159,8 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
 </CaseStudy>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
   @font-face{
     font-family:'Berthold Akzidenz Grotesk';
     src:url('/Personal/Images/Scandalous/Berthold%20Akzidenz%20Grotesk%20Bold%20Extended.otf') format('opentype');
@@ -216,8 +218,8 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
     .type-marquee{animation:none}
   }
   .type-sample-display{font-family:'Berthold Akzidenz Grotesk',var(--font-display);font-weight:700;font-size:20px;letter-spacing:.01em}
-  .type-sample-display-italic{font-family:'Berthold Akzidenz Grotesk',var(--font-display);font-weight:700;font-style:italic;font-size:20px;letter-spacing:.01em}
-  .type-sample-body{font-family:var(--font-sans);font-weight:400;font-size:18px}
+  .type-sample-roboto-black{font-family:'Roboto',var(--font-sans);font-weight:900;font-size:20px}
+  .type-sample-roboto{font-family:'Roboto',var(--font-sans);font-weight:400;font-size:18px}
 
   @media (max-width:640px){
     .sc-logo-wrap{grid-template-columns:1fr;gap:12px}
