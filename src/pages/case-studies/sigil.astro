@@ -83,7 +83,6 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         <div class="brand-swatch">
           <div class="swatch-chip" style="background:#EF3E32"></div>
           <div class="swatch-name">Sigil Red</div>
-          <div class="swatch-meta">PMS 179 C</div>
           <div class="swatch-meta">HEX #EF3E32</div>
           <div class="swatch-meta">RGB 239 · 62 · 50</div>
           <div class="swatch-meta">CMYK 0 · 91 · 87 · 0</div>
@@ -91,7 +90,6 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         <div class="brand-swatch">
           <div class="swatch-chip" style="background:#3658A8"></div>
           <div class="swatch-name">Arcane Blue</div>
-          <div class="swatch-meta">PMS 7455 C</div>
           <div class="swatch-meta">HEX #3658A8</div>
           <div class="swatch-meta">RGB 54 · 88 · 168</div>
           <div class="swatch-meta">CMYK 88 · 73 · 0 · 0</div>
@@ -229,9 +227,9 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .sigil-logo-wrap img{width:100%;height:auto;display:block}
 
   .brand-system{display:flex;flex-direction:column;gap:32px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px}
-  .brand-swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .brand-swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .brand-swatch{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-  .swatch-chip{width:100%;aspect-ratio:1/1;max-width:160px;border-radius:var(--r);border:1px solid var(--border)}
+  .swatch-chip{width:100%;aspect-ratio:4/3;max-width:160px;border-radius:var(--r);border:1px solid var(--border)}
   .swatch-name{font-size:13px;font-weight:600;color:var(--text);margin-top:4px}
   .swatch-meta{font-family:var(--font-mono);font-size:10px;color:var(--text3);letter-spacing:.04em}
 
@@ -276,7 +274,7 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .phone-caption{font-size:11px;color:var(--text3);text-align:center;letter-spacing:.04em;text-transform:uppercase}
 
   @media (max-width:640px){
-    .brand-swatches{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .brand-swatches{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
     .swatch-chip{max-width:100%}
     .type-row{grid-template-columns:1fr;gap:6px}
     .sigil-grid-2x2{grid-template-columns:1fr}
