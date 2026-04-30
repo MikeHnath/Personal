@@ -55,29 +55,18 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
 
   <div class="section">
     <div class="section-label">Website — scandalouschocolates.com</div>
-    <div class="browser-mockup" data-browser>
+    <div class="browser-mockup">
       <div class="browser-toolbar">
         <div class="browser-dots">
           <span class="browser-dot red" aria-hidden="true"></span>
           <span class="browser-dot yellow" aria-hidden="true"></span>
           <span class="browser-dot green" aria-hidden="true"></span>
         </div>
-        <div class="browser-url" data-browser-url>scandalouschocolates.com</div>
+        <div class="browser-url">scandalouschocolates.com</div>
         <a class="browser-visit" href="https://www.scandalouschocolates.com/" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>
       </div>
-      <div class="browser-tabs" role="tablist">
-        <button type="button" class="browser-tab active" data-tab="home" data-url="scandalouschocolates.com" role="tab" aria-selected="true">Home</button>
-        <button type="button" class="browser-tab" data-tab="products" data-url="scandalouschocolates.com/products" role="tab" aria-selected="false">Products</button>
-        <button type="button" class="browser-tab" data-tab="story" data-url="scandalouschocolates.com/our-story" role="tab" aria-selected="false">Our Story</button>
-        <button type="button" class="browser-tab" data-tab="locations" data-url="scandalouschocolates.com/find-us" role="tab" aria-selected="false">Find Us</button>
-        <button type="button" class="browser-tab" data-tab="contact" data-url="scandalouschocolates.com/contact" role="tab" aria-selected="false">Contact</button>
-      </div>
       <div class="browser-viewport">
-        <img class="browser-shot active" data-tab="home" src="/Personal/Images/Scandalous/scandalous-web-home.jpg" alt="Scandalous Chocolates homepage" loading="lazy" />
-        <img class="browser-shot" data-tab="products" src="/Personal/Images/Scandalous/scandalous-web-products.jpg" alt="Scandalous products page" loading="lazy" />
-        <img class="browser-shot" data-tab="story" src="/Personal/Images/Scandalous/scandalous-web-story.jpg" alt="Scandalous our story page" loading="lazy" />
-        <img class="browser-shot" data-tab="locations" src="/Personal/Images/Scandalous/scandalous-web-locations.jpg" alt="Scandalous find us page" loading="lazy" />
-        <img class="browser-shot" data-tab="contact" src="/Personal/Images/Scandalous/scandalous-web-contact.jpg" alt="Scandalous contact page" loading="lazy" />
+        <img src="/Personal/Images/Scandalous/scandalous-web-home.jpg" alt="Scandalous Chocolates homepage" loading="lazy" />
       </div>
     </div>
   </div>
@@ -105,38 +94,14 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .browser-url{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-family:var(--font-mono);font-size:11px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
   .browser-visit{font-size:11px;font-family:var(--font-sans);font-weight:600;color:var(--text);background:var(--bg3);padding:5px 12px;border-radius:6px;flex-shrink:0;transition:opacity var(--transition)}
   .browser-visit:hover{opacity:.75}
-  .browser-tabs{display:flex;gap:0;background:var(--bg2);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
-  .browser-tabs::-webkit-scrollbar{display:none}
-  .browser-tab{appearance:none;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--text3);font-size:12px;font-family:var(--font-sans);font-weight:500;padding:10px 16px;cursor:pointer;transition:color var(--transition),border-color var(--transition);white-space:nowrap}
-  .browser-tab:hover{color:var(--text2)}
-  .browser-tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:600}
-  .browser-viewport{position:relative;width:100%;height:480px;overflow:hidden;background:var(--bg2)}
-  .browser-shot{position:absolute;top:0;left:0;width:100%;height:auto;display:block;opacity:0;transition:opacity 220ms ease;pointer-events:none}
-  .browser-shot.active{opacity:1;pointer-events:auto}
+  .browser-viewport{width:100%;height:560px;overflow-y:auto;overflow-x:hidden;background:var(--bg2)}
+  .browser-viewport::-webkit-scrollbar{width:8px}
+  .browser-viewport::-webkit-scrollbar-track{background:transparent}
+  .browser-viewport::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+  .browser-viewport img{width:100%;height:auto;display:block}
   @media (max-width:640px){
-    .browser-viewport{height:360px}
+    .browser-viewport{height:420px}
     .browser-url{font-size:10px}
     .browser-visit{font-size:10px;padding:4px 10px}
-    .browser-tab{padding:8px 12px;font-size:11px}
   }
 </style>
-
-<script is:inline>
-  document.querySelectorAll('[data-browser]').forEach((mockup) => {
-    const urlEl = mockup.querySelector('[data-browser-url]');
-    const tabs = mockup.querySelectorAll('.browser-tab');
-    const shots = mockup.querySelectorAll('.browser-shot');
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
-        tabs.forEach((t) => {
-          const on = t === tab;
-          t.classList.toggle('active', on);
-          t.setAttribute('aria-selected', on ? 'true' : 'false');
-        });
-        shots.forEach((s) => s.classList.toggle('active', s.dataset.tab === target));
-        if (urlEl && tab.dataset.url) urlEl.textContent = tab.dataset.url;
-      });
-    });
-  });
-</script>
