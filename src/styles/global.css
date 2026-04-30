@@ -262,6 +262,10 @@ input,textarea{font-family:var(--font-sans)}
 .foundation-card{background:var(--bg2);border-radius:var(--r-lg);border:1px solid var(--border);padding:20px}
 .foundation-section-title{font-size:20px;font-weight:500;color:var(--text);margin-bottom:12px}
 .foundation-desc{font-size:17px;color:var(--text2);line-height:1.75;margin-bottom:16px}
+@media (min-width:641px){
+  .foundation-card.key-insight .foundation-section-title{font-size:18px}
+  .foundation-card.key-insight .foundation-desc{font-size:15px}
+}
 .foundation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .foundation-bullets{display:flex;flex-direction:column;gap:7px}
 .foundation-bullet{display:flex;gap:8px;align-items:flex-start;font-size:15px;color:var(--text2);line-height:1.55}
