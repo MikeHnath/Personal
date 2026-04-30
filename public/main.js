@@ -392,3 +392,63 @@ function submitContact() {
     if ((cur || 'auto') === 'auto') applyTheme(prefersDark() ? 'dark' : 'light');
   });
 })();
+
+// ── IMAGE LIGHTBOX ──────────────────────────────────────────────
+(function(){
+  const SKIP_SELECTOR = '.sidebar, .mobile-topbar, .ticker-wrap, .modal-overlay, .update-thumb, .lightbox-overlay, .nav-icon, .social-pill, a, button';
+  function eligible(img) {
+    if (!img || img.tagName !== 'IMG') return false;
+    if (img.classList.contains('no-lightbox')) return false;
+    if (img.closest(SKIP_SELECTOR)) return false;
+    if (!img.getAttribute('src')) return false;
+    return true;
+  }
+  function markEligible(root) {
+    (root || document).querySelectorAll('img').forEach(img => {
+      if (eligible(img)) img.classList.add('lightbox-eligible');
+    });
+  }
+  function open(img) {
+    const overlay = document.getElementById('lightbox-overlay');
+    const target = document.getElementById('lightbox-img');
+    if (!overlay || !target) return;
+    target.src = img.currentSrc || img.src;
+    target.alt = img.alt || '';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+  }
+  function close() {
+    const overlay = document.getElementById('lightbox-overlay');
+    const target = document.getElementById('lightbox-img');
+    if (!overlay) return;
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    if (target) target.src = '';
+  }
+  document.addEventListener('click', (e) => {
+    const overlay = document.getElementById('lightbox-overlay');
+    if (overlay && overlay.classList.contains('open')) {
+      if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+        close();
+        return;
+      }
+      if (e.target.id === 'lightbox-img') return;
+    }
+    const img = e.target.closest && e.target.closest('img');
+    if (img && eligible(img)) {
+      e.preventDefault();
+      open(img);
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+  document.addEventListener('DOMContentLoaded', () => markEligible());
+  // re-mark after dynamic injections (ticker / updates / work cards)
+  const reMark = () => markEligible();
+  if (document.readyState !== 'loading') reMark();
+  setTimeout(reMark, 0);
+  setTimeout(reMark, 250);
+})();
