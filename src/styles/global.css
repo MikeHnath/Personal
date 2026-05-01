@@ -206,8 +206,8 @@ input,textarea{font-family:var(--font-sans)}
 .ticker-sep{display:none}
 
 /* ── PERSONAL UPDATES ───────────────────────────────────────── */
-.update-thumb{width:32px;height:32px;min-width:32px;background:none;border:none;display:flex;align-items:center;justify-content:center;padding:0;overflow:visible}
-.update-thumb-img{width:30px;height:30px;object-fit:contain;display:block}
+.update-thumb{width:40px;height:40px;min-width:40px;background:none;border:none;display:flex;align-items:center;justify-content:center;padding:0;overflow:visible}
+.update-thumb-img{width:40px;height:40px;object-fit:contain;display:block}
 .update-title{font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.4;font-family:var(--font-display)}
 .update-desc{font-size:var(--fs-body-sm);color:var(--text2);line-height:1.5}
 .update-date{font-size:var(--fs-micro);color:var(--text3);font-family:var(--font-mono);white-space:nowrap}
@@ -223,7 +223,7 @@ input,textarea{font-family:var(--font-sans)}
 .update-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
 .update-item:last-child{border-bottom:none}
 .update-item .update-body{flex:1}
-.update-item .update-date{padding-top:2px}
+.update-left{display:flex;flex-direction:column;align-items:flex-start;gap:6px;flex-shrink:0}
 .show-more{font-size:var(--fs-caption);color:var(--text3);margin-top:12px;cursor:pointer;display:inline-block;transition:color var(--transition);text-decoration:underline}
 .show-more:hover{color:var(--text2)}
 .show-more-em{font-size:var(--fs-body-sm);text-decoration:underline}
@@ -278,7 +278,7 @@ input,textarea{font-family:var(--font-sans)}
 .foundation-card.key-insight .foundation-desc{font-size:var(--fs-body-sm);line-height:1.7}
 .foundation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .foundation-bullets{display:flex;flex-direction:column;gap:7px}
-.foundation-bullet{display:flex;gap:8px;align-items:flex-start;font-size:var(--fs-body);color:var(--text2);line-height:1.55}
+.foundation-bullet{display:flex;gap:8px;align-items:flex-start;font-size:var(--fs-body-sm);color:var(--text2);line-height:1.55}
 .foundation-dot{width:4px;height:4px;border-radius:50%;background:var(--text3);margin-top:5px;min-width:4px}
 
 /* ── CONTACT ROWS ───────────────────────────────────────────── */
@@ -539,7 +539,8 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .nav-icon img{width:20px;height:20px;opacity:0.6}
 
   .update-grid{grid-template-columns:1fr}
-  .update-card{min-height:0;padding:14px}
+  .update-card{flex-direction:row;align-items:flex-start;gap:14px;min-height:0;padding:14px}
+  .update-card .update-body{margin-top:0}
   .home-work-grid{grid-template-columns:1fr}
   .section{padding:20px 17px}
   #home-greeting{font-size:clamp(52px,18vw,136px)!important;letter-spacing:-1px!important}
@@ -644,7 +645,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   body.mobile-menu-open{overflow:hidden}
 
   /* shrink body + card-title tokens at mobile breakpoint */
-  :root{--fs-body:14px;--fs-h3:14px}
+  :root{--fs-body:14px;--fs-h3:14px;--fs-body-sm:12px}
 }
 
 /* phones only — collapse any multi-column grid to a single column */

@@ -163,11 +163,13 @@ function renderUpdates() {
   if (homeEl) {
     homeEl.innerHTML = updates.slice(0, 4).map(u => `
       <div class="update-card">
-        ${thumb(u)}
+        <div class="update-left">
+          ${thumb(u)}
+          <div class="update-date">${u.date}</div>
+        </div>
         <div class="update-body">
           <div class="update-title">${u.title}</div>
           <div class="update-desc">${u.desc}</div>
-          <div class="update-date">${u.date}</div>
         </div>
       </div>`).join('');
   }
@@ -175,12 +177,14 @@ function renderUpdates() {
   if (aboutEl) {
     aboutEl.innerHTML = updates.map(u => `
       <div class="update-item">
-        ${thumb(u)}
+        <div class="update-left">
+          ${thumb(u)}
+          <div class="update-date">${u.date}</div>
+        </div>
         <div class="update-body">
           <div class="update-title">${u.title}</div>
           <div class="update-desc">${u.desc}</div>
         </div>
-        <div class="update-date">${u.date}</div>
       </div>`).join('');
   }
 }
