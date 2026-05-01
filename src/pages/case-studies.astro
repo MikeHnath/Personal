@@ -13,6 +13,12 @@ const total = caseStudies.length;
       <div class="page-count">{total} projects</div>
     </div>
     <div class="page-subtitle">Selected case studies across brand strategy, performance media, GTM, and creative direction.</div>
+    <div class="section-label" style="margin-bottom:10px">By the numbers</div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:24px">
+      <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$1.7M+</div><div class="stat-label">Paid media managed</div></div>
+      <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">15+ yrs</div><div class="stat-label">Brand &amp; marketing</div></div>
+      <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$500K+</div><div class="stat-label">Client funding raised</div></div>
+    </div>
     <div class="filter-bar">
       <button class="filter-pill active" onclick="filterWork(this,'all')">All</button>
       <button class="filter-pill" onclick="filterWork(this,'brand')">Brand</button>
@@ -20,13 +26,6 @@ const total = caseStudies.length;
       <button class="filter-pill" onclick="filterWork(this,'gtm')">GTM</button>
       <button class="filter-pill" onclick="filterWork(this,'design')">Design</button>
     </div>
-    <div class="section-label" style="margin-bottom:10px">By the numbers</div>
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:24px">
-      <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$1.7M+</div><div class="stat-label">Paid media managed</div></div>
-      <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">15+ yrs</div><div class="stat-label">Brand &amp; marketing</div></div>
-      <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$500K+</div><div class="stat-label">Client funding raised</div></div>
-    </div>
-    <div class="section-row-label">All projects</div>
     <div class="work-grid">
       {caseStudies.map((study) => <CaseStudyCard study={study} />)}
     </div>
