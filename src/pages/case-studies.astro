@@ -3,8 +3,6 @@ import Base from '../layouts/Base.astro';
 import CaseStudyCard from '../components/CaseStudyCard.astro';
 import { caseStudies } from '../data/caseStudies';
 
-const featured = caseStudies.filter((c) => c.isFeaturedOnIndex);
-const others = caseStudies.filter((c) => !c.isFeaturedOnIndex);
 const total = caseStudies.length;
 ---
 <Base title="Case Studies — Mike Hnath">
@@ -21,7 +19,6 @@ const total = caseStudies.length;
       <button class="filter-pill" onclick="filterWork(this,'performance')">Performance</button>
       <button class="filter-pill" onclick="filterWork(this,'gtm')">GTM</button>
       <button class="filter-pill" onclick="filterWork(this,'design')">Design</button>
-      <button class="filter-pill" onclick="filterWork(this,'web')">Web</button>
     </div>
     <div class="section-label" style="margin-bottom:10px">By the numbers</div>
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:24px">
@@ -29,17 +26,9 @@ const total = caseStudies.length;
       <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">15+ yrs</div><div class="stat-label">Brand &amp; marketing</div></div>
       <div class="stat-box" style="aspect-ratio:5/4"><div class="stat-num">$500K+</div><div class="stat-label">Client funding raised</div></div>
     </div>
-    {featured.length > 0 && (
-      <>
-        <div class="section-row-label">Featured</div>
-        <div class="work-grid" style="margin-bottom:24px">
-          {featured.map((study) => <CaseStudyCard study={study} />)}
-        </div>
-      </>
-    )}
     <div class="section-row-label">All projects</div>
     <div class="work-grid">
-      {others.map((study) => <CaseStudyCard study={study} />)}
+      {caseStudies.map((study) => <CaseStudyCard study={study} />)}
     </div>
     <div style="margin-top:24px;text-align:center"><a class="btn" href="/Personal/tools/" style="display:inline-flex;align-items:center;gap:10px"><svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>See the tools I use to make these happen<span style="background:rgba(255,255,255,0.18);font-family:var(--font-mono);font-size:9px;padding:2px 6px;border-radius:4px;font-weight:500;line-height:1.4">6</span></a></div>
   </div>
