@@ -105,7 +105,7 @@ input,textarea{font-family:var(--font-sans)}
 .nav-item.active{background:var(--bg);color:var(--text);font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.08);border-radius:6px;margin:0 8px;padding-left:8px;padding-right:8px}
 
 .nav-icon{width:20px;height:20px;min-width:20px;display:flex;align-items:center;justify-content:center}
-.nav-icon svg{width:16px;height:16px;stroke:var(--text3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.nav-icon svg{width:16px;height:16px;stroke:var(--text3);fill:none;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round}
 .nav-icon img{width:16px;height:16px;display:block}
 .nav-item.active .nav-icon svg{stroke:var(--text)}
 .nav-item:hover .nav-icon svg{stroke:var(--text)}

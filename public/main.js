@@ -71,7 +71,7 @@ buildTicker('ticker1'); buildTicker('ticker2');
 // ── PERSONAL UPDATES ─────────────────────────────────────────────
 const updates = [
   {
-    emoji: '🎆',
+    img: '/Personal/Icons/fireworks.svg',
     title: 'Received PGI 1.4 Pro Certificate of Training',
     desc: 'Licensed to handle 1.4 professional-use-only fireworks under PGI certification.',
     date: 'Apr 2026'
@@ -83,19 +83,19 @@ const updates = [
     date: 'Aug 2025'
   },
   {
-    emoji: '🏠',
-    title: 'Bought our house',
-    desc: 'Allison and I bought our first house together — right near friends and family in CT.',
+    img: '/Personal/Icons/house.svg',
+    title: 'Locked down our first house together',
+    desc: 'Allison and I bought our first home — five minutes from family, right in the middle of everything that matters.',
     date: 'Jul 2025'
   },
   {
-    emoji: '💍',
-    title: 'Got married',
-    desc: 'Married my beautiful wife Allison on the beach at Surfside Hotel in Lordship, CT.',
+    img: '/Personal/Icons/ring.svg',
+    title: 'Married Allison — best day of my life!',
+    desc: 'Said "I do" on the beach at The Surfside Hotel in Lordship, CT. Perfect weather, perfect day, no contest.',
     date: 'Jun 2025'
   },
   {
-    emoji: '📷',
+    img: '/Personal/Icons/camera.svg',
     title: 'Went all-in on photo and video production',
     desc: 'Invested $10K+ in professional camera and video gear. Creative production is now fully in-house.',
     date: 'Apr 2025'
@@ -141,9 +141,9 @@ const updates = [
     date: 'May 2022'
   },
   {
-    emoji: '🔑',
-    title: 'Bought my condo — first home',
-    desc: 'First home purchase. Moved out on my own for the first time — a milestone that was a long time coming.',
+    img: '/Personal/Icons/key.svg',
+    title: 'Officially became a homeowner!',
+    desc: 'First real estate purchase — a waterfront condo. A milestone that was a long time coming.',
     date: 'May 2021'
   }
 ];
@@ -361,7 +361,7 @@ function setTheme(choice) {
 function syncMobileThemeUI(mode) {
   const m = mode === 'dark' ? 'dark' : 'light';
   const fabIcon = document.querySelector('.mobile-theme-fab-icon');
-  if (fabIcon) fabIcon.textContent = m === 'dark' ? '🌙' : '☀';
+  if (fabIcon) fabIcon.textContent = m === 'dark' ? '☾' : '☀';
 }
 
 function setMobileTheme(choice) {
