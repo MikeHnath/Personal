@@ -356,13 +356,6 @@ function setTheme(choice) {
 
 function syncMobileThemeUI(mode) {
   const m = mode === 'dark' ? 'dark' : 'light';
-  const pill = document.querySelector('.mobile-theme-pill');
-  if (pill) {
-    pill.dataset.mode = m;
-    pill.querySelectorAll('.mobile-theme-pill-btn').forEach(b => {
-      b.classList.toggle('on', b.dataset.theme === m);
-    });
-  }
   const fabIcon = document.querySelector('.mobile-theme-fab-icon');
   if (fabIcon) fabIcon.textContent = m === 'dark' ? '🌙' : '☀';
 }

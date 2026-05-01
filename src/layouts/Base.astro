@@ -50,6 +50,11 @@ const isActive = (prefix: string) => {
 <!-- ── MOBILE BACKDROP ───────────────────────────────────────── -->
 <div class="mobile-backdrop" onclick="closeMobileMenu()"></div>
 
+<!-- ── MOBILE THEME BUBBLE (fixed bottom-right) ──────────────── -->
+<button class="mobile-theme-fab" onclick="toggleMobileTheme()" aria-label="Toggle theme">
+  <span class="mobile-theme-fab-icon">☀</span>
+</button>
+
 <div class="app">
 
   <!-- ── MOBILE TOP BAR ──────────────────────────────────────── -->
@@ -138,14 +143,6 @@ const isActive = (prefix: string) => {
           <button class="theme-btn on" id="btn-auto" onclick="setTheme('auto')">Auto</button>
         </div>
       </div>
-      <div class="mobile-theme-pill" data-mode="dark">
-        <div class="mobile-theme-pill-indicator"></div>
-        <button class="mobile-theme-pill-btn" data-theme="light" onclick="setMobileTheme('light')">Light</button>
-        <button class="mobile-theme-pill-btn on" data-theme="dark" onclick="setMobileTheme('dark')">Dark</button>
-      </div>
-      <button class="mobile-theme-fab" onclick="toggleMobileTheme()" aria-label="Toggle theme">
-        <span class="mobile-theme-fab-icon">☀</span>
-      </button>
     </div>
   </nav>
 
