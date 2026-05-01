@@ -35,7 +35,9 @@ const isActive = (prefix: string) => {
     (function () {
       var c;
       try { c = localStorage.getItem('mh-theme'); } catch (e) {}
-      if (!['light','dark','auto'].includes(c)) c = 'auto';
+      if (!['light','dark','auto'].includes(c)) {
+        c = window.matchMedia('(max-width: 768px)').matches ? 'dark' : 'auto';
+      }
       var mode = c === 'auto'
         ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
         : c;
@@ -44,6 +46,9 @@ const isActive = (prefix: string) => {
   </script>
 </head>
 <body>
+
+<!-- ── MOBILE BACKDROP ───────────────────────────────────────── -->
+<div class="mobile-backdrop" onclick="closeMobileMenu()"></div>
 
 <div class="app">
 
@@ -57,9 +62,9 @@ const isActive = (prefix: string) => {
 
   <!-- ── SIDEBAR ─────────────────────────────────────────────── -->
   <nav class="sidebar">
-    <div class="sidebar-logo">
+    <div class="sidebar-logo" onclick="toggleMobileMenu()">
       <img src="/Personal/Icons/mikehnath-icon.svg" alt="Mike Hnath" class="sidebar-logo-img" />
-      <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
+      <button class="mobile-menu-close" onclick="event.stopPropagation();closeMobileMenu()" aria-label="Close menu">✕</button>
     </div>
 
     <div class="sidebar-nav">
@@ -133,6 +138,14 @@ const isActive = (prefix: string) => {
           <button class="theme-btn on" id="btn-auto" onclick="setTheme('auto')">Auto</button>
         </div>
       </div>
+      <div class="mobile-theme-pill" data-mode="dark">
+        <div class="mobile-theme-pill-indicator"></div>
+        <button class="mobile-theme-pill-btn" data-theme="light" onclick="setMobileTheme('light')">Light</button>
+        <button class="mobile-theme-pill-btn on" data-theme="dark" onclick="setMobileTheme('dark')">Dark</button>
+      </div>
+      <button class="mobile-theme-fab" onclick="toggleMobileTheme()" aria-label="Toggle theme">
+        <span class="mobile-theme-fab-icon">☀</span>
+      </button>
     </div>
   </nav>
 

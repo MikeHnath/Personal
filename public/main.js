@@ -298,12 +298,20 @@ function closeModal() {
   if (el) el.classList.remove('open');
 }
 function toggleMobileMenu() {
-  const el = document.querySelector('.sidebar');
-  if (el) el.classList.toggle('mobile-open');
+  const sb = document.querySelector('.sidebar');
+  const bd = document.querySelector('.mobile-backdrop');
+  if (!sb) return;
+  const open = !sb.classList.contains('mobile-open');
+  sb.classList.toggle('mobile-open', open);
+  if (bd) bd.classList.toggle('open', open);
+  document.body.classList.toggle('mobile-menu-open', open);
 }
 function closeMobileMenu() {
-  const el = document.querySelector('.sidebar');
-  if (el) el.classList.remove('mobile-open');
+  const sb = document.querySelector('.sidebar');
+  const bd = document.querySelector('.mobile-backdrop');
+  if (sb) sb.classList.remove('mobile-open');
+  if (bd) bd.classList.remove('open');
+  document.body.classList.remove('mobile-menu-open');
 }
 function handleOverlay(e) {
   if (e.target === document.getElementById('modal-overlay')) closeModal();
@@ -343,6 +351,30 @@ function setTheme(choice) {
   renderUpdates();
   const ind = document.getElementById('theme-indicator');
   if (ind) ind.style.transform = `translateX(calc(${({light:0,dark:1,auto:2}[choice]??2)} * 100%))`;
+  syncMobileThemeUI(resolveTheme(choice));
+}
+
+function syncMobileThemeUI(mode) {
+  const m = mode === 'dark' ? 'dark' : 'light';
+  const pill = document.querySelector('.mobile-theme-pill');
+  if (pill) {
+    pill.dataset.mode = m;
+    pill.querySelectorAll('.mobile-theme-pill-btn').forEach(b => {
+      b.classList.toggle('on', b.dataset.theme === m);
+    });
+  }
+  const fabIcon = document.querySelector('.mobile-theme-fab-icon');
+  if (fabIcon) fabIcon.textContent = m === 'dark' ? '🌙' : '☀';
+}
+
+function setMobileTheme(choice) {
+  // mobile is light/dark only — store as explicit choice
+  setTheme(choice === 'dark' ? 'dark' : 'light');
+}
+
+function toggleMobileTheme() {
+  const cur = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+  setMobileTheme(cur === 'dark' ? 'light' : 'dark');
 }
 
 function copyEmail(e) {
@@ -374,15 +406,24 @@ function submitContact() {
   window.location.href = `mailto:hnath928@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
 }
 
-// init theme from saved choice (default: auto → system)
+// init theme from saved choice (default: mobile→dark, desktop→auto)
 (function(){
   let saved;
   try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
-  setTheme(['light','dark','auto'].includes(saved) ? saved : 'auto');
+  let initial;
+  if (['light','dark','auto'].includes(saved)) {
+    initial = saved;
+  } else {
+    initial = window.matchMedia('(max-width: 768px)').matches ? 'dark' : 'auto';
+  }
+  setTheme(initial);
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
     let cur;
     try { cur = localStorage.getItem(THEME_KEY); } catch (e) {}
-    if ((cur || 'auto') === 'auto') applyTheme(prefersDark() ? 'dark' : 'light');
+    if ((cur || 'auto') === 'auto') {
+      applyTheme(prefersDark() ? 'dark' : 'light');
+      syncMobileThemeUI(prefersDark() ? 'dark' : 'light');
+    }
   });
 })();
 
