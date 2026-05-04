@@ -68,7 +68,7 @@ const isActive = (prefix: string) => {
   <!-- ── SIDEBAR ─────────────────────────────────────────────── -->
   <nav class="sidebar">
     <div class="sidebar-logo" onclick="toggleMobileMenu()">
-      <img src="/Personal/Icons/mikehnath-icon.svg" alt="Mike Hnath" class="sidebar-logo-img" />
+      <span class="sidebar-logo-img" role="img" aria-label="Mike Hnath"></span>
       <button class="mobile-menu-close" onclick="event.stopPropagation();closeMobileMenu()" aria-label="Close menu">✕</button>
     </div>
 
@@ -114,7 +114,7 @@ const isActive = (prefix: string) => {
         <span class="nav-label">Websites</span>
         <span class="nav-shortcut">7</span>
       </a>
-      <div class="nav-mobile-logo"><img src="/Personal/Icons/mikehnath-icon.svg" alt="Mike Hnath" class="sidebar-logo-img" /></div>
+      <div class="nav-mobile-logo"><span class="sidebar-logo-img" role="img" aria-label="Mike Hnath"></span></div>
       <a class="nav-item nav-ext" href="https://hnath.myportfolio.com" target="_blank" rel="noopener noreferrer">
         <div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
         <span class="nav-label">Media</span>
