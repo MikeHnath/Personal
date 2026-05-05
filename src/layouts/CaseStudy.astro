@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import CaseStudyNav from '../components/CaseStudyNav.astro';
+import WaveformCanvas from '../components/WaveformCanvas.astro';
 import { getCaseStudy } from '../data/caseStudies';
 
 interface Props {
@@ -12,21 +13,24 @@ const cs = getCaseStudy(slug);
 if (!cs) throw new Error(`Unknown case study slug: ${slug}`);
 ---
 <Base title={cs.pageTitle}>
-  <div class="section">
-    <a class="breadcrumb" href="/Personal/case-studies/">← <span>Case Studies</span> / {cs.breadcrumb}</a>
-    {cs.hero.src ? (
-      <div class="cs-hero" style="border:0;padding:0;overflow:hidden">
-        <img src={cs.hero.src} alt={cs.hero.alt ?? ''} style="width:100%;height:100%;object-fit:cover;display:block" />
+  <div class="section" style="position:relative;overflow:hidden">
+    <WaveformCanvas />
+    <div style="position:relative;z-index:1">
+      <a class="breadcrumb" href="/Personal/case-studies/">← <span>Case Studies</span> / {cs.breadcrumb}</a>
+      {cs.hero.src ? (
+        <div class="cs-hero" style="border:0;padding:0;overflow:hidden">
+          <img src={cs.hero.src} alt={cs.hero.alt ?? ''} style="width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+      ) : (
+        <div class="cs-hero">{cs.hero.placeholder}</div>
+      )}
+      <div class="cs-tags">
+        {cs.tags.map((t) => <span class="cs-tag">{t}</span>)}
       </div>
-    ) : (
-      <div class="cs-hero">{cs.hero.placeholder}</div>
-    )}
-    <div class="cs-tags">
-      {cs.tags.map((t) => <span class="cs-tag">{t}</span>)}
+      <div class="cs-title">{cs.title}</div>
+      <div class="cs-subtitle" set:html={cs.subtitle} />
+      <slot name="meta" />
     </div>
-    <div class="cs-title">{cs.title}</div>
-    <div class="cs-subtitle" set:html={cs.subtitle} />
-    <slot name="meta" />
   </div>
   <slot />
   <div class="section" style="border-bottom:none">
