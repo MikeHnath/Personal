@@ -77,7 +77,13 @@ const {
     let strokeRGB: [number, number, number] = [0, 0, 0];
     const refreshColor = () => {
       const c = getComputedStyle(canvas).color;
-      strokeRGB = parseColor(c);
+      const [r, g, b] = parseColor(c);
+      // shift the color cooler — pull red back, push blue up
+      strokeRGB = [
+        Math.max(0, Math.min(255, r * 0.78)),
+        Math.max(0, Math.min(255, g * 0.92)),
+        Math.max(0, Math.min(255, b * 1.15 + 10))
+      ];
     };
     refreshColor();
 
@@ -101,7 +107,7 @@ const {
       sign: number
     ): number => {
       const cy = height / 2;
-      const freq = 0.0044;
+      const freq = 0.0038;
       return (
         cy +
         amplitude *

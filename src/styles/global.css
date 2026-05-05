@@ -212,8 +212,8 @@ input,textarea{font-family:var(--font-sans)}
 
 /* ── LOGO TICKER ────────────────────────────────────────────── */
 .ticker-wrap{background:var(--ticker-bg,var(--bg));padding:48px 0;overflow:hidden;position:relative}
-.ticker-wrap.ticker--inverse{--ticker-bg:var(--bg);--ticker-logo-filter:grayscale(1);--ticker-logo-filter-flip:grayscale(1) invert(1);--ticker-logo-filter-boost:grayscale(1) contrast(2) brightness(.35)}
-:root[data-theme="dark"] .ticker-wrap.ticker--inverse{--ticker-logo-filter:grayscale(1) invert(1);--ticker-logo-filter-flip:grayscale(1);--ticker-logo-filter-boost:grayscale(1) invert(1) contrast(2) brightness(1.65)}
+.ticker-wrap.ticker--inverse{--ticker-bg:var(--bg);--ticker-logo-filter:grayscale(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-flip:grayscale(1) invert(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-boost:grayscale(1) contrast(2) brightness(.35) sepia(.5) hue-rotate(200deg) saturate(.7)}
+:root[data-theme="dark"] .ticker-wrap.ticker--inverse{--ticker-logo-filter:grayscale(1) invert(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-flip:grayscale(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-boost:grayscale(1) invert(1) contrast(2) brightness(1.65) sepia(.5) hue-rotate(200deg) saturate(.7)}
 .ticker-fade-l{position:absolute;left:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to right,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-fade-r{position:absolute;right:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to left,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-row{display:flex;white-space:nowrap;align-items:center}

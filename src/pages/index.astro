@@ -26,8 +26,8 @@ const homeWork = caseStudies.slice(0, 3);
     </div>
   </div>
 
-  <div class="section" style="padding:0;position:relative;z-index:0;height:820px;margin-top:-180px;margin-bottom:-590px;overflow:visible;pointer-events:none;transform:rotate(-7deg);transform-origin:center">
-    <WaveformCanvas lines={120} amplitude={276} speed={0.096} />
+  <div class="section" style="padding:0;position:relative;z-index:0;height:820px;margin-top:-196px;margin-bottom:-574px;overflow:visible;pointer-events:none;transform:rotate(-7deg);transform-origin:center">
+    <WaveformCanvas lines={180} amplitude={276} speed={0.096} />
   </div>
 
   <div class="section" style="padding-top:25px;padding-bottom:71px;position:relative;z-index:1;background:transparent">
@@ -77,36 +77,21 @@ const homeWork = caseStudies.slice(0, 3);
   </div>
 
   <div class="section" style="padding-bottom:25px">
-    <div class="section-header" style="margin-bottom:16px">
-      <div class="section-label" style="margin-bottom:0">Read my latest thoughts</div>
-      <a class="show-more" href="/Personal/writing/" style="margin-top:0">View all</a>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
-      <a class="work-card" href="/Personal/writing/">
-        <div class="work-thumb" style="height:120px">[Hero image]</div>
-        <div class="work-body">
-          <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">Brand · Strategy</div>
-          <div class="work-title">Why brand strategy and performance media aren't opposites</div>
-          <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
-        </div>
-      </a>
-      <a class="work-card" href="/Personal/writing/">
-        <div class="work-thumb" style="height:120px">[Hero image]</div>
-        <div class="work-body">
-          <div class="work-client" style="font-size:10px;margin-bottom:4px;letter-spacing:.04em">GTM · Personal</div>
-          <div class="work-title">What 22 countries on a tour bus taught me about operations</div>
-          <div class="work-meta" style="margin-top:8px"><span class="work-industry">Coming soon</span><span class="work-arrow">→</span></div>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="section">
     <div class="section-header">
       <div class="section-label" style="margin-bottom:0">Personal updates</div>
       <a class="show-more" href="/Personal/about/" style="margin-top:0">View all</a>
     </div>
     <div class="update-grid" id="home-updates"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-header" style="margin-bottom:16px">
+      <div class="section-label" style="margin-bottom:0">Read my latest thoughts</div>
+    </div>
+    <div style="padding:32px 16px;background:var(--bg2);border-radius:var(--r-lg);text-align:center">
+      <div style="font-size:var(--fs-h3);font-weight:700;color:var(--text);font-family:var(--font-display);margin-bottom:6px">Blog coming soon</div>
+      <div style="font-size:var(--fs-body-sm);color:var(--text2);line-height:1.5">Writing is in progress — check back shortly.</div>
+    </div>
   </div>
 
   <div class="section" style="border-bottom:none">
