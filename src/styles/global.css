@@ -537,6 +537,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
        (max-width:768px){
   .sidebar-logo-img{height:19px;width:30px}
   .home-featured{padding-top:13px!important}
+  .home-work-grid > :nth-child(n+3){display:none}
 }
 
 @media (max-width:1024px) and (orientation:portrait),
