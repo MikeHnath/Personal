@@ -1,7 +1,7 @@
 /* Mike Hnath Portfolio — main.js */
 
 // ── NAVIGATION ───────────────────────────────────────────────────
-const BASE = '/';
+const BASE = '';
 const PAGE_PATHS = {
   home: BASE + '/',
   about: BASE + '/about/',

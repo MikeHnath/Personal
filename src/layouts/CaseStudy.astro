@@ -13,7 +13,7 @@ if (!cs) throw new Error(`Unknown case study slug: ${slug}`);
 ---
 <Base title={cs.pageTitle}>
   <div class="section">
-    <a class="breadcrumb" href="/Personal/case-studies/">← <span>Case Studies</span> / {cs.breadcrumb}</a>
+    <a class="breadcrumb" href="/case-studies/">← <span>Case Studies</span> / {cs.breadcrumb}</a>
     {cs.hero.src ? (
       <div class="cs-hero" style="border:0;padding:0;overflow:hidden">
         <img src={cs.hero.src} alt={cs.hero.alt ?? ''} style="width:100%;height:100%;object-fit:cover;display:block" />
@@ -33,6 +33,6 @@ if (!cs) throw new Error(`Unknown case study slug: ${slug}`);
     <slot name="footer-prelude" />
     <hr class="cs-rule" />
     <CaseStudyNav slug={slug} />
-    <div class="btn-row"><a class="btn" href="/Personal/case-studies/">← All case studies</a></div>
+    <div class="btn-row"><a class="btn" href="/case-studies/">← All case studies</a></div>
   </div>
 </Base>

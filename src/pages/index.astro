@@ -14,7 +14,7 @@ const homeWork = caseStudies.slice(0, 3);
         <div id="home-greeting" style="font-size:120px;font-weight:300;color:var(--text);line-height:1;margin-top:24px;margin-bottom:16px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
         <div class="body-text" style="margin-bottom:16px">I'm <strong>Mike Hnath</strong> (pronounced Nath), former touring drummer who runs my own consultancy. I help brands find their footing, tell their story, and grow with purpose.</div>
         <div style="display:flex;gap:8px;margin-bottom:16px">
-          <a class="btn primary" href="/Personal/case-studies/">View case studies</a>
+          <a class="btn primary" href="/case-studies/">View case studies</a>
           <button class="btn secondary" onclick="openModal()">Get in touch</button>
         </div>
       </div>
@@ -33,7 +33,7 @@ const homeWork = caseStudies.slice(0, 3);
   <div class="section home-featured" style="padding-top:25px;padding-bottom:71px;position:relative;z-index:1;background:transparent">
     <div class="section-header">
       <div class="section-label" style="margin-bottom:0">Featured work</div>
-      <a class="show-more" href="/Personal/case-studies/" style="margin-top:0">View all</a>
+      <a class="show-more" href="/case-studies/" style="margin-top:0">View all</a>
     </div>
     <div id="home-work" class="home-work-grid">
       {homeWork.map((study) => <FeaturedWorkCard study={study} />)}
@@ -58,12 +58,12 @@ const homeWork = caseStudies.slice(0, 3);
   <div class="section">
     <div class="section-label">Portfolio</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-      <a class="nav-tile" href="/Personal/case-studies/">
+      <a class="nav-tile" href="/case-studies/">
         <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Case Studies</div>
         <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Brand, GTM, performance media, and eComm. Full write-ups with context and results.</div>
         <div style="font-size:11px;color:var(--text3)">View case studies →</div>
       </a>
-      <a class="nav-tile" href="/Personal/websites/">
+      <a class="nav-tile" href="/websites/">
         <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px">Websites</div>
         <div style="font-size:11px;color:var(--text2);line-height:1.55;margin-bottom:10px">Live builds + GitHub projects. WordPress, Webflow, custom HTML.</div>
         <div style="font-size:11px;color:var(--text3)">View websites →</div>
@@ -79,7 +79,7 @@ const homeWork = caseStudies.slice(0, 3);
   <div class="section" style="padding-bottom:25px">
     <div class="section-header">
       <div class="section-label" style="margin-bottom:0">Personal updates</div>
-      <a class="show-more" href="/Personal/about/" style="margin-top:0">View all</a>
+      <a class="show-more" href="/about/" style="margin-top:0">View all</a>
     </div>
     <div class="update-grid" id="home-updates"></div>
   </div>
@@ -96,11 +96,11 @@ const homeWork = caseStudies.slice(0, 3);
 
   <div class="section" style="border-bottom:none">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-      <img src="/Personal/Logos/mikehnath-logo.svg" style="height:12px;width:auto;display:block;filter:var(--logo-filter,none)" />
+      <img src="/Logos/mikehnath-logo.svg" style="height:12px;width:auto;display:block;filter:var(--logo-filter,none)" />
       <div class="social-pills">
-        <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank" rel="noopener noreferrer"><img src="/Personal/Icons/linkedin.svg" style="width:16px;height:16px;display:block" />LinkedIn</a>
-        <a class="social-pill" href="https://github.com/MikeHnath" target="_blank" rel="noopener noreferrer"><img src="/Personal/Icons/github.svg" style="width:16px;height:16px;display:block" />GitHub</a>
-        <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank" rel="noopener noreferrer"><img src="/Personal/Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block" />Portfolio</a>
+        <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank" rel="noopener noreferrer"><img src="/Icons/linkedin.svg" style="width:16px;height:16px;display:block" />LinkedIn</a>
+        <a class="social-pill" href="https://github.com/MikeHnath" target="_blank" rel="noopener noreferrer"><img src="/Icons/github.svg" style="width:16px;height:16px;display:block" />GitHub</a>
+        <a class="social-pill" href="https://hnath.myportfolio.com" target="_blank" rel="noopener noreferrer"><img src="/Icons/adobe-portfolio.svg" style="width:16px;height:16px;display:block" />Portfolio</a>
       </div>
       <div style="font-size:11px;color:var(--text3)">Connecticut, USA · Available for select work</div>
     </div>
