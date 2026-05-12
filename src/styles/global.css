@@ -522,7 +522,7 @@ input,textarea{font-family:var(--font-sans)}
 .btn-row{text-align:left;margin-top:36px}
 
 /* ── SIDEBAR LOGO IMAGE ─────────────────────────────────────── */
-.sidebar-logo-img{height:24px;width:38px;display:block;background-color:var(--logo-color);-webkit-mask:url(/Personal/Icons/mikehnath-icon.svg) no-repeat center/contain;mask:url(/Personal/Icons/mikehnath-icon.svg) no-repeat center/contain}
+.sidebar-logo-img{height:24px;width:38px;display:block;background-color:var(--logo-color);-webkit-mask:url(/Icons/mikehnath-icon.svg) no-repeat center/contain;mask:url(/Icons/mikehnath-icon.svg) no-repeat center/contain}
 img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--logo-filter,none)}
 .nav-mobile-logo{display:none}
 .mobile-topbar{display:none}
