@@ -23,7 +23,7 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'scandalous',
-    href: '/Personal/case-studies/scandalous/',
+    href: '/case-studies/scandalous/',
     pageTitle: 'Scandalous — Case Study',
     breadcrumb: 'Scandalous',
     title: 'Brand architect for a cannabis chocolate startup.',
@@ -39,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'pocn',
-    href: '/Personal/case-studies/pocn/',
+    href: '/case-studies/pocn/',
     pageTitle: 'POCN — Case Study',
     breadcrumb: 'POCN',
     title: 'Driving Efficiency in Programmatic Media for Regulated Healthcare',
@@ -55,7 +55,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'sigil',
-    href: '/Personal/case-studies/sigil/',
+    href: '/case-studies/sigil/',
     pageTitle: 'SIGIL — Case Study',
     breadcrumb: 'SIGIL',
     title: 'Zero-to-launch brand and product system for a Kickstarter-funded tabletop game',
@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'kraft-heinz',
-    href: '/Personal/case-studies/kraft-heinz/',
+    href: '/case-studies/kraft-heinz/',
     pageTitle: 'Kraft Heinz / MiO — Case Study',
     breadcrumb: 'Kraft Heinz / MiO',
     title: "Rebuilding MiO's digital shelf into a conversion system",
@@ -85,7 +85,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'triax',
-    href: '/Personal/case-studies/triax/',
+    href: '/case-studies/triax/',
     pageTitle: 'Triax — Case Study',
     breadcrumb: 'Triax',
     title: 'B2B SaaS Messaging & Demand Gen Overhaul for Energy Enterprise Prospects',
@@ -100,7 +100,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'infinity',
-    href: '/Personal/case-studies/infinity/',
+    href: '/case-studies/infinity/',
     pageTitle: 'Infinity — Case Study',
     breadcrumb: 'Infinity',
     title: 'Infinity — Licensed CPG brand direction and packaging at scale',
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'ark',
-    href: '/Personal/case-studies/ark/',
+    href: '/case-studies/ark/',
     pageTitle: 'Ark of the Covenant — Case Study',
     breadcrumb: 'Ark of the Covenant',
     title: 'Ark of the Covenant — Independent artist brand built from zero',
