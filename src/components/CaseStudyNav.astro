@@ -7,7 +7,7 @@ interface Props {
 
 const { slug } = Astro.props;
 const { prev, next } = getCaseStudyNeighbors(slug);
-const indexHref = '/Personal/case-studies/';
+const indexHref = '/case-studies/';
 ---
 <div class="next-prev">
   {prev ? (
