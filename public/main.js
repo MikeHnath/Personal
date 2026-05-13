@@ -56,7 +56,7 @@ function buildTicker(id) {
   let html = '';
   brands.forEach(b => {
     if (b.img) {
-      const h = Math.round(37 * (b.scale || 1));
+      const h = Math.round(33 * (b.scale || 1));
       const cls = (b.flip ? ' ticker-logo-flip' : '') + (b.boost ? ' ticker-logo-boost' : '');
       html += `<div class="ticker-logo${cls}"><img src="${b.img}" alt="${b.name}" style="height:${h}px;max-width:200px;object-fit:contain"></div><div class="ticker-sep"></div>`;
     } else {
@@ -219,6 +219,14 @@ function filterTools(btn, cat) {
     const cats = card.dataset.cat || '';
     card.style.display = cats.includes(cat) ? '' : 'none';
   });
+}
+
+// Auto-apply tools category filter from URL hash (e.g. /tools/#web)
+if (location.hash && document.getElementById('tools-grid')) {
+  const cat = location.hash.slice(1);
+  const pill = Array.from(document.querySelectorAll('.filter-bar .filter-pill'))
+    .find(p => (p.getAttribute('onclick') || '').includes(`'${cat}'`));
+  if (pill) filterTools(pill, cat);
 }
 
 // ── CAR STEPS ────────────────────────────────────────────────────

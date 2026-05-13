@@ -16,9 +16,9 @@ const total = caseStudies.length;
     <div class="filter-bar">
       <button class="filter-pill active" onclick="filterWork(this,'all')">All</button>
       <button class="filter-pill" onclick="filterWork(this,'brand')">Brand</button>
-      <button class="filter-pill" onclick="filterWork(this,'performance')">Performance</button>
-      <button class="filter-pill" onclick="filterWork(this,'gtm')">GTM</button>
       <button class="filter-pill" onclick="filterWork(this,'design')">Design</button>
+      <button class="filter-pill" onclick="filterWork(this,'gtm')">GTM</button>
+      <button class="filter-pill" onclick="filterWork(this,'performance')">Performance</button>
     </div>
     <div class="work-grid">
       {caseStudies.map((study) => <CaseStudyCard study={study} />)}

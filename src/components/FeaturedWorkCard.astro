@@ -13,7 +13,8 @@ const { study } = Astro.props;
   ) : (
     <div class="fw-thumb fw-thumb-empty"></div>
   )}
-  <div class="fw-client">{study.industry}</div>
-  <div class="fw-outcome">{study.subtitle}</div>
-  <div class="fw-footer"><span class="fw-industry">{study.navTag}</span><span class="fw-arrow">→</span></div>
+  <div class="fw-footer">
+    <span class="fw-cats">{study.navTag}</span>
+    <span class="fw-cta">View more <span class="fw-arrow">→</span></span>
+  </div>
 </a>
