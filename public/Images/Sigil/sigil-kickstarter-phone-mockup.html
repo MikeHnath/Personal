@@ -8,8 +8,10 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
     height: 100%;
+    width: 100%;
     background: transparent;
     font-family: -apple-system, sans-serif;
+    overflow: hidden;
   }
   body {
     display: flex;
@@ -20,15 +22,15 @@
   .phone {
     position: relative;
     width: 340px;
+    height: 668px;
     background: #1a1a1a;
     border-radius: 48px;
     padding: 14px;
-    margin: 50px;
-    box-shadow:
-      0 0 0 1px #2a2a2a,
-      0 0 0 2px #111,
-      0 20px 40px rgba(0,0,0,.35),
-      inset 0 0 0 1px #333;
+    flex-shrink: 0;
+    --scale-w: calc((100vw - 16px) / 340px);
+    --scale-h: calc((100vh - 16px) / 668px);
+    transform: scale(min(var(--scale-w), var(--scale-h)));
+    transform-origin: center center;
   }
 
   /* Side buttons */

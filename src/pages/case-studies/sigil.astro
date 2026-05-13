@@ -20,6 +20,13 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
     </div>
   </div>
   <div class="section">
+    <div class="section-label">Promo</div>
+    <div class="media-video">
+      <video src="/Images/Sigil/sigil-teaser-promo.mp4" controls playsinline preload="metadata"></video>
+    </div>
+  </div>
+
+  <div class="section">
     <div class="section-label">Context · Action · Result</div>
     <div class="car-grid">
       <div class="car-sidebar">
@@ -44,21 +51,6 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
           <div class="car-content-body">SIGIL launched on Kickstarter in May 2023 and funded at 303% of its $7,500 goal, raising $22,740 from 347 backers.<br /><br />The visual and product system I developed is the version that was manufactured and shipped to customers.</div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-label">What this proves</div>
-    <div class="foundation-card key-insight">
-      <div class="foundation-section-title">Translating mechanics into product.</div>
-      <div class="foundation-desc" style="margin-bottom:0">A strong system isn't enough — it has to be legible, intuitive, and physically executable. This project demonstrates how visual design and production thinking turn an abstract concept into a real, manufacturable product.</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-label">Promo</div>
-    <div class="media-video">
-      <video src="/Images/Sigil/sigil-teaser-promo.mp4" controls playsinline preload="metadata"></video>
     </div>
   </div>
 
@@ -183,6 +175,14 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
       <div class="phone-caption">Campaign page design — brand system applied by Pine Island Games team</div>
     </div>
   </div>
+
+  <div class="section">
+    <div class="section-label">What this proves</div>
+    <div class="foundation-card key-insight" style="border:none">
+      <div class="foundation-section-title">Translating mechanics into product.</div>
+      <div class="foundation-desc" style="margin-bottom:0">A strong system isn't enough — it has to be legible, intuitive, and physically executable. This project demonstrates how visual design and production thinking turn an abstract concept into a real, manufacturable product.</div>
+    </div>
+  </div>
 </CaseStudy>
 
 <style>
@@ -206,7 +206,10 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .sigil-logo-wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
   .sigil-logo-cell{display:flex;align-items:center;justify-content:center;background:#442554;border-radius:var(--r-lg);padding:32px}
   :root[data-theme="dark"] .sigil-logo-cell{background:var(--bg2)}
-  .sigil-logo-cell img{width:100%;height:auto;display:block}
+  .sigil-logo-cell img{width:85%;height:auto;display:block}
+  .sigil-logo-cell-logo img{width:94%}
+  .sigil-logo-cell-icon img{width:79%}
+  .sigil-logo-cell-icon,:root[data-theme="dark"] .sigil-logo-cell-icon{background:#000}
   .sigil-logo-cell-logo{grid-column:span 3}
   .sigil-logo-cell-icon{grid-column:span 1}
   @media (max-width:640px){
@@ -214,7 +217,7 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
     .sigil-logo-cell{padding:16px}
   }
 
-  .brand-system{display:flex;flex-direction:column;gap:32px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px}
+  .brand-system{display:flex;flex-direction:column;gap:32px;background:var(--bg2);border-radius:var(--r-lg);padding:28px}
   .brand-swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .brand-swatch{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
   .swatch-chip{width:100%;aspect-ratio:3/2;max-width:160px;border-radius:var(--r);border:1px solid var(--border);margin-bottom:6px}
@@ -259,7 +262,7 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .sigil-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 
   .phone-mockup{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:28px}
-  .phone-iframe{width:100%;max-width:480px;height:840px;border:0;background:transparent;display:block;color-scheme:light}
+  .phone-iframe{width:100%;max-width:390px;aspect-ratio:9/14;border:0;background:transparent;display:block;color-scheme:light}
   .phone-caption{font-size:11px;color:var(--text3);text-align:center;letter-spacing:.04em;text-transform:uppercase}
 
   @media (max-width:640px){
