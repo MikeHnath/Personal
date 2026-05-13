@@ -129,6 +129,16 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   </div>
 
   <div class="section">
+    <div class="section-label">Product System</div>
+    <div class="sc-product-grid">
+      <div class="sc-product-cell"><img src="/Images/Scandalous/scandalous-product-systemscandalous-product-system-mold.jpg" alt="Custom chocolate mold developed with Tomric Systems" loading="lazy" /></div>
+      <div class="sc-product-cell"><img src="/Images/Scandalous/scandalous-product-systemscandalous-product-system-pkgtime.jpg" alt="Packaging timeline across SKUs and formats" loading="lazy" /></div>
+      <div class="sc-product-cell"><img src="/Images/Scandalous/scandalous-product-systemscandalous-product-system-inmkt.jpg" alt="Scandalous Chocolates product in market" loading="lazy" /></div>
+      <div class="sc-product-cell"><img src="/Images/Scandalous/scandalous-product-systemscandalous-product-system-promo-sales.jpg" alt="Promotional and sales materials" loading="lazy" /></div>
+    </div>
+  </div>
+
+  <div class="section">
     <div class="section-label">Website — scandalouschocolates.com</div>
     <div class="browser-mockup">
       <div class="browser-toolbar">
@@ -188,6 +198,11 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
     .browser-url{font-size:10px}
     .browser-visit{font-size:10px;padding:4px 10px}
   }
+
+  .sc-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .sc-product-cell{border-radius:var(--r-lg);overflow:hidden;background:var(--bg2);border:1px solid var(--border)}
+  .sc-product-cell img{width:100%;height:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+  @media (max-width:640px){.sc-product-grid{grid-template-columns:1fr;gap:8px}}
 
   .sc-logo-wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
   .sc-logo-cell{display:flex;align-items:center;justify-content:center;background:#58311D;border-radius:var(--r-lg);padding:32px}
