@@ -577,7 +577,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .update-card .update-body{margin-top:0}
   .home-work-grid{grid-template-columns:1fr}
   .section{padding:20px 17px}
-  #home-greeting{font-size:44px!important;letter-spacing:-1px!important}
+  #home-greeting{font-size:clamp(50px,14vw,72px)!important;letter-spacing:-1px!important}
 }
 
 /* phones + tablets-in-portrait — persistent left icon strip, expands on logo tap.
