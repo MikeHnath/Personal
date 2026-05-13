@@ -214,13 +214,15 @@ input,textarea{font-family:var(--font-sans)}
 .avail-sub{font-size:var(--fs-micro);color:var(--text3);margin-left:4px}
 
 /* ── LOGO TICKER ────────────────────────────────────────────── */
-.ticker-wrap{background:transparent;padding:48px 0;overflow:hidden;position:relative}
+.ticker-wrap{background:transparent;padding:28px 0 54px;overflow:hidden;position:relative}
 .ticker-wrap.ticker--inverse{--ticker-bg:var(--bg);--ticker-logo-filter:grayscale(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-flip:grayscale(1) invert(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-boost:grayscale(1) contrast(2) brightness(.35) sepia(.5) hue-rotate(200deg) saturate(.7)}
 :root[data-theme="dark"] .ticker-wrap.ticker--inverse{--ticker-logo-filter:grayscale(1) invert(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-flip:grayscale(1) sepia(.5) hue-rotate(200deg) saturate(.7);--ticker-logo-filter-boost:grayscale(1) invert(1) contrast(2) brightness(1.65) sepia(.5) hue-rotate(200deg) saturate(.7)}
 .ticker-fade-l{position:absolute;left:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to right,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-fade-r{position:absolute;right:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to left,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-row{display:flex;white-space:nowrap;align-items:center}
+.ticker-row + .ticker-row{margin-top:10px}
 .ticker-track{display:inline-flex;align-items:center;animation:ticker 36s linear infinite}
+.ticker-row--reverse .ticker-track{animation-direction:reverse}
 .ticker-wrap:hover .ticker-track{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-logo{height:48px;padding:0 34px;display:flex;align-items:center;justify-content:center;opacity:.5}
@@ -552,7 +554,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
        (max-height:500px) and (orientation:landscape) and (max-width:1024px),
        (max-width:768px){
   .sidebar-logo-img{height:19px;width:30px}
-  .home-featured{padding-top:13px!important}
+  .home-featured{padding-top:30px!important}
 }
 
 @media (max-width:1024px) and (orientation:portrait),
@@ -590,9 +592,10 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .home-work-grid{grid-template-columns:1fr}
   .section{padding:20px 21px}
   #home-greeting{font-size:clamp(50px,14vw,72px)!important;letter-spacing:-1px!important}
-  .home-wave{margin-top:-176px!important;margin-bottom:-474px!important}
-  .ticker-logo{padding:0 25px}
+  .home-wave{margin-top:-116px!important;margin-bottom:-394px!important}
+  .ticker-logo{padding:0 14px}
   .ticker-logo img{transform:scale(0.8);transform-origin:center}
+  .ticker-row + .ticker-row{margin-top:4px}
 }
 
 /* phones + tablets-in-portrait — persistent left icon strip, expands on logo tap.

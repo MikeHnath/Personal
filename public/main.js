@@ -50,13 +50,13 @@ const brands = [
   {name:'ARK OF THE COVENANT',img:'/Logos/ark-of-the-covenant-logo.svg'}
 ];
 
-function buildTicker(id) {
+function buildTicker(id, list) {
   const el = document.getElementById(id);
   if (!el) return;
   let html = '';
-  brands.forEach(b => {
+  list.forEach(b => {
     if (b.img) {
-      const h = Math.round(33 * (b.scale || 1));
+      const h = Math.round(26 * (b.scale || 1));
       const cls = (b.flip ? ' ticker-logo-flip' : '') + (b.boost ? ' ticker-logo-boost' : '');
       html += `<div class="ticker-logo${cls}"><img src="${b.img}" alt="${b.name}" style="height:${h}px;max-width:200px;object-fit:contain"></div><div class="ticker-sep"></div>`;
     } else {
@@ -66,7 +66,11 @@ function buildTicker(id) {
   el.innerHTML = html;
 }
 for (let i = brands.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [brands[i], brands[j]] = [brands[j], brands[i]]; }
-buildTicker('ticker1'); buildTicker('ticker2');
+const half = Math.ceil(brands.length / 2);
+const row1Brands = brands.slice(0, half);
+const row2Brands = brands.slice(half);
+buildTicker('ticker1', row1Brands); buildTicker('ticker2', row1Brands);
+buildTicker('ticker3', row2Brands); buildTicker('ticker4', row2Brands);
 
 // ── PERSONAL UPDATES ─────────────────────────────────────────────
 const updates = [
