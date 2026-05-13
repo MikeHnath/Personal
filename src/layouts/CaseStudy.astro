@@ -29,7 +29,7 @@ if (!cs) throw new Error(`Unknown case study slug: ${slug}`);
     <slot name="meta" />
   </div>
   <slot />
-  <div class="section" style="border-bottom:none">
+  <div class="section" style="border-bottom:none;padding-top:0">
     <slot name="footer-prelude" />
     <hr class="cs-rule" />
     <CaseStudyNav slug={slug} />

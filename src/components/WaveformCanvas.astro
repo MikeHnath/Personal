@@ -139,30 +139,26 @@ const {
       // edge fold).
       const totalLines = connectorCount + 2;
 
-      // Pre-sample the four main envelopes once per frame.
+      // Pre-sample the three main envelopes once per frame.
       const sampleCount = Math.floor(width / step) + 1;
       const aSamples = new Float32Array(sampleCount);
       const cSamples = new Float32Array(sampleCount);
-      const dSamples = new Float32Array(sampleCount);
       const bSamples = new Float32Array(sampleCount);
       for (let s = 0; s < sampleCount; s++) {
         const x = s * step;
         aSamples[s] = yWave(x, ts, 0.0, 1);
-        cSamples[s] = yWave(x, ts, Math.PI / 3, 1);
-        dSamples[s] = yWave(x, ts, (2 * Math.PI) / 3, -1);
+        cSamples[s] = yWave(x, ts, Math.PI / 2, 1);
         bSamples[s] = yWave(x, ts, Math.PI, -1);
       }
 
-      const third = 1 / 3;
-      const twoThirds = 2 / 3;
+      const half = 1 / 2;
 
       for (let i = 0; i < totalLines; i++) {
         const tI = totalLines === 1 ? 0.5 : i / (totalLines - 1);
-        // distance to the nearest main line (positions 0, 1/3, 2/3, 1)
+        // distance to the nearest main line (positions 0, 1/2, 1)
         const distToMain = Math.min(
           Math.abs(tI - 0),
-          Math.abs(tI - third),
-          Math.abs(tI - twoThirds),
+          Math.abs(tI - half),
           Math.abs(tI - 1)
         );
         // mains sit at base opacity; intermediates fade nearly to bg
@@ -173,15 +169,12 @@ const {
         for (let s = 0; s < sampleCount; s++) {
           const x = s * step;
           let y: number;
-          if (tI <= third) {
-            const t2 = tI * 3;
+          if (tI <= half) {
+            const t2 = tI * 2;
             y = aSamples[s] * (1 - t2) + cSamples[s] * t2;
-          } else if (tI <= twoThirds) {
-            const t2 = (tI - third) * 3;
-            y = cSamples[s] * (1 - t2) + dSamples[s] * t2;
           } else {
-            const t2 = (tI - twoThirds) * 3;
-            y = dSamples[s] * (1 - t2) + bSamples[s] * t2;
+            const t2 = (tI - half) * 2;
+            y = cSamples[s] * (1 - t2) + bSamples[s] * t2;
           }
           if (s === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
