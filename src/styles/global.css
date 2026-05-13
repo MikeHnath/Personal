@@ -17,7 +17,7 @@
   --green:#3A4250;
   --nav-active-bg:#FFFFFF;
   --sidebar-bg:#E6E8EE;
-  --nav-text:#5A6370;
+  --nav-text:#3A4250;
   --theme-toggle-bg:#D8DBE2;
   --sidebar-w:248px;
   --font-sans:'Open Sans',sans-serif;
@@ -49,7 +49,7 @@
 :root[data-theme="dark"]{
   --bg:#0C0D10;
   --bg2:#1B1E24;
-  --bg3:#1F232A;
+  --bg3:#161B28;
   --border:#2A2E36;
   --border2:#3A3F48;
   --text:#ECEEF2;
@@ -61,10 +61,10 @@
   --green:#B0B7C2;
   --btn-bg:var(--accent);
   --btn-fg:var(--bg);
-  --nav-active-bg:#1B1E24;
-  --sidebar-bg:#14171C;
-  --nav-text:#8A93A1;
-  --theme-toggle-bg:#1F232A;
+  --nav-active-bg:#3A4250;
+  --sidebar-bg:#1D1F25;
+  --nav-text:#B3B9C2;
+  --theme-toggle-bg:#3A4250;
   --mobile-menu-bg:rgba(20,23,28,0.7);
   --logo-filter:invert(1);
   --logo-color:#ECEEF2;
@@ -142,6 +142,9 @@ input,textarea{font-family:var(--font-sans)}
   text-align:center;
   line-height:1.7;
 }
+:root[data-theme="dark"] .nav-shortcut{background:var(--bg2)}
+:root[data-theme="dark"] .nav-item.active{color:#FFFFFF}
+:root[data-theme="dark"] .nav-item.active .nav-icon svg{fill:#FFFFFF}
 
 /* ── THEME SWITCHER ─────────────────────────────────────────── */
 .theme-bar{
@@ -595,7 +598,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
     position:fixed;top:0;bottom:0;left:0;right:auto;
     width:56px;min-width:56px;height:100vh;height:100dvh;
     flex-direction:column;
-    background:var(--bg3);
+    background:var(--sidebar-bg);
     border-top:none;border-right:1px solid var(--border);
     transform:none;
     transition:width 300ms ease,min-width 300ms ease;
