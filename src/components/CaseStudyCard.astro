@@ -7,6 +7,9 @@ interface Props {
 
 const { study } = Astro.props;
 const tagAttr = study.filterTags.join(',');
+const subtitle = study.subtitle.length > 92
+  ? study.subtitle.slice(0, 92).trimEnd() + '…'
+  : study.subtitle;
 ---
 <a class="work-card" data-tags={tagAttr} href={study.href}>
   {study.preview.src ? (
@@ -16,7 +19,7 @@ const tagAttr = study.filterTags.join(',');
   )}
   <div class="work-body">
     <div class="work-client">{study.industry}</div>
-    <div class="work-outcome">{study.subtitle}</div>
+    <div class="work-outcome">{subtitle}</div>
     <div class="work-meta">
       <span class="work-industry">{study.navTag}</span>
       <span class="work-arrow">→</span>
