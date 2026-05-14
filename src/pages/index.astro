@@ -4,7 +4,7 @@ import FeaturedWorkCard from '../components/FeaturedWorkCard.astro';
 import WaveformCanvas from '../components/WaveformCanvas.astro';
 import { caseStudies } from '../data/caseStudies';
 
-const homeWork = caseStudies.slice(0, 3);
+const homeWork = caseStudies.slice(0, 4);
 ---
 <Base title="Mike Hnath — Portfolio" pageId="page-home">
 
@@ -26,7 +26,7 @@ const homeWork = caseStudies.slice(0, 3);
     </div>
   </div>
 
-  <div class="section home-wave" style="padding:0;position:relative;z-index:0;height:500px;margin-top:-176px;margin-bottom:-334px;overflow:visible;pointer-events:none;transform:rotate(-7deg);transform-origin:center">
+  <div class="section home-wave" style="padding:0;position:relative;z-index:0;height:800px;margin-top:-286px;margin-bottom:-524px;overflow:visible;pointer-events:none;transform:rotate(-7deg);transform-origin:center">
     <WaveformCanvas lines={240} amplitude={276} speed={0.096} />
   </div>
 
@@ -38,29 +38,7 @@ const homeWork = caseStudies.slice(0, 3);
     <div id="home-work" class="home-work-grid">
       {homeWork.map((study) => <FeaturedWorkCard study={study} />)}
     </div>
-  </div>
-
-  <div class="section" style="padding:14px 34px 0;overflow:hidden">
-    <div style="font-weight:400;color:var(--text2);font-family:var(--font-display);font-size:var(--fs-h3);text-align:center;text-transform:uppercase;letter-spacing:.16em">Trusted by 100+ brands and small businesses globally</div>
-  </div>
-
-  <div class="section" style="padding:0;overflow:hidden">
-    <div class="ticker-wrap ticker--inverse">
-      <div class="ticker-fade-l"></div>
-      <div class="ticker-fade-r"></div>
-      <div class="ticker-row">
-        <div class="ticker-track" id="ticker1"></div>
-        <div class="ticker-track" id="ticker2" aria-hidden="true"></div>
-      </div>
-      <div class="ticker-row ticker-row--reverse">
-        <div class="ticker-track" id="ticker3"></div>
-        <div class="ticker-track" id="ticker4" aria-hidden="true"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="portfolio-grid">
+    <div class="portfolio-grid" style="margin-top:32px">
       <a class="nav-tile" href="/case-studies/">
         <div class="nav-tile-title">Case Studies</div>
         <div class="nav-tile-desc">Brand, GTM, performance media, and eComm. Full write-ups with context and results.</div>
@@ -76,6 +54,25 @@ const homeWork = caseStudies.slice(0, 3);
         <div class="nav-tile-desc">Photography and videography. Brand shoots, product content, live event coverage.</div>
         <div class="nav-tile-cta">View media →</div>
       </a>
+    </div>
+  </div>
+
+  <div class="section" style="padding:24px 34px 0;overflow:hidden">
+    <div style="font-weight:400;color:var(--text2);font-family:var(--font-display);font-size:var(--fs-h3);text-align:center;text-transform:uppercase;letter-spacing:.16em">Trusted by 100+ brands and small businesses globally</div>
+  </div>
+
+  <div class="section" style="padding:0;overflow:hidden">
+    <div class="ticker-wrap ticker--inverse">
+      <div class="ticker-fade-l"></div>
+      <div class="ticker-fade-r"></div>
+      <div class="ticker-row">
+        <div class="ticker-track" id="ticker1"></div>
+        <div class="ticker-track" id="ticker2" aria-hidden="true"></div>
+      </div>
+      <div class="ticker-row ticker-row--reverse">
+        <div class="ticker-track" id="ticker3"></div>
+        <div class="ticker-track" id="ticker4" aria-hidden="true"></div>
+      </div>
     </div>
   </div>
 
