@@ -113,21 +113,6 @@ export const caseStudies: CaseStudy[] = [
     industry: 'Licensed CPG',
     navTag: 'Brand · Licensing',
   },
-  {
-    slug: 'ark',
-    href: '/case-studies/ark/',
-    pageTitle: 'Ark of the Covenant — Case Study',
-    breadcrumb: 'Ark of the Covenant',
-    title: 'Ark of the Covenant — Independent artist brand built from zero',
-    subtitle:
-      'Eight years founding and operating an independent music project. 350+ live shows, 2 distribution deals, 20K+ followers, 100K+ streams, and a Mesa/Boogie endorsement — all self-built across brand, booking, production, and audience.',
-    hero: { placeholder: '[Ark of the Covenant — tour and album artwork]' },
-    preview: { placeholder: '[Ark of the Covenant preview]' },
-    tags: ['Brand', 'GTM', 'Music', 'Independent'],
-    filterTags: ['brand', 'gtm'],
-    industry: 'Music · Independent',
-    navTag: 'Brand · GTM',
-  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
