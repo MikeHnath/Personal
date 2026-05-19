@@ -158,7 +158,7 @@ const isActive = (prefix: string) => {
 
   <!-- ── MAIN CONTENT ─────────────────────────────────────────── -->
   <main class="main">
-  <div class="page-frame">
+  <div class={`page-frame${path === '/' ? ' is-home' : ''}`}>
     <div class="page active" id={pageId}>
       <slot />
     </div>
