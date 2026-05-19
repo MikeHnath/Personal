@@ -4,8 +4,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#FFFFFF;
-  --bg2:#F4F5F7;
-  --bg3:#E6E8EE;
+  --bg2:#E6E8EE;
+  --bg3:#F4F5F7;
   --border:#D8DBE2;
   --border2:#C2C6CF;
   --text:#1A1D24;
@@ -359,7 +359,7 @@ input,textarea{font-family:var(--font-sans)}
 :root[data-theme="dark"] .fw-cats{color:#5A6370}
 
 .work-grid{display:grid;grid-template-columns:1fr;gap:14px}
-.work-card{background:var(--bg);border:none;border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:border-color var(--transition),transform var(--transition);display:flex;flex-direction:column}
+.work-card{background:var(--bg2);border:none;border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:background var(--transition),transform var(--transition);display:flex;flex-direction:column}
 .nav-tile{background:var(--bg2);border-radius:var(--r-lg);padding:17px;cursor:pointer;color:var(--text);transition:background var(--transition);display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:160px}
 .nav-tile:hover{background:var(--bg3)}
 .nav-tile .nav-tile-title{font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.4;font-family:var(--font-display)}
@@ -367,7 +367,7 @@ input,textarea{font-family:var(--font-sans)}
 .nav-tile .nav-tile-cta{margin-top:auto;align-self:flex-start;font-size:11px;font-weight:500;color:#1A1D24;background:#FFFFFF;padding:5px 10px;border-radius:6px}
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:600px){.portfolio-grid{grid-template-columns:1fr}.home-work-grid{grid-template-columns:1fr}}
-.work-card:hover{border-color:var(--border2);transform:translateY(-1px)}
+.work-card:hover{background:var(--bg3);transform:translateY(-1px)}
 .work-thumb{aspect-ratio:11/4;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:var(--fs-tiny);color:var(--text3);position:relative;padding:12px;overflow:hidden}
 .work-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .work-body{padding:17px;background:var(--bg2);flex:1;display:flex;flex-direction:column}
@@ -555,6 +555,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
 .mobile-menu-close{display:none}
 .mobile-backdrop{display:none}
 .mobile-theme-fab{display:none}
+.mobile-menu-fab{display:none}
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 /* phones (all orientations) + tablets in portrait */
@@ -594,9 +595,12 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .nav-icon svg{width:20px;height:20px}
   .nav-icon img{width:20px;height:20px;opacity:0.6}
 
-  .update-grid{grid-template-columns:1fr}
-  .update-card{flex-direction:row;align-items:flex-start;gap:14px;min-height:0;padding:14px}
+  .update-grid{grid-template-columns:1fr;gap:0}
+  .update-card{flex-direction:row;align-items:flex-start;gap:14px;min-height:0;padding:14px 0;background:transparent;border-radius:0;border-bottom:1px solid var(--border);cursor:default}
+  .update-card:hover{background:transparent}
+  .update-card:last-child{border-bottom:none}
   .update-card .update-body{margin-top:0}
+  .update-card .update-date{margin-top:0}
   .section{padding:36px 21px}
   .home-trusted{padding-top:72px}
   #home-greeting{font-size:clamp(50px,14vw,72px)!important;letter-spacing:-1px!important}
@@ -721,6 +725,40 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
 
   /* shrink body + card-title tokens at mobile breakpoint */
   :root{--fs-body:14px;--fs-h3:14px;--fs-body-sm:12px}
+}
+
+/* phones in portrait — floating circular toggle slides a full-width panel in from the left. */
+@media (max-width:640px) and (orientation:portrait){
+  .app{padding-left:0}
+
+  /* The circular toggle button — fixed, always sits at top-left of the viewport */
+  .mobile-menu-fab{
+    display:flex;align-items:center;justify-content:center;
+    position:fixed;
+    top:max(12px,env(safe-area-inset-top,12px));left:12px;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--bg2);border:1px solid var(--border);
+    color:var(--text);cursor:pointer;padding:0;line-height:0;
+    z-index:1100;
+    transition:background var(--transition),color var(--transition);
+  }
+  .mobile-menu-fab svg{width:20px;height:20px;display:block}
+
+  /* The sidebar becomes a full-width slide-in panel, off-screen by default */
+  .sidebar{
+    top:0;left:0;right:auto;bottom:0;
+    width:100%;min-width:0;max-width:100%;height:100vh;height:100dvh;
+    border-radius:0;border:none;
+    background:var(--sidebar-bg);
+    transform:translateX(-100%);
+    transition:transform 300ms ease;
+    overflow-y:auto;
+    z-index:1200;
+  }
+  .sidebar.mobile-open{
+    width:100%;min-width:0;max-width:100%;
+    transform:translateX(0);
+  }
 }
 
 /* phones only — collapse any multi-column grid to a single column */

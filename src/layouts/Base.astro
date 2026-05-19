@@ -65,6 +65,11 @@ const isActive = (prefix: string) => {
     </button>
   </div>
 
+  <!-- Floating circular toggle — phone portrait only -->
+  <button class="mobile-menu-fab" onclick="toggleMobileMenu()" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="4" x2="6" y2="20"/></svg>
+  </button>
+
   <!-- ── SIDEBAR ─────────────────────────────────────────────── -->
   <nav class="sidebar">
     <div class="sidebar-logo" onclick="toggleMobileMenu()">
@@ -73,7 +78,7 @@ const isActive = (prefix: string) => {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="4" x2="6" y2="20"/></svg>
       </span>
       <button class="mobile-menu-close" onclick="event.stopPropagation();closeMobileMenu()" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="4" x2="6" y2="20"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
       </button>
     </div>
 
