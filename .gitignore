@@ -19,3 +19,4 @@ dist/
 
 # Source files (working files — keep local, don't deploy)
 *.psd
+/wave-animation-video.mp4

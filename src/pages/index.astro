@@ -1,17 +1,74 @@
 ---
 import Base from '../layouts/Base.astro';
 import FeaturedWorkCard from '../components/FeaturedWorkCard.astro';
-import WaveformCanvas from '../components/WaveformCanvas.astro';
 import { caseStudies } from '../data/caseStudies';
 
 const homeWork = caseStudies.slice(0, 4);
 ---
-<Base title="Mike Hnath — Portfolio" pageId="page-home">
+<Base title="Mike Hnath — Brand & Marketing Strategist" pageId="page-home">
+
+  <style is:global>
+    /* On the home page, make the page-frame a positioning + stacking
+       context so the video can be absolutely positioned inside it and
+       sit behind the static page content. The page-frame's own bg and
+       rounded border continue to paint above the video. */
+    body:has(#page-home) .page-frame{position:relative;isolation:isolate}
+    /* Flip the background video vertically in light mode only. */
+    :root:not([data-theme="dark"]) body:has(#page-home) .video-bg{filter:invert(1)}
+  </style>
+  <style>
+    /* Stretch the video horizontally from the nav's right edge to the
+       viewport's right edge so object-fit:cover has more room and crops
+       less of the sides. The .app has 10px left padding, the sidebar is
+       248px (so its right edge is at x=258px), and the page-frame sits
+       10px inside .main's padding — meaning page-frame starts at x=268
+       and ends 10px before the viewport. left:-10px aligns the video
+       with the nav's right edge; width:calc(100vw - 258px) reaches the
+       viewport's right edge. */
+    .video-bg{
+      position:absolute;
+      top:0;
+      left:-10px;
+      width:calc(100vw - 258px);
+      height:100vh;
+      object-fit:cover;
+      z-index:-1;
+      opacity:0.3;
+      pointer-events:none;
+    }
+    .video-bg-overlay{
+      position:absolute;
+      top:0;
+      left:-10px;
+      width:calc(100vw - 258px);
+      height:100vh;
+      background:linear-gradient(to bottom, transparent 0%, transparent 55%, var(--bg) 100%);
+      z-index:-1;
+      pointer-events:none;
+    }
+    /* Tablet/mobile: the sidebar drops to the bottom and .main/page-frame
+       lose their padding, so the video should fill the full viewport
+       width instead of subtracting the (no-longer-present) nav width. */
+    @media (max-width:1024px) and (orientation:portrait),
+           (max-height:500px) and (orientation:landscape) and (max-width:1024px){
+      .video-bg,
+      .video-bg-overlay{left:0;width:100%}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .video-bg{display:none}
+    }
+  </style>
+
+  <video class="video-bg" autoplay muted loop playsinline aria-hidden="true">
+    <source src="/assets/wave-animation-video.webm" type="video/webm" />
+    <source src="/assets/wave-animation-video.mp4" type="video/mp4" />
+  </video>
+  <div class="video-bg-overlay" aria-hidden="true"></div>
 
   <div class="section" style="padding-bottom:0;position:relative;z-index:1">
     <div class="home-intro-grid" style="display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:28px;align-items:start">
       <div>
-        <div id="home-greeting" style="font-size:96px;font-weight:300;color:var(--text);line-height:1;margin-top:24px;margin-bottom:16px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
+        <div id="home-greeting" style="font-size:82px;font-weight:300;color:var(--text);line-height:1;margin-top:24px;margin-bottom:16px;letter-spacing:-2px;font-family:var(--font-display)">Hello!</div>
         <div class="body-text" style="margin-bottom:16px">I'm <strong>Mike Hnath</strong> (pronounced Nath), former touring drummer who runs my own consultancy. I help brands find their footing, tell their story, and grow with purpose.</div>
         <div style="display:flex;gap:8px;margin-bottom:16px">
           <a class="btn primary" href="/case-studies/">View case studies</a>
@@ -24,10 +81,6 @@ const homeWork = caseStudies.slice(0, 4);
         <div style="font-size:12px;color:var(--text2);line-height:1.6">Use keyboard shortcuts <strong style="color:var(--text)">1 → 9</strong> to jump between pages. Try pressing <strong style="color:var(--text)">2</strong>, <strong style="color:var(--text)">3</strong> or <strong style="color:var(--text)">4</strong>.</div>
       </div>
     </div>
-  </div>
-
-  <div class="section home-wave" style="padding:0;position:relative;z-index:0;height:800px;margin-top:-286px;margin-bottom:-524px;overflow:visible;pointer-events:none;transform:rotate(-7deg);transform-origin:center">
-    <WaveformCanvas lines={240} amplitude={276} speed={0.096} />
   </div>
 
   <div class="section home-featured" style="padding-top:40px;padding-bottom:61px;position:relative;z-index:1;background:transparent">
