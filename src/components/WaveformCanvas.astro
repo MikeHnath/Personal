@@ -78,11 +78,11 @@ const {
     const refreshColor = () => {
       const c = getComputedStyle(canvas).color;
       const [r, g, b] = parseColor(c);
-      // Nudge toward a soft blue-teal: pull red back hard,
-      // lift green a touch, push blue up.
-      const tR = r * 0.35;
-      const tG = g * 0.55;
-      const tB = b * 1.3 + 30;
+      // Keep close to source brightness with just a faint blue lift,
+      // so the result reads as near-white in dark mode.
+      const tR = r * 0.75;
+      const tG = g * 0.85;
+      const tB = b * 1.1 + 10;
       // Desaturate toward luminance — 0 = pure gray, 1 = full color.
       const sat = 0.3;
       const lum = tR * 0.299 + tG * 0.587 + tB * 0.114;
@@ -107,20 +107,34 @@ const {
     let running = !reduce;
     const t0 = performance.now();
 
+    const zCache: Record<number, Float32Array> = {};
+    const buildZ = (count: number): Float32Array => {
+      const arr = new Float32Array(count);
+      for (let i = 0; i < count; i++) {
+        const h = Math.sin((i + 1) * 12.9898) * 43758.5453;
+        arr[i] = (h - Math.floor(h)) * 2 - 1;
+      }
+      return arr;
+    };
+
     const yWave = (
       x: number,
       ts: number,
       phase: number,
-      sign: number
+      sign: number,
+      ampMul: number = 1,
+      cyOff: number = 0,
+      freqMul: number = 1
     ): number => {
-      const cy = height / 2;
-      const freq = 0.0038;
+      const cy = height / 2 + cyOff;
+      const freq = 0.0022 * freqMul;
+      const amp = amplitude * ampMul;
       return (
         cy +
-        amplitude *
+        amp *
           0.85 *
           Math.sin(x * freq + ts * sign + phase) +
-        amplitude *
+        amp *
           0.22 *
           Math.sin(x * freq * 2.3 + ts * sign * 1.4 + phase * 0.6 + 1.1)
       );
@@ -151,11 +165,17 @@ const {
       const aSamples = new Float32Array(sampleCount);
       const cSamples = new Float32Array(sampleCount);
       const bSamples = new Float32Array(sampleCount);
+      // a (front/top) and b (back/bottom) are small waves confined to
+      // non-overlapping upper and lower bands, so they never cross.
+      // c (middle) is a low-frequency wide-amplitude sweep that crosses
+      // a's band once and b's band once — giving 2 total intersections.
+      const cFreq = 0.0022 * 0.45;
+      const cAmp = amplitude * 0.75;
       for (let s = 0; s < sampleCount; s++) {
         const x = s * step;
-        aSamples[s] = yWave(x, ts, 0.0, 1);
-        cSamples[s] = yWave(x, ts, Math.PI / 2, 1);
-        bSamples[s] = yWave(x, ts, Math.PI, -1);
+        aSamples[s] = yWave(x, ts, 0.0, 1, 0.18, -amplitude * 0.5);
+        bSamples[s] = yWave(x, ts, Math.PI, -1, 0.18, amplitude * 0.5);
+        cSamples[s] = height / 2 + cAmp * Math.sin(x * cFreq + ts);
       }
 
       const half = 1 / 2;
@@ -168,10 +188,27 @@ const {
           Math.abs(tI - half),
           Math.abs(tI - 1)
         );
-        // mains sit at base opacity; intermediates fade nearly to bg
-        const a = opacity * Math.max(0.04, 1 - distToMain * 6);
+        // Per-line depth (z): pseudo-random in [-1, 1], stable per index.
+        // |z| ≈ 0 = focal plane (sharp/front), |z| ≈ 1 = far (soft/back).
+        const zValues = zCache[totalLines] || buildZ(totalLines);
+        zCache[totalLines] = zValues;
+        const absZ = Math.abs(zValues[i]);
+        // mains sit at base opacity; intermediates fade nearly to bg.
+        // Back lines fade further; front lines stay full strength.
+        const baseA = opacity * Math.max(0.04, 1 - distToMain * 6);
+        const a = baseA * (1 - absZ * 0.4375);
         ctx.strokeStyle = `rgba(${r},${g},${b},${a})`;
-        ctx.lineWidth = 0.7;
+        // Front lines are noticeably thicker, back lines hair-thin.
+        ctx.lineWidth = 0.20 + (1 - absZ) * 3.30;
+        // Soft blur only on lines further from the focal plane.
+        // Quadratic ramp keeps most lines crisp; only the back ~third blurs.
+        const blur = absZ > 0.35 ? (absZ - 0.35) * (absZ - 0.35) * 5.5 : 0;
+        if (blur > 0) {
+          ctx.shadowBlur = blur;
+          ctx.shadowColor = `rgba(${r},${g},${b},${a})`;
+        } else {
+          ctx.shadowBlur = 0;
+        }
         ctx.beginPath();
         for (let s = 0; s < sampleCount; s++) {
           const x = s * step;
@@ -188,6 +225,8 @@ const {
         }
         ctx.stroke();
       }
+
+      ctx.shadowBlur = 0;
 
       // Edge fade — trim alpha at left/right
       ctx.save();

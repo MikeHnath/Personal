@@ -388,7 +388,7 @@ function toggleMobileTheme() {
 
 function copyEmail(e) {
   const btn = e.currentTarget;
-  navigator.clipboard.writeText('hnath928@gmail.com').then(() => {
+  navigator.clipboard.writeText('me@mikehnath.com').then(() => {
     const orig = btn.textContent;
     btn.textContent = 'Copied ✓';
     setTimeout(() => btn.textContent = orig, 1800);
@@ -412,7 +412,7 @@ function submitContact() {
   if (email) lines.push(`Email: ${email}`);
   if (intents) lines.push(`Looking for: ${intents}`);
   if (message) lines.push('', message);
-  window.location.href = `mailto:hnath928@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+  window.location.href = `mailto:me@mikehnath.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
 }
 
 // init theme from saved choice (default: mobile→dark, desktop→auto)
