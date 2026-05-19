@@ -633,6 +633,9 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
     min-height:56px;
   }
   .sidebar.mobile-open .sidebar-logo{justify-content:space-between;padding:20px 18px 14px}
+  /* Spin the brand mark 90° when the sidebar expands. */
+  .sidebar-logo .sidebar-logo-img{transition:transform 300ms ease}
+  .sidebar.mobile-open .sidebar-logo .sidebar-logo-img{transform:rotate(90deg)}
   .nav-mobile-logo{display:none}
   .mobile-menu-close{
     display:none;align-items:center;justify-content:center;
