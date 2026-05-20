@@ -38,6 +38,21 @@ export const caseStudies: CaseStudy[] = [
     isFeaturedOnIndex: true,
   },
   {
+    slug: 'kraft-heinz',
+    href: '/case-studies/kraft-heinz/',
+    pageTitle: 'Kraft Heinz / MiO — Case Study',
+    breadcrumb: 'Kraft Heinz / MiO',
+    title: "Rebuilding MiO's digital shelf into a conversion system",
+    subtitle:
+      'Led the digital shelf transformation for MiO — rebuilding UX and multi-channel creative into a unified conversion system that contributed to measurable Amazon sales lift.',
+    hero: { src: '/Images/MiO/mio-cs-gfx-1.webp', alt: 'MiO digital shelf case study graphic' },
+    preview: { src: '/Images/MiO/mio-cs-gfx-2.webp', alt: 'MiO digital shelf preview' },
+    tags: ['CPG', 'eCommerce', 'Creative Direction', 'Enterprise'],
+    filterTags: ['design'],
+    industry: 'CPG · Enterprise eCommerce',
+    navTag: 'Design · CPG',
+  },
+  {
     slug: 'pocn',
     href: '/case-studies/pocn/',
     pageTitle: 'POCN — Case Study',
@@ -52,6 +67,21 @@ export const caseStudies: CaseStudy[] = [
     industry: 'Healthcare · Pharma',
     navTag: 'Performance · Healthcare',
     isFeaturedOnIndex: true,
+  },
+  {
+    slug: 'infinity',
+    href: '/case-studies/infinity/',
+    pageTitle: 'Infinity — Case Study',
+    breadcrumb: 'Infinity',
+    title: 'Rebranded a licensed bottled water company and built the creative system behind $10M+ in partnerships.',
+    subtitle:
+      'Brand identity, packaging across 50+ SKUs, and sales collateral for a sports-licensed water brand partnered with Disney, the Yankees, MLBPA, and Nickelodeon.',
+    hero: { src: '/Images/Infinity/infinity-hero.jpg', alt: 'Infinity Sports Water licensed CPG lineup' },
+    preview: { src: '/Images/Infinity/infinity-preview.jpg', alt: 'Infinity case study preview' },
+    tags: ['Brand Identity', 'Packaging', 'Licensed CPG', 'Sales Enablement'],
+    filterTags: ['brand', 'design'],
+    industry: 'Licensed Consumer Products',
+    navTag: 'Brand · Licensing',
   },
   {
     slug: 'sigil',
@@ -69,21 +99,6 @@ export const caseStudies: CaseStudy[] = [
     navTag: 'GTM · Brand',
   },
   {
-    slug: 'kraft-heinz',
-    href: '/case-studies/kraft-heinz/',
-    pageTitle: 'Kraft Heinz / MiO — Case Study',
-    breadcrumb: 'Kraft Heinz / MiO',
-    title: "Rebuilding MiO's digital shelf into a conversion system",
-    subtitle:
-      'Led the digital shelf transformation for MiO — rebuilding UX and multi-channel creative into a unified conversion system that contributed to measurable Amazon sales lift.',
-    hero: { src: '/Images/MiO/mio-cs-gfx-1.webp', alt: 'MiO digital shelf case study graphic' },
-    preview: { src: '/Images/MiO/mio-cs-gfx-2.webp', alt: 'MiO digital shelf preview' },
-    tags: ['CPG', 'eCommerce', 'Creative Direction', 'Enterprise'],
-    filterTags: ['design'],
-    industry: 'CPG · Enterprise eCommerce',
-    navTag: 'Design · CPG',
-  },
-  {
     slug: 'triax',
     href: '/case-studies/triax/',
     pageTitle: 'Triax — Case Study',
@@ -97,21 +112,6 @@ export const caseStudies: CaseStudy[] = [
     filterTags: ['performance', 'gtm'],
     industry: 'B2B SaaS · Demand Gen',
     navTag: 'B2B SaaS · Demand Gen',
-  },
-  {
-    slug: 'infinity',
-    href: '/case-studies/infinity/',
-    pageTitle: 'Infinity — Case Study',
-    breadcrumb: 'Infinity',
-    title: 'Infinity — Licensed CPG brand direction and packaging at scale',
-    subtitle:
-      'Creative Director at Infinity Lifestyle Brands. Led brand direction and packaging across a $10M+ licensed CPG portfolio spanning Disney, MLBPA, and Viacom IP — reconciling licensor guidelines with a coherent brand aesthetic across 50+ SKUs.',
-    hero: { placeholder: '[Infinity — licensed CPG packaging lineup]' },
-    preview: { placeholder: '[Infinity preview]' },
-    tags: ['Brand', 'Licensing', 'CPG', 'Packaging'],
-    filterTags: ['brand', 'design'],
-    industry: 'Licensed CPG',
-    navTag: 'Brand · Licensing',
   },
 ];
 

@@ -203,7 +203,7 @@ input,textarea{font-family:var(--font-sans)}
 .section{padding:54px 36px}
 .home-trusted{padding-top:108px}
 @media (min-width:601px) and (max-width:1024px) and (orientation:portrait){.section{padding:48px 21px}.home-trusted{padding-top:96px}}
-.section-label{font-size:var(--fs-micro);font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:16px;padding-bottom:0}
+.section-label{font-size:var(--fs-micro);font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:32px;margin-bottom:16px;padding-bottom:0}
 .section-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
 .section-eyebrow{font-size:var(--fs-tiny);font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
 .page-title{font-size:var(--fs-display);font-weight:700;color:var(--text);margin-bottom:12px;font-family:var(--font-display)}
@@ -723,8 +723,8 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   /* body lock when sidebar open */
   body.mobile-menu-open{overflow:hidden}
 
-  /* mobile copy: 10% larger than desktop tokens (min +1px) */
-  :root{--fs-body:15px;--fs-h3:15px;--fs-body-sm:13px}
+  /* mobile copy: match desktop body/body-sm, bump display and micro */
+  :root{--fs-display:32px;--fs-micro:12px}
 }
 
 /* phones in portrait — floating circular toggle slides a full-width panel in from the left. */

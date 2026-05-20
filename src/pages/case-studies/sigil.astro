@@ -27,15 +27,10 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         <div class="stat-label">Backers</div>
       </div>
     </div>
-  </Fragment>
-  <div class="section">
-    <div class="section-label">Promo</div>
-    <div class="media-video">
+    <div class="media-video" style="margin-top:14px;max-width:100%">
       <video src="/Images/Sigil/sigil-teaser-promo.mp4" controls playsinline preload="metadata"></video>
     </div>
-  </div>
-
-  <div class="section">
+    <div style="margin-top:14px">
     <div class="section-label">Context · Action · Result</div>
     <div class="car-grid">
       <div class="car-sidebar">
@@ -61,7 +56,8 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  </Fragment>
 
   <div class="section">
     <div class="section-label">Brand System</div>
@@ -136,9 +132,8 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="section">
+    <div style="margin-top:14px">
     <div class="section-label">Product System</div>
     <div class="sigil-product-stack">
       <figure class="media-figure">
@@ -151,9 +146,9 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         <img src="/Images/Sigil/sigil-product-system-3.jpg" alt="SIGIL product system — overview 3" loading="lazy" />
       </figure>
     </div>
-  </div>
+    </div>
 
-  <div class="section">
+    <div style="margin-top:14px">
     <div class="section-label">In Play</div>
     <div class="sigil-carousel" data-sigil-carousel>
       <div class="sigil-carousel-main">
@@ -175,19 +170,20 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         <button class="sigil-thumb" type="button" data-sigil-index="4" aria-label="Show slide 5"><img src="/Images/Sigil/sigil-lifestyle-skyview.webp" alt="" loading="lazy" /></button>
       </div>
     </div>
-  </div>
+    </div>
 
-  <div class="section">
+    <div style="margin-top:14px">
     <div class="section-label">Kickstarter</div>
     <div class="phone-mockup">
       <iframe class="phone-iframe" src="/Images/Sigil/sigil-kickstarter-phone-mockup.html" title="SIGIL Kickstarter campaign page mockup" loading="lazy" scrolling="no"></iframe>
       <div class="phone-caption">Campaign page design — brand system applied by Pine Island Games team</div>
     </div>
+    </div>
   </div>
 
   <div class="section">
     <div class="section-label">What this proves</div>
-    <div class="foundation-card key-insight" style="border:none">
+    <div class="foundation-card key-insight" style="border:none;background:transparent;padding:0">
       <div class="foundation-section-title">Translating mechanics into product.</div>
       <div class="foundation-desc" style="margin-bottom:0">A strong system isn't enough — it has to be legible, intuitive, and physically executable. This project demonstrates how visual design and production thinking turn an abstract concept into a real, manufacturable product.</div>
     </div>
@@ -270,7 +266,7 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .sigil-thumb.active{border-color:var(--text);opacity:1}
   .sigil-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 
-  .phone-mockup{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:28px}
+  .phone-mockup{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:20px}
   .phone-iframe{width:100%;max-width:390px;aspect-ratio:9/14;border:0;background:transparent;display:block;color-scheme:light}
   .phone-caption{font-size:11px;color:var(--text3);text-align:center;letter-spacing:.04em;text-transform:uppercase}
 
