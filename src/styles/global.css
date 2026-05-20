@@ -233,7 +233,7 @@ input,textarea{font-family:var(--font-sans)}
 .ticker-row--reverse .ticker-track{animation-direction:reverse}
 .ticker-wrap:hover .ticker-track{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-logo{height:48px;padding:0 34px;display:flex;align-items:center;justify-content:center;opacity:.5}
+.ticker-logo{height:62px;padding:0 34px;display:flex;align-items:center;justify-content:center;opacity:.5}
 .ticker-logo img{opacity:1;filter:var(--ticker-logo-filter,grayscale(1))}
 .ticker-logo-flip img{filter:var(--ticker-logo-filter-flip,grayscale(1) invert(1))}
 .ticker-logo-text{font-size:var(--fs-micro);font-weight:500;color:var(--text3);letter-spacing:.06em;white-space:nowrap;font-family:var(--font-sans)}
@@ -779,6 +779,8 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .design-grid,
   .form-row{grid-template-columns:1fr!important}
   .car-grid{grid-template-columns:1fr!important}
+  .car-sidebar{flex-wrap:nowrap}
+  .car-step{flex:1 1 0;min-width:0;padding:9px 8px 10px;text-align:center}
   .stat-num{font-size:clamp(20px,3.06vw,29px)}
 }
 
