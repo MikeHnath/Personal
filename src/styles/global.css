@@ -649,7 +649,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .sidebar-logo{flex-direction:column;gap:4px}
   /* Hide brand mark in the compact strip; only show it once the menu expands. */
   .sidebar-logo .sidebar-logo-img{display:none}
-  .sidebar.mobile-open .sidebar-logo .sidebar-logo-img{display:inline-flex}
+  .sidebar.mobile-open .sidebar-logo .sidebar-logo-img{display:inline-flex;height:26px;width:41px}
   /* Menu icon: stacks directly below the centered brand mark and is
      flipped vertically. Hides when sidebar opens. */
   .sidebar-logo-caret{display:flex;align-items:center;justify-content:center;width:20px;height:20px;color:var(--nav-text);transition:color 200ms ease}
@@ -660,12 +660,12 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .nav-mobile-logo{display:none}
   .mobile-menu-close{
     display:none;align-items:center;justify-content:center;
-    width:20px;height:20px;border-radius:4px;
+    width:32px;height:32px;border-radius:4px;
     background:transparent;border:none;color:var(--nav-text);
     cursor:pointer;padding:0;line-height:0;
     transition:background var(--transition),color var(--transition);
   }
-  .mobile-menu-close svg{width:16px;height:16px;display:block}
+  .mobile-menu-close svg{width:24px;height:24px;display:block}
   .sidebar.mobile-open .mobile-menu-close{display:inline-flex}
   .mobile-menu-close:hover{background:var(--bg3);color:var(--text)}
 
@@ -677,7 +677,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .nav-divider{display:none}
   .sidebar.mobile-open .nav-divider{display:block;font-size:var(--fs-nano);color:var(--text3);padding:14px 16px 4px;letter-spacing:.07em;text-transform:uppercase}
   .nav-label{display:none}
-  .sidebar.mobile-open .nav-label{display:block;flex:1;font-size:var(--fs-sm)}
+  .sidebar.mobile-open .nav-label{display:block;flex:1;font-size:16px}
   .nav-shortcut{display:none}
   .nav-item{
     flex:initial;flex-direction:row;justify-content:center;align-items:center;
@@ -693,6 +693,10 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .nav-icon svg{width:16px;height:16px}
   .nav-icon img{width:16px;height:16px;opacity:1}
   .sidebar.mobile-open .nav-item{justify-content:flex-start;padding:8px 16px;gap:11px;aspect-ratio:auto;width:auto;height:auto;margin:0 8px}
+  .sidebar.mobile-open .nav-icon{width:24px;height:24px}
+  .sidebar.mobile-open .nav-icon svg{width:24px;height:24px}
+  .sidebar.mobile-open .nav-icon img{width:24px;height:24px}
+  .sidebar.mobile-open .nav-item.active .nav-icon{width:24px;height:24px}
 
   /* footer — hide desktop theme toggle on mobile (theme bubble lives outside) */
   .sidebar-footer{display:none}
