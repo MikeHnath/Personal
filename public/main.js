@@ -56,7 +56,7 @@ function buildTicker(id, list) {
   let html = '';
   list.forEach(b => {
     if (b.img) {
-      const h = Math.round(26 * (b.scale || 1));
+      const h = Math.round(34 * (b.scale || 1));
       const cls = (b.flip ? ' ticker-logo-flip' : '') + (b.boost ? ' ticker-logo-boost' : '');
       html += `<div class="ticker-logo${cls}"><img src="${b.img}" alt="${b.name}" style="height:${h}px;max-width:200px;object-fit:contain"></div><div class="ticker-sep"></div>`;
     } else {

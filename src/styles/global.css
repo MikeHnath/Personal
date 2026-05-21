@@ -228,12 +228,12 @@ input,textarea{font-family:var(--font-sans)}
 .ticker-fade-l{position:absolute;left:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to right,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-fade-r{position:absolute;right:0;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;background:linear-gradient(to left,var(--ticker-bg,var(--bg)),transparent)}
 .ticker-row{display:flex;white-space:nowrap;align-items:center}
-.ticker-row + .ticker-row{margin-top:10px}
+.ticker-row + .ticker-row{margin-top:8px}
 .ticker-track{display:inline-flex;align-items:center;animation:ticker 36s linear infinite}
 .ticker-row--reverse .ticker-track{animation-direction:reverse}
 .ticker-wrap:hover .ticker-track{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-logo{height:62px;padding:0 34px;display:flex;align-items:center;justify-content:center;opacity:.5}
+.ticker-logo{height:81px;padding:0 34px;display:flex;align-items:center;justify-content:center;opacity:.5}
 .ticker-logo img{opacity:1;filter:var(--ticker-logo-filter,grayscale(1))}
 .ticker-logo-flip img{filter:var(--ticker-logo-filter-flip,grayscale(1) invert(1))}
 .ticker-logo-text{font-size:var(--fs-micro);font-weight:500;color:var(--text3);letter-spacing:.06em;white-space:nowrap;font-family:var(--font-sans)}
@@ -607,7 +607,7 @@ img[src$="Icons/github.svg"],img[src$="Icons/adobe-portfolio.svg"]{filter:var(--
   .home-wave{margin-top:-266px!important;margin-bottom:-544px!important}
   .ticker-logo{padding:0 14px}
   .ticker-logo img{transform:scale(0.8);transform-origin:center}
-  .ticker-row + .ticker-row{margin-top:4px}
+  .ticker-row + .ticker-row{margin-top:3px}
 }
 
 /* phones + tablets-in-portrait — persistent left icon strip, expands on logo tap.
