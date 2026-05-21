@@ -1,5 +1,11 @@
 ---
 import CaseStudy from '../../layouts/CaseStudy.astro';
+
+const pad = (n: number) => String(n).padStart(2, '0');
+const tickerBase = '/Images/Infinity/ticker';
+const raidersPages  = Array.from({ length: 13 }, (_, i) => `${tickerBase}/raiders-p${pad(i + 1)}.jpg`);
+const watercoPages  = Array.from({ length: 25 }, (_, i) => `${tickerBase}/waterco-p${pad(i + 1)}.jpg`);
+const swPrezziPages = Array.from({ length: 14 }, (_, i) => `${tickerBase}/sw-prezzi-p${pad(i + 1)}.jpg`);
 ---
 <CaseStudy slug="infinity">
   <Fragment slot="meta">
@@ -70,19 +76,33 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
         'waterco-DPC-ariel-16-a.png','waterco-DPC-belle-16-a.png','waterco-DPC-cinderella-16-a.png','waterco-DPC-frozen-16-a.png','waterco-DPC-jasmine-16-a.png','waterco-DPC-sw-16-a.png',
         'waterco-jj-16-a.png','waterco-pp-16-a.png','waterco-sb-16-a.png'
       ];
-      for (var j = bottles.length - 1; j > 0; j--) {
-        var k = Math.floor(Math.random() * (j + 1));
-        var tmp = bottles[j]; bottles[j] = bottles[k]; bottles[k] = tmp;
-      }
       var img = document.getElementById('infinity-bottle-img');
       if (!img) return;
       bottles.forEach(function(b){ var p = new Image(); p.src = '/Images/Infinity/bottles/' + encodeURIComponent(b); });
-      img.src = '/Images/Infinity/bottles/' + encodeURIComponent(bottles[0]);
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      function shuffle(arr, avoidFirst){
+        for (var j = arr.length - 1; j > 0; j--) {
+          var k = Math.floor(Math.random() * (j + 1));
+          var tmp = arr[j]; arr[j] = arr[k]; arr[k] = tmp;
+        }
+        if (avoidFirst != null && arr[0] === avoidFirst && arr.length > 1) {
+          var swap = 1 + Math.floor(Math.random() * (arr.length - 1));
+          var t = arr[0]; arr[0] = arr[swap]; arr[swap] = t;
+        }
+      }
+      var queue = bottles.slice();
+      shuffle(queue, null);
+      img.src = '/Images/Infinity/bottles/' + encodeURIComponent(queue[0]);
       var i = 0;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       setInterval(function(){
-        i = (i + 1) % bottles.length;
-        img.src = '/Images/Infinity/bottles/' + encodeURIComponent(bottles[i]);
+        i++;
+        if (i >= queue.length) {
+          var last = queue[queue.length - 1];
+          queue = bottles.slice();
+          shuffle(queue, last);
+          i = 0;
+        }
+        img.src = '/Images/Infinity/bottles/' + encodeURIComponent(queue[i]);
       }, 500);
     })();
   </script>
@@ -195,52 +215,47 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
       </div>
     </div>
 
-    <div style="margin-top:14px">
+  </div>
+
+  <div class="section infinity-decks-section">
+    <div class="infinity-deck-tickers">
+      <div class="deck-ticker" style="--deck-dur:75s">
+        <div class="deck-ticker-track deck-ticker-track--left">
+          {swPrezziPages.map((src, i) => (
+            <img src={src} loading="lazy" width="272" height="153" alt={`Sports Water Prezzi deck — page ${i + 1}`} />
+          ))}
+          {swPrezziPages.map((src) => (
+            <img src={src} loading="lazy" width="272" height="153" alt="" aria-hidden="true" />
+          ))}
+        </div>
+      </div>
+      <div class="deck-ticker" style="--deck-dur:90s">
+        <div class="deck-ticker-track deck-ticker-track--right">
+          {watercoPages.map((src, i) => (
+            <img src={src} loading="lazy" width="204" height="153" alt={`WaterCo business plan — page ${i + 1}`} />
+          ))}
+          {watercoPages.map((src) => (
+            <img src={src} loading="lazy" width="204" height="153" alt="" aria-hidden="true" />
+          ))}
+        </div>
+      </div>
+      <div class="deck-ticker" style="--deck-dur:60s">
+        <div class="deck-ticker-track deck-ticker-track--left">
+          {raidersPages.map((src, i) => (
+            <img src={src} loading="lazy" width="236" height="153" alt={`Sports Water × Raiders deck — page ${i + 1}`} />
+          ))}
+          {raidersPages.map((src) => (
+            <img src={src} loading="lazy" width="236" height="153" alt="" aria-hidden="true" />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
     <div class="section-label">Promo Events</div>
     <div class="media-video infinity-video">
       <video src="/Images/Infinity/Gleyber-Torres-Modells.mp4#t=6.5" controls playsinline preload="metadata"></video>
-    </div>
-    </div>
-
-    <div style="margin-top:14px">
-    <div class="section-label">In Venue</div>
-    <div class="media-video infinity-video">
-      <video src="/Images/Infinity/SportsWater-Suite-Night-Yankees.mp4" poster="/Images/Infinity/sportswater-invenue-poster.jpg" controls playsinline preload="metadata"></video>
-    </div>
-    </div>
-
-    <div style="margin-top:14px">
-    <div class="section-label">Selected work</div>
-    <div class="media-stack">
-      <figure class="media-figure">
-        <img src="/Images/Infinity/infinity-before-after.jpg" alt="Sports Water brand before and after rebrand comparison" loading="lazy" />
-        <figcaption class="media-caption">Before &amp; After</figcaption>
-      </figure>
-      <figure class="media-figure">
-        <img src="/Images/Infinity/infinity-brand-system.jpg" alt="Sports Water logo system, typography, and color palette" loading="lazy" />
-        <figcaption class="media-caption">Brand Identity</figcaption>
-      </figure>
-      <figure class="media-figure">
-        <img src="/Images/Infinity/infinity-yankees-packaging.jpg" alt="New York Yankees Sports Water bottle — four-angle packaging view" loading="lazy" />
-        <figcaption class="media-caption">Packaging — Yankees</figcaption>
-      </figure>
-      <figure class="media-figure">
-        <img src="/Images/Infinity/infinity-sku-lineup.jpg" alt="Full Sports Water SKU lineup across all licensed properties" loading="lazy" />
-        <figcaption class="media-caption">Full SKU Range</figcaption>
-      </figure>
-      <figure class="media-figure">
-        <img src="/Images/Infinity/infinity-stadium-signage.jpg" alt="Sports Water in-stadium signage at Yankee Stadium and Busch Stadium" loading="lazy" />
-        <figcaption class="media-caption">In-Venue Signage</figcaption>
-      </figure>
-      <figure class="media-figure">
-        <img src="/Images/Infinity/infinity-experiential.jpg" alt="Sports Water trade show booth and event activations" loading="lazy" />
-        <figcaption class="media-caption">Events &amp; Experiential</figcaption>
-      </figure>
-      <figure class="media-figure">
-        <img src="/Images/Infinity/infinity-sales-deck.jpg" alt="Rebuilt Sports Water sales presentation overview" loading="lazy" />
-        <figcaption class="media-caption">Sales Collateral</figcaption>
-      </figure>
-    </div>
     </div>
   </div>
 
@@ -262,30 +277,59 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
   .infinity-car-block{margin-top:14px}
 
   .infinity-bottle-section{padding-top:20px;padding-bottom:20px}
-  .infinity-bottle-stage{display:flex;align-items:flex-end;justify-content:center;background:transparent;padding:0;min-height:749px}
-  .infinity-bottle-stage img{display:block;height:749px;width:auto;max-width:100%;object-fit:contain}
+
+  .infinity-decks-section{padding-left:0;padding-right:0}
+  @media (min-width:641px){
+    .infinity-decks-section{
+      width:100cqi;
+      margin-left:calc(50% - 50cqi);
+      margin-right:calc(50% - 50cqi);
+      box-sizing:border-box;
+    }
+  }
   @media (max-width:640px){
-    .infinity-bottle-stage{min-height:624px}
-    .infinity-bottle-stage img{height:624px}
+    .infinity-decks-section{padding-left:21px;padding-right:21px}
+  }
+  .infinity-deck-tickers{display:flex;flex-direction:column;gap:16px;padding-top:24px;padding-bottom:24px}
+  .deck-ticker{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);mask-image:linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%)}
+  .deck-ticker-track{display:flex;gap:20px;width:max-content;will-change:transform}
+  .deck-ticker-track--left{animation:deck-scroll-left var(--deck-dur, 60s) linear infinite}
+  .deck-ticker-track--right{animation:deck-scroll-right var(--deck-dur, 60s) linear infinite}
+  .deck-ticker-track img{display:block;height:153px;width:auto;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.18);background:var(--bg2);flex-shrink:0;pointer-events:none;user-select:none;-webkit-user-drag:none}
+  @keyframes deck-scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes deck-scroll-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  @media (max-width:640px){
+    .deck-ticker-track img{height:119px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .deck-ticker-track{animation:none}
+  }
+  .infinity-bottle-stage{display:flex;align-items:flex-end;justify-content:center;background:transparent;padding:0;min-height:599px}
+  .infinity-bottle-stage img{display:block;height:599px;width:auto;max-width:100%;object-fit:contain}
+  @media (max-width:640px){
+    .infinity-bottle-stage{min-height:499px}
+    .infinity-bottle-stage img{height:499px}
   }
 
   .brand-sub-label{font-size:13px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
   .infinity-logo-wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;align-items:stretch}
   .waterco-logo-cell-logo{grid-column:1 / -1}
-  .waterco-logo-cell-logo img{height:120px}
+  .waterco-logo-cell-logo img{height:110px}
   @media (max-width:640px){
-    .waterco-logo-cell-logo{grid-column:1 / -1;aspect-ratio:5 / 2}
+    .waterco-logo-cell-logo{grid-column:1 / -1;aspect-ratio:5 / 1.331;padding:5px 8px;overflow:visible}
+    .waterco-logo-cell-logo img{max-height:114%;max-width:121%}
   }
   .infinity-logo-cell{display:flex;align-items:center;justify-content:center;background:#0C2340;border-radius:var(--r-lg);padding:5%}
+  .infinity-logo-cell.waterco-logo-cell-logo{background:#1647B0}
   .infinity-logo-cell img{display:block;height:auto;width:auto;max-width:90%;max-height:100%;object-fit:contain}
   .infinity-logo-cell-horizontal{grid-column:1 / -1;order:1}
   .infinity-logo-cell-horizontal img{height:110px}
   @media (max-width:640px){
     .infinity-logo-wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
     .infinity-logo-cell{padding:8px;min-width:0;box-sizing:border-box;overflow:hidden}
-    .infinity-logo-cell-horizontal{order:1;grid-column:1 / -1;aspect-ratio:5 / 1.21;padding:5px 8px}
+    .infinity-logo-cell-horizontal{order:1;grid-column:1 / -1;aspect-ratio:5 / 1.331;padding:5px 8px}
     .infinity-logo-cell img{height:auto;width:auto;max-height:70%;max-width:85%;object-fit:contain}
-    .infinity-logo-cell-horizontal img{max-height:88%;max-width:93%}
+    .infinity-logo-cell-horizontal img{max-height:72%;max-width:84%}
   }
 
   .brand-system{display:flex;flex-direction:column;gap:32px;background:var(--bg2);border-radius:var(--r-lg);padding:28px}
