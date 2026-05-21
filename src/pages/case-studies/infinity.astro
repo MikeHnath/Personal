@@ -65,15 +65,24 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
 
   <script is:inline>
     (function(){
-      var bottles = ['NYY.png','BRS.png','SLC.png','MC13.png','RC24.png','T25.png','YM04.png','JB09.png','AW50.png','Raiders.png','ManCity.png','Liv.png','Paw.png'];
+      var bottles = [
+        'NYY.png','BRS.png','SLC.png','MC13.png','RC24.png','T25.png','YM04.png','JB09.png','AW50.png','Raiders.png','ManCity.png','Liv.png',
+        'waterco-DPC-ariel-16-a.png','waterco-DPC-belle-16-a.png','waterco-DPC-cinderella-16-a.png','waterco-DPC-frozen-16-a.png','waterco-DPC-jasmine-16-a.png','waterco-DPC-sw-16-a.png',
+        'waterco-jj-16-a.png','waterco-pp-16-a.png','waterco-sb-16-a.png'
+      ];
+      for (var j = bottles.length - 1; j > 0; j--) {
+        var k = Math.floor(Math.random() * (j + 1));
+        var tmp = bottles[j]; bottles[j] = bottles[k]; bottles[k] = tmp;
+      }
       var img = document.getElementById('infinity-bottle-img');
       if (!img) return;
-      bottles.forEach(function(b){ var p = new Image(); p.src = '/Images/Infinity/bottles/' + b; });
+      bottles.forEach(function(b){ var p = new Image(); p.src = '/Images/Infinity/bottles/' + encodeURIComponent(b); });
+      img.src = '/Images/Infinity/bottles/' + encodeURIComponent(bottles[0]);
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       var i = 0;
       setInterval(function(){
         i = (i + 1) % bottles.length;
-        img.src = '/Images/Infinity/bottles/' + bottles[i];
+        img.src = '/Images/Infinity/bottles/' + encodeURIComponent(bottles[i]);
       }, 500);
     })();
   </script>
@@ -189,7 +198,7 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
     <div style="margin-top:14px">
     <div class="section-label">Promo Events</div>
     <div class="media-video infinity-video">
-      <video src="/Images/Infinity/Gleyber-Torres-Modells.mp4" poster="/Images/Infinity/sportswater-promoevents-poster.jpg" controls playsinline preload="metadata"></video>
+      <video src="/Images/Infinity/Gleyber-Torres-Modells.mp4#t=6.5" controls playsinline preload="metadata"></video>
     </div>
     </div>
 
