@@ -61,7 +61,7 @@ const swPrezziPages = Array.from({ length: 14 }, (_, i) => `${tickerBase}/sw-pre
   </Fragment>
 
   <script is:inline>
-    (function(){
+    function initInfinityBottleReel(){
       var bottles = [
         'NYY.png','BRS.png','SLC.png','MC13.png','RC24.png','T25.png','YM04.png','JB09.png','AW50.png','Raiders.png','ManCity.png','Liv.png',
         'waterco-DPC-ariel-16-a.png','waterco-DPC-belle-16-a.png','waterco-DPC-cinderella-16-a.png','waterco-DPC-frozen-16-a.png','waterco-DPC-jasmine-16-a.png','waterco-DPC-sw-16-a.png',
@@ -95,7 +95,12 @@ const swPrezziPages = Array.from({ length: 14 }, (_, i) => `${tickerBase}/sw-pre
         }
         img.src = '/Images/Infinity/bottles/' + encodeURIComponent(queue[i]);
       }, 500);
-    })();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initInfinityBottleReel);
+    } else {
+      initInfinityBottleReel();
+    }
   </script>
 
   <div class="section">
@@ -276,6 +281,7 @@ const swPrezziPages = Array.from({ length: 14 }, (_, i) => `${tickerBase}/sw-pre
   </div>
 
   <div class="section">
+    <div style="font-weight:400;color:var(--text2);font-family:var(--font-display);font-size:var(--fs-h3);text-align:center;text-transform:uppercase;letter-spacing:.16em;margin-bottom:24px">Live Event & Activation</div>
     <div class="media-video infinity-video">
       <video src="/Images/Infinity/Gleyber-Torres-Modells.mp4#t=6.5" poster="/Images/Infinity/Gleyber-Torres-Modells-poster.jpg" controls playsinline preload="metadata"></video>
     </div>
