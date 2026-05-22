@@ -76,8 +76,8 @@ export const caseStudies: CaseStudy[] = [
     title: 'Built the brand architecture and creative systems that unlocked $10M+ in licensing deals.',
     subtitle:
       'Created the naming strategy, brand identity, and packaging systems for two distinct brand lines, giving the sales team the creative foundation that supported $10M+ in partnerships with Disney, Nickelodeon, the MLBPA, and major sports franchises.',
-    hero: { src: '/Images/Infinity/media/infinity-cs-gfx-1.jpg', alt: 'Infinity Sports Water licensed CPG lineup' },
-    preview: { src: '/Images/Infinity/media/infinity-cs-gfx-2.jpg', alt: 'Infinity case study preview' },
+    hero: { src: '/Images/Infinity/infinity-cs-gfx-1.jpg', alt: 'Infinity Sports Water licensed CPG lineup' },
+    preview: { src: '/Images/Infinity/infinity-cs-gfx-2.jpg', alt: 'Infinity case study preview' },
     tags: ['Brand Architecture', 'Packaging', 'Licensed CPG', 'Sales Enablement'],
     filterTags: ['brand', 'design'],
     industry: 'Licensed Consumer Products',
