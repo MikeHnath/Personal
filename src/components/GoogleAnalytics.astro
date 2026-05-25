@@ -1,0 +1,18 @@
+---
+// Google Analytics 4 — mikehnath.com
+// Only loads in production builds to avoid polluting analytics during local dev.
+const GA_ID = 'G-66HCW6KVP1';
+const isProd = import.meta.env.PROD;
+---
+{isProd && (
+  <>
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <script is:inline define:vars={{ GA_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    </script>
+  </>
+)}
