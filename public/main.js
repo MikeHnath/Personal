@@ -495,3 +495,24 @@ function submitContact() {
   setTimeout(reMark, 0);
   setTimeout(reMark, 250);
 })();
+
+// Background video: force inline muted autoplay, and if the browser still
+// blocks it (e.g. iOS power/data saving heuristics), start on first touch.
+(function () {
+  const v = document.querySelector('.video-bg');
+  if (!v) return;
+  v.muted = true;            // some browsers ignore the HTML attribute alone
+  v.setAttribute('muted', '');
+  v.playsInline = true;
+  const tryPlay = () => { const p = v.play(); if (p) p.catch(() => {}); };
+  tryPlay();
+  v.addEventListener('canplay', tryPlay, { once: true });
+  // Last resort: kick it off on the first user interaction.
+  const onInteract = () => {
+    tryPlay();
+    document.removeEventListener('touchstart', onInteract);
+    document.removeEventListener('click', onInteract);
+  };
+  document.addEventListener('touchstart', onInteract, { once: true, passive: true });
+  document.addEventListener('click', onInteract, { once: true });
+})();
