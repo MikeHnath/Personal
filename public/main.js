@@ -304,15 +304,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── MODAL ────────────────────────────────────────────────────────
+// Fires a GA4 event if gtag is loaded. Safe no-op in dev or when blocked.
+function gtagEvent(name, params) {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', name, params || {});
+  }
+}
+
+// Track once-per-open: form_start should fire on first field focus per session-open,
+// not every time the user tabs between fields.
+let _formStartFired = false;
+
 function openModal() {
   const el = document.getElementById('modal-overlay');
-  if (el) el.classList.add('open');
+  if (el) {
+    el.classList.add('open');
+    _formStartFired = false;
+    clearFormStatus();
+    gtagEvent('form_view', { form_name: 'contact' });
+  }
   closeMobileMenu();
 }
 function closeModal() {
   const el = document.getElementById('modal-overlay');
   if (el) el.classList.remove('open');
 }
+
+// form_start: first focus inside the open modal
+document.addEventListener('focusin', (e) => {
+  if (_formStartFired) return;
+  const modal = document.getElementById('modal-overlay');
+  if (!modal || !modal.classList.contains('open')) return;
+  if (e.target && e.target.matches && e.target.matches('.form-input, .form-textarea')) {
+    _formStartFired = true;
+    gtagEvent('form_start', { form_name: 'contact' });
+  }
+});
 function toggleMobileMenu() {
   const sb = document.querySelector('.sidebar');
   const bd = document.querySelector('.mobile-backdrop');
@@ -395,7 +422,23 @@ function copyEmail(e) {
   });
 }
 
-function submitContact() {
+// ── CONTACT FORM ────────────────────────────────────────────────
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mojbpjvw';
+
+function showFormStatus(message, type) {
+  const status = document.getElementById('form-status');
+  if (!status) return;
+  status.textContent = message;
+  status.dataset.type = type || '';
+}
+function clearFormStatus() {
+  const status = document.getElementById('form-status');
+  if (!status) return;
+  status.textContent = '';
+  status.dataset.type = '';
+}
+
+async function submitContact() {
   const modal = document.getElementById('modal-overlay');
   if (!modal) return;
   const inputs = modal.querySelectorAll('.form-input');
@@ -403,16 +446,58 @@ function submitContact() {
   const company = (inputs[1]?.value || '').trim();
   const email = (inputs[2]?.value || '').trim();
   const message = (modal.querySelector('.form-textarea')?.value || '').trim();
+  const honeypot = (modal.querySelector('input[name="_gotcha"]')?.value || '').trim();
   const intents = Array.from(modal.querySelectorAll('.intent-chip.selected'))
     .map(b => b.textContent.trim()).join(', ');
-  const subject = `Inquiry from ${name || 'website'}${intents ? ` — ${intents}` : ''}`;
-  const lines = [];
-  if (name) lines.push(`Name: ${name}`);
-  if (company) lines.push(`Company: ${company}`);
-  if (email) lines.push(`Email: ${email}`);
-  if (intents) lines.push(`Looking for: ${intents}`);
-  if (message) lines.push('', message);
-  window.location.href = `mailto:me@mikehnath.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+
+  // Honeypot tripped: silently drop. Do not fire GA, do not show error (don't tip off bots).
+  if (honeypot) return;
+
+  // Basic validation
+  if (!email || !message) {
+    showFormStatus('Email and message are required.', 'error');
+    gtagEvent('form_submit', { form_name: 'contact', status: 'validation_error', error_type: 'missing_fields' });
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showFormStatus('Please enter a valid email address.', 'error');
+    gtagEvent('form_submit', { form_name: 'contact', status: 'validation_error', error_type: 'invalid_email' });
+    return;
+  }
+
+  const btn = modal.querySelector('.form-submit');
+  const originalText = btn ? btn.textContent : 'Send message';
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+  showFormStatus('', '');
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name, company, email, message, intents,
+        _subject: `Inquiry from ${name || 'website'}${intents ? ` — ${intents}` : ''}`
+      })
+    });
+    if (res.ok) {
+      gtagEvent('form_submit', { form_name: 'contact', status: 'success', has_company: !!company, has_intents: !!intents });
+      showFormStatus("Message sent. I'll get back to you within 24 hours.", 'success');
+      inputs.forEach(i => { i.value = ''; });
+      const textarea = modal.querySelector('.form-textarea');
+      if (textarea) textarea.value = '';
+      modal.querySelectorAll('.intent-chip.selected').forEach(c => c.classList.remove('selected'));
+    } else {
+      let detail = '';
+      try { const data = await res.json(); detail = data.error || (data.errors && data.errors[0] && data.errors[0].message) || ''; } catch (_) {}
+      gtagEvent('form_submit', { form_name: 'contact', status: 'error', error_type: 'server_error', http_status: res.status });
+      showFormStatus(detail || 'Something went wrong. Email me@mikehnath.com directly and I\'ll get back to you.', 'error');
+    }
+  } catch (err) {
+    gtagEvent('form_submit', { form_name: 'contact', status: 'error', error_type: 'network_error' });
+    showFormStatus('Network error. Email me@mikehnath.com directly and I\'ll get back to you.', 'error');
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = originalText; }
+  }
 }
 
 // init theme from saved choice (default: mobile→dark, desktop→auto)

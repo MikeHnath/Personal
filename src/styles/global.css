@@ -535,6 +535,11 @@ input,textarea{font-family:var(--font-sans)}
 .form-textarea{width:100%;height:88px;border-radius:var(--r);border:none;background:var(--bg2);padding:10px 12px;font-size:var(--fs-caption);color:var(--text);resize:none;font-family:var(--font-sans);line-height:1.5;outline:none}
 .form-submit{width:100%;padding:10px;border-radius:var(--r);background:var(--btn-bg,var(--accent));color:var(--btn-fg,#FFFFFF);border:none;font-size:var(--fs-caption);font-weight:500;cursor:pointer;margin-top:4px;font-family:var(--font-sans);transition:opacity var(--transition)}
 .form-submit:hover{opacity:.85}
+.form-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-status{font-size:var(--fs-caption);margin-top:10px;min-height:1em;line-height:1.4}
+.form-status[data-type="success"]{color:var(--text)}
+.form-status[data-type="error"]{color:#C0392B}
+:root[data-theme="dark"] .form-status[data-type="error"]{color:#E07A6E}
 .modal-footer{display:flex;gap:8px;justify-content:flex-start;margin-top:16px;padding-top:14px;flex-wrap:wrap}
 
 /* ── PAGE HEADER BAR ────────────────────────────────────────── */

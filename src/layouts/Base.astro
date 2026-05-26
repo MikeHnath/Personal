@@ -6,12 +6,14 @@ interface Props {
   title: string;
   description?: string;
   pageId?: string;
+  ogImage?: string;
 }
 
 const {
   title,
   description = 'Mike Hnath — Brand & Marketing Strategist. Case studies across regulated CPG, enterprise eCommerce, pharma media, and product commercialization.',
-  pageId
+  pageId,
+  ogImage = '/Images/og-default.png'
 } = Astro.props;
 
 const path = Astro.url.pathname;
@@ -19,6 +21,34 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const isActive = (prefix: string) => {
   const target = prefix === '/' ? base + '/' : base + prefix;
   return prefix === '/' ? path === target : path === target || path.startsWith(target);
+};
+
+const siteUrl = 'https://www.mikehnath.com';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Mike Hnath',
+  alternateName: 'Michael Hnath',
+  url: siteUrl,
+  jobTitle: 'Creative Director & Brand Strategist',
+  description: 'Creative Director and SMB Brand Strategist running THIS — a brand strategy and creative consultancy.',
+  sameAs: [
+    'https://www.linkedin.com/in/michaelhnath/',
+    'https://github.com/MikeHnath',
+    'https://hnath.myportfolio.com'
+  ],
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'University of Connecticut'
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'CT',
+    addressCountry: 'US'
+  }
 };
 ---
 <!DOCTYPE html>
@@ -28,6 +58,25 @@ const isActive = (prefix: string) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <title>{title}</title>
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mike Hnath" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImageUrl} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <!-- Structured data -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
   <GoogleAnalytics />
   <link rel="icon" href="/Icons/mikehnath-favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -181,7 +230,10 @@ const isActive = (prefix: string) => {
     </div>
     <div class="form-field"><input class="form-input" type="email" placeholder="Email" aria-label="Email" /></div>
     <div class="form-field"><textarea class="form-textarea" placeholder="What's the situation? Brief description — what you're building, what you need, timeline if relevant." aria-label="Message"></textarea></div>
+    {/* Honeypot — hidden from real users, bots fill it and get silently dropped */}
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
     <button type="button" class="form-submit" onclick="submitContact()">Send message</button>
+    <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
     <div class="modal-footer">
       <div class="social-pills">
         <a class="social-pill" href="https://www.linkedin.com/in/michaelhnath/" target="_blank" rel="noopener noreferrer"><img src="/Icons/linkedin.svg" style="width:16px;height:16px;display:block" />LinkedIn</a>

@@ -10,7 +10,10 @@ const isProd = import.meta.env.PROD;
     <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
     <script is:inline define:vars={{ GA_ID }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      // Assign to window explicitly: Astro's define:vars wraps this script in an
+      // IIFE, so a bare `function gtag(){}` would be trapped in local scope and
+      // main.js (which guards on window.gtag) could never fire form events.
+      window.gtag = function gtag(){ dataLayer.push(arguments); };
       gtag('js', new Date());
       gtag('config', GA_ID);
     </script>
