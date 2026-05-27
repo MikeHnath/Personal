@@ -20,10 +20,11 @@ function nav(pageId) {
 // Keyboard shortcuts 1–9
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  const map = {'1':'home','2':'about','4':'experience','5':'work','6':'tools','7':'websites'};
+  const map = {'1':'home','2':'about','3':'experience','4':'tools','5':'work','6':'websites'};
   if (map[e.key]) nav(map[e.key]);
-  if (e.key === '8') window.open('https://hnath.myportfolio.com','_blank');
-  if (e.key === '9') openModal();
+  if (e.key === '7') window.open('https://hnath.myportfolio.com','_blank');
+  if (e.key === '8') openModal();
+  if (e.key === '9') window.open('https://www.linkedin.com/in/michaelhnath/','_blank');
   if (e.key === 'Escape') closeModal();
 });
 
