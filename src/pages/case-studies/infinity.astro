@@ -3,9 +3,9 @@ import CaseStudy from '../../layouts/CaseStudy.astro';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 const tickerBase = '/Images/Infinity/ticker';
-const raidersPages  = Array.from({ length: 13 }, (_, i) => `${tickerBase}/raiders-p${pad(i + 1)}.jpg`);
-const watercoPages  = Array.from({ length: 25 }, (_, i) => `${tickerBase}/waterco-p${pad(i + 1)}.jpg`);
-const swPrezziPages = Array.from({ length: 14 }, (_, i) => `${tickerBase}/sw-prezzi-p${pad(i + 1)}.jpg`);
+const raidersPages  = Array.from({ length: 13 }, (_, i) => `${tickerBase}/raiders-p${pad(i + 1)}.webp`);
+const watercoPages  = Array.from({ length: 25 }, (_, i) => `${tickerBase}/waterco-p${pad(i + 1)}.webp`);
+const swPrezziPages = Array.from({ length: 14 }, (_, i) => `${tickerBase}/sw-prezzi-p${pad(i + 1)}.webp`);
 ---
 <CaseStudy slug="infinity">
   <Fragment slot="meta">
