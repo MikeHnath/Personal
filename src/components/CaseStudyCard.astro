@@ -13,7 +13,7 @@ const subtitle = study.subtitle.length > 92
 ---
 <a class="work-card" data-tags={tagAttr} href={study.href}>
   {study.preview.src ? (
-    <div class="work-thumb" style="padding:0"><img src={study.preview.src} alt={study.preview.alt ?? ''} /></div>
+    <div class="work-thumb" style="padding:0"><img src={study.preview.src} alt={study.preview.alt ?? ''} loading="lazy" decoding="async" /></div>
   ) : (
     <div class="work-thumb">{study.preview.placeholder ?? ''}</div>
   )}

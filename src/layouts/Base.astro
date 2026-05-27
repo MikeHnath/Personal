@@ -15,7 +15,7 @@ const {
   title,
   description = 'Mike Hnath — Brand & Marketing Strategist. Case studies across regulated CPG, enterprise eCommerce, pharma media, and product commercialization.',
   pageId,
-  ogImage = '/Images/og-default.jpg',
+  ogImage = 'og-default',
   ogTitle = 'Mike Hnath — Brand & Marketing Strategist',
   ogDescription = 'Mike Hnath — Brand & Marketing Strategist. Case studies across regulated CPG, enterprise eCommerce, pharma media, and product commercialization.'
 } = Astro.props;
@@ -92,7 +92,16 @@ const personSchema = {
   <link rel="icon" href="/Icons/mikehnath-favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Load font CSS without blocking render; swap to stylesheet once fetched. display=swap avoids FOIT. -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" />
+  </noscript>
   <script is:inline>
     (function () {
       var c;

@@ -29,8 +29,8 @@ export const caseStudies: CaseStudy[] = [
     title: 'Brand architect for a cannabis chocolate startup.',
     subtitle:
       'Identity, packaging, custom chocolate molds, investor decks, and go-to-market across five regulated states — each with unique compliance requirements. $500K+ raised. 13+ SKUs on shelves. Nine years and counting.',
-    hero: { src: '/Images/Scandalous/scandalous-cs-gfx-1.jpg', alt: 'Scandalous case study graphic' },
-    preview: { src: '/Images/Scandalous/scandalous-cs-gfx-2.jpg', alt: 'Scandalous case study preview' },
+    hero: { src: '/Images/Scandalous/scandalous-cs-gfx-1.webp', alt: 'Scandalous case study graphic' },
+    preview: { src: '/Images/Scandalous/scandalous-cs-gfx-2.webp', alt: 'Scandalous case study preview' },
     tags: ['Brand Development', 'Packaging', 'Product Commercialization', 'Regulated CPG', 'Cannabis'],
     filterTags: ['brand', 'gtm'],
     industry: 'Regulated Cannabis / Consumer CPG',
@@ -76,8 +76,8 @@ export const caseStudies: CaseStudy[] = [
     title: 'Built the brand architecture and creative systems that unlocked $10M+ in licensing deals.',
     subtitle:
       'Created the naming strategy, brand identity, and packaging systems for two distinct brand lines, giving the sales team the creative foundation that supported $10M+ in partnerships with Disney, Nickelodeon, the MLBPA, and major sports franchises.',
-    hero: { src: '/Images/Infinity/infinity-cs-gfx-1.jpg', alt: 'Infinity Sports Water licensed CPG lineup' },
-    preview: { src: '/Images/Infinity/infinity-cs-gfx-2.jpg', alt: 'Infinity case study preview' },
+    hero: { src: '/Images/Infinity/infinity-cs-gfx-1.webp', alt: 'Infinity Sports Water licensed CPG lineup' },
+    preview: { src: '/Images/Infinity/infinity-cs-gfx-2.webp', alt: 'Infinity case study preview' },
     tags: ['Brand Architecture', 'Packaging', 'Licensed CPG', 'Sales Enablement'],
     filterTags: ['brand', 'design'],
     industry: 'Licensed Consumer Products',
