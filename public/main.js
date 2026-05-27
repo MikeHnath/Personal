@@ -24,7 +24,7 @@ document.addEventListener('keydown', e => {
   if (map[e.key]) nav(map[e.key]);
   if (e.key === '7') window.open('https://hnath.myportfolio.com','_blank');
   if (e.key === '8') openModal();
-  if (e.key === '9') window.open('https://www.linkedin.com/in/michaelhnath/','_blank');
+  if (e.key === '9') window.open('https://www.linkedin.com/in/mikehnath/','_blank');
   if (e.key === 'Escape') closeModal();
 });
 
