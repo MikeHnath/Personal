@@ -7,13 +7,17 @@ interface Props {
   description?: string;
   pageId?: string;
   ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
 const {
   title,
   description = 'Mike Hnath — Brand & Marketing Strategist. Case studies across regulated CPG, enterprise eCommerce, pharma media, and product commercialization.',
   pageId,
-  ogImage = '/Images/og-default.png'
+  ogImage = '/Images/og-default.jpg',
+  ogTitle = 'Mike Hnath — Brand & Marketing Strategist',
+  ogDescription = 'Mike Hnath — Brand & Marketing Strategist. Case studies across regulated CPG, enterprise eCommerce, pharma media, and product commercialization.'
 } = Astro.props;
 
 const path = Astro.url.pathname;
@@ -63,16 +67,23 @@ const personSchema = {
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mike Hnath" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={ogDescription} />
   <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:secure_url" content={ogImageUrl} />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={ogTitle} />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
+  <meta name="twitter:url" content={canonicalUrl} />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={ogDescription} />
   <meta name="twitter:image" content={ogImageUrl} />
+  <meta name="twitter:image:alt" content={ogTitle} />
 
   <!-- Structured data -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
