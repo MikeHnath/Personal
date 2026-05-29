@@ -28,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     breadcrumb: 'Scandalous',
     title: 'Brand architect for a cannabis chocolate startup.',
     subtitle:
-      'Identity, packaging, custom chocolate molds, investor decks, and go-to-market across five regulated states — each with unique compliance requirements. $500K+ raised. 13+ SKUs on shelves. Nine years and counting.',
+      'Identity, packaging, custom chocolate molds, investor decks, and go-to-market across five regulated states, each with its own compliance gauntlet. $500K+ raised. 13+ SKUs on shelves. Nine years and counting.',
     hero: { src: '/Images/Scandalous/scandalous-cs-gfx-1.webp', alt: 'Scandalous case study graphic' },
     preview: { src: '/Images/Scandalous/scandalous-cs-gfx-2.webp', alt: 'Scandalous case study preview' },
     tags: ['Brand Development', 'Packaging', 'Product Commercialization', 'Regulated CPG', 'Cannabis'],
@@ -44,7 +44,7 @@ export const caseStudies: CaseStudy[] = [
     breadcrumb: 'Kraft Heinz / MiO',
     title: "Rebuilding MiO's digital shelf into a conversion system",
     subtitle:
-      'Led the digital shelf transformation for MiO — rebuilding UX and multi-channel creative into a unified conversion system that contributed to measurable Amazon sales lift.',
+      'Led the digital shelf rebuild for MiO. UX and multi-channel creative consolidated into one conversion system that contributed to measurable Amazon sales lift.',
     hero: { src: '/Images/MiO/mio-cs-gfx-1.webp', alt: 'MiO digital shelf case study graphic' },
     preview: { src: '/Images/MiO/mio-cs-gfx-2.webp', alt: 'MiO digital shelf preview' },
     tags: ['CPG', 'eCommerce', 'Creative Direction', 'Enterprise'],
@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
     breadcrumb: 'POCN',
     title: 'Driving Efficiency in Programmatic Media for Regulated Healthcare',
     subtitle:
-      'Managed $1.7M+ in pharmaceutical media across 30+ concurrent HCP campaigns — driving compounding efficiency gains while consistently hitting contracted KPIs in a regulated environment.',
+      'Managed $1.7M+ in pharmaceutical media across 30+ concurrent HCP campaigns. Compounding efficiency gains while consistently hitting contracted KPIs in a regulated environment.',
     hero: { src: '/Images/POCN/pocn-cs-gfx-1.webp', alt: 'POCN case study graphic' },
     preview: { src: '/Images/POCN/pocn-cs-gfx-2.webp', alt: 'POCN case study preview' },
     tags: ['Performance', 'Healthcare', 'Programmatic', 'HCP Marketing'],

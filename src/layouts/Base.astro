@@ -38,7 +38,7 @@ const personSchema = {
   alternateName: 'Michael Hnath',
   url: siteUrl,
   jobTitle: 'Creative Director & Brand Strategist',
-  description: 'Creative Director and SMB Brand Strategist running THIS — a brand strategy and creative consultancy.',
+  description: 'Creative Director and SMB Brand Strategist running THIS, a brand strategy and creative consultancy.',
   sameAs: [
     'https://www.linkedin.com/in/mikehnath/',
     'https://github.com/MikeHnath',
@@ -237,18 +237,18 @@ const personSchema = {
 <div class="modal-overlay" id="modal-overlay" onclick="handleOverlay(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-eyebrow">Get in touch</div>
-    <div class="modal-title">Let's talk.</div>
-    <div class="modal-sub">Available for select consulting, brand strategy, and creative projects. Response within 24 hrs.</div>
+    <div class="modal-eyebrow">New work</div>
+    <div class="modal-title">Let's get into it!</div>
+    <div class="modal-sub">Taking on select retainers and scoped projects. Brand strategy and growth work, with a soft spot for regulated CPG. I read every note personally with 24-hour reply, no auto-responder. 👍</div>
     <div class="form-row">
       <div class="form-field"><input class="form-input" type="text" placeholder="Name" aria-label="Name" /></div>
       <div class="form-field"><input class="form-input" type="text" placeholder="Company" aria-label="Company" /></div>
     </div>
     <div class="form-field"><input class="form-input" type="email" placeholder="Email" aria-label="Email" /></div>
-    <div class="form-field"><textarea class="form-textarea" placeholder="What's the situation? Brief description — what you're building, what you need, timeline if relevant." aria-label="Message"></textarea></div>
+    <div class="form-field"><textarea class="form-textarea" placeholder="What's the situation? What you're building, what you need, timeline if relevant." aria-label="Message"></textarea></div>
     {/* Honeypot — hidden from real users, bots fill it and get silently dropped */}
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
-    <button type="button" class="form-submit" onclick="submitContact()">Send message</button>
+    <button type="button" class="form-submit" onclick="submitContact()">Send it</button>
     <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
     <div class="modal-footer">
       <div class="social-pills">
