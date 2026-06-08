@@ -28,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     breadcrumb: 'Scandalous',
     title: 'Brand architect for a cannabis chocolate startup.',
     subtitle:
-      'Identity, packaging, custom chocolate molds, investor decks, and go-to-market across five regulated states, each with its own compliance gauntlet. $500K+ raised. 13+ SKUs on shelves. Nine years and counting.',
+      'Identity, packaging, custom chocolate molds, investor decks, and go-to-market across five regulated states, each with its own compliance gauntlet. $500K+ raised. 13+ SKUs on shelves. Seven years and counting.',
     hero: { src: '/Images/Scandalous/scandalous-cs-gfx-1.webp', alt: 'Scandalous case study graphic' },
     preview: { src: '/Images/Scandalous/scandalous-cs-gfx-2.webp', alt: 'Scandalous case study preview' },
     tags: ['Brand Development', 'Packaging', 'Product Commercialization', 'Regulated CPG', 'Cannabis'],
@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
     breadcrumb: 'SIGIL',
     title: 'Zero-to-launch brand and product system for a Kickstarter-funded tabletop game',
     subtitle:
-      'Built the visual identity, board system, packaging, and production-ready assets for a strategy dueling game that raised $22K+ on Kickstarter at 303% of goal.',
+      "Built the visual identity, board system, packaging, and production-ready assets for Pine Island Games' strategy dueling game, which raised $22K+ on Kickstarter at 303% of goal.",
     hero: { src: '/Images/Sigil/sigil-cs-gfx-1.webp', alt: 'SIGIL case study graphic' },
     preview: { src: '/Images/Sigil/sigil-cs-gfx-2.webp', alt: 'SIGIL case study preview' },
     tags: ['Brand Identity', 'Packaging', 'Product Design', 'Tabletop'],
