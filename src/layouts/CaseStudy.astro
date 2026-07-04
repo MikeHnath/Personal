@@ -11,7 +11,12 @@ const { slug } = Astro.props;
 const cs = getCaseStudy(slug);
 if (!cs) throw new Error(`Unknown case study slug: ${slug}`);
 ---
-<Base title={cs.pageTitle}>
+<Base
+  title={cs.pageTitle}
+  ogImage={cs.hero.src}
+  ogTitle={cs.title}
+  ogDescription={cs.subtitle}
+>
   <div class="section">
     <a class="breadcrumb" href="/case-studies/">← <span>Case Studies</span> / {cs.breadcrumb}</a>
     {cs.hero.src ? (
