@@ -75,6 +75,12 @@ buildTicker('ticker3', row2Brands); buildTicker('ticker4', row2Brands);
 // ── PERSONAL UPDATES ─────────────────────────────────────────────
 const updates = [
   {
+    img: '/Icons/hubspot.svg',
+    title: 'Earned HubSpot Email Marketing Certification',
+    desc: 'Certified on segmentation, high-performing sends, deliverability, and testing — direct application to the HubSpot buildout at THIS.',
+    date: 'Jun 2026'
+  },
+  {
     img: '/Icons/fireworks.svg',
     title: 'Received PGI 1.4 Pro Certificate of Training',
     desc: 'Licensed to handle 1.4 professional-use-only fireworks under PGI certification.',
